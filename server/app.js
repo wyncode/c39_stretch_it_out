@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 // Unauthenticated routes
-app.use(openRoutes);
+app.use('/api', openRoutes);
 
 // Serve any static files
 if (process.env.NODE_ENV === 'production') {
