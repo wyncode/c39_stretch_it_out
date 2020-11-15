@@ -50,7 +50,12 @@ const userSchema = new mongoose.Schema(
     avatar: {
       type: String
     },
-    stretches: {}
+    stretches: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Stretch'
+      }
+    ]
   },
   {
     timestamps: true
