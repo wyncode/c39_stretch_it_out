@@ -1,5 +1,6 @@
 const User = require('../db/models/user');
 const jwt = require('jsonwebtoken');
+const cloudinary = require('cloudinary').v2;
 
 //Create a new user//
 
@@ -51,6 +52,8 @@ exports.loginUser = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+///////////////////FOR SECURE ROUTES//////////////////////////
 //LOGOUT USER
 exports.logoutUser = async (req, res) => {
   try {
@@ -60,6 +63,31 @@ exports.logoutUser = async (req, res) => {
     await req.user.save();
     res.clearCookie('jwt');
     res.json({ message: 'User has been logged out' });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+exports.updateUser = async (req, res) => {
+  const updates = Object.keys(req.body);
+  const allowedUpdates = [
+    'firstName',
+    'lastName',
+    'email',
+    'password',
+    'personType',
+    'stretchingLevel',
+    'timeDedicated',
+    'avatar',
+    'stretches'
+  ];
+  const isValid = updates.every((update) => allowedUpdates.includes(update));
+  if (!isValid)
+    return res.status(400).json({ error: 'You cannot update this field' });
+  try {
+    updates.forEach((update) => (req.user[update] = req.body[update]));
+    await req.user.save();
+    res.json(req.user);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
