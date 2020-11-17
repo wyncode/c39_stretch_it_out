@@ -24,7 +24,7 @@ exports.createUser = async (req, res) => {
       stretchingLevel,
       timeDedicated
     });
-    const token = await user.generateAuthToken();
+    const token = await user.generateToken();
 
     res.cookie('jwt', token, {
       httpOnly: true,
@@ -67,7 +67,7 @@ exports.logoutUser = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-
+//UPDATE USER
 exports.updateUser = async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = [
@@ -90,5 +90,18 @@ exports.updateUser = async (req, res) => {
     res.json(req.user);
   } catch (error) {
     res.status(400).json({ error: error.message });
+  }
+};
+//UPLOAD AVATAR//////
+exports.uploadAvatar = async (req, res) => {
+  try {
+    const response = await cloudinary.uploader.upload(
+      req.files.avatar.tempFilePath
+    );
+    req.user.avatar = response.secure_url;
+    await req.user.save();
+    res.json(response);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };
