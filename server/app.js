@@ -1,7 +1,8 @@
 require('./db/config');
+const cookieParser = require('cookie-parser');
 const express = require('express'),
   path = require('path'),
-  openRoutes = require('./routes/open');
+  openRoutes = require('./routes/open/index');
 
 const app = express();
 
@@ -10,6 +11,7 @@ app.use(express.json());
 
 // Unauthenticated routes
 app.use('/api', openRoutes);
+app.use(cookieParser());
 
 // Serve any static files
 if (process.env.NODE_ENV === 'production') {
