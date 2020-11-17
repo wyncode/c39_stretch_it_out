@@ -68,6 +68,7 @@ userSchema.methods.toJSON = function () {
   const userObject = user.toObject();
   delete userObject.password;
   delete userObject.tokens;
+  return userObject;
 };
 //hashing password before saving user
 userSchema.pre('save', async function (next) {
