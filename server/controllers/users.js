@@ -105,3 +105,15 @@ exports.uploadAvatar = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+//DELETE USER/////
+exports.deleteUser = async (req, res) => {
+  try {
+    await req.user.remove();
+    sendCancellationEmail(req.user.email, req.user.name);
+    res.clearCookie('jwt');
+    res.json({ message: 'user deleted' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
