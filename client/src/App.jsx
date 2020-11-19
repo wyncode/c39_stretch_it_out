@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { AppContextProvider } from './context/AppContext';
-import ContextDemo from './components/ContextDemo';
 
 import './App.css';
 
@@ -19,7 +18,7 @@ const App = () => {
     <AppContextProvider>
       <div id="demo">
         <h3>Hello from client/src/App.js</h3>
-        <ContextDemo />
+
         <h3>{serverMessage}</h3>
       </div>
     </AppContextProvider>

@@ -68,6 +68,7 @@ userSchema.methods.toJSON = function () {
   const userObject = user.toObject();
   delete userObject.password;
   delete userObject.tokens;
+  return userObject;
 };
 //hashing password before saving user
 userSchema.pre('save', async function (next) {
@@ -78,7 +79,7 @@ userSchema.pre('save', async function (next) {
 });
 
 //making token for user
-userSchema.methods.generateAuthToken = async function () {
+userSchema.methods.generateToken = async function () {
   const user = this;
   const token = jwt.sign(
     {
