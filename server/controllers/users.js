@@ -29,7 +29,7 @@ exports.createUser = async (req, res) => {
     res.cookie('jwt', token, {
       httpOnly: true,
       sameSite: 'Strict',
-      secure: process.env.NODE_ENV === 'production'
+      secure: process.env.NODE_ENV !== 'production' ? false : true
     });
     res.status(201).json(user);
   } catch (error) {
@@ -55,6 +55,15 @@ exports.loginUser = async (req, res) => {
 
 ///////////////////FOR SECURE ROUTES//////////////////////////
 //LOGOUT USER
+
+exports.getCurrentUser = async (req, res) => {
+  try {
+    res.json(req.user);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
 exports.logoutUser = async (req, res) => {
   try {
     req.user.tokens = req.user.tokens.filter(({ token }) => {

@@ -34,7 +34,10 @@ const stretchSchema = new mongoose.Schema(
       {
         type: String
       }
-    ]
+    ],
+    premium: {
+      type: Boolean
+    }
   },
   {
     timestamps: true
