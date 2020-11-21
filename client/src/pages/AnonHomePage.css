@@ -1,0 +1,191 @@
+.ws {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+.ws-text {
+  margin-left: 40%;
+}
+
+.ws-img {
+  width: 425px;
+  height: 425px;
+  border-radius: 50px;
+  margin-left: 300px;
+  -webkit-box-shadow: -50px -1px 0px -4px #e0eaed;
+  -moz-box-shadow: -50px -1px 0px -4px #e0eaed;
+  box-shadow: -50px -1px 0px -4px #e0eaed;
+}
+
+.jumboHeader {
+  background-image: url('https://www.flexispot.com/media/magefan_blog/workrestingstretching_1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+.cgDiv {
+  border-radius: 200px 0px 0px 0px;
+  background-color: #e0eaed;
+  width: 100%;
+  height: 680px;
+}
+
+.cardGroup1 {
+  width: 60%;
+  height: 200px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards1 {
+  border-radius: 50px 50px 50px 50px;
+  margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cg1title {
+  padding: 40px;
+  text-align: center;
+}
+
+.ws2-text {
+  margin: 20px;
+}
+
+#ws2-title {
+  font-weight: 800;
+  font-size: 40px;
+}
+
+#ws2-subtitle {
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.statsText {
+  margin: 100px;
+}
+
+.statsText img {
+  padding: 20px;
+}
+.clocks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#ws3-title {
+  margin-left: 100px;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+#ws3-reviewTitle {
+  font-weight: 800;
+  font-size: 40px;
+  margin-left: 40px;
+}
+
+#ws3-reviews {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.getStartedFooter {
+  height: 300px;
+  width: 100%;
+  background-color: #e0eaed;
+}
+
+.getStartedContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 5px;
+}
+
+.getStartedText {
+  font-weight: 600;
+}
+
+.getStartedIcon {
+  width: 300px;
+  height: 100px;
+}
+
+.getStartedIcon2 {
+  width: 300px;
+  height: 126px;
+}
+
+.followUsContainer {
+  height: 374px;
+  width: 100%;
+  background-color: #bdbdbd;
+}
+
+.followUsWrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 70px;
+  justify-content: space-between;
+}
+
+.signUp {
+  margin-left: 100px;
+}
+
+.followUsIcons {
+  margin-right: 300px;
+}
+
+.followUsText {
+  margin-left: 60px;
+  font-weight: 800;
+  color: #606060;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+}
+
+.socialIcon {
+  list-style: none;
+  padding: 0px 15px 0px 15px;
+}
+
+.formText {
+  font-weight: 800;
+  color: #606060;
+}
+
+.contactBar {
+  list-style: none;
+  display: flex;
+  margin-left: 80px;
+}
+
+.contactItem {
+  margin-left: 50px;
+  font-weight: 700;
+  color: #606060;
+}
+
+.blogContainer {
+  border-radius: 200px 0px 0px 0px;
+  /* background-color: #e0eaed; */
+  width: 100%;
+  height: 680px;
+}
