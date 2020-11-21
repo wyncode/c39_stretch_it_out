@@ -18,7 +18,8 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
-      unique: true,
+      unique: false,
+      //leaving false for testing purposes
       trim: true
     },
     password: {
@@ -26,14 +27,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true
     },
-    tokens: [
-      {
-        token: {
-          type: String,
-          required: true
-        }
-      }
-    ],
+
     personType: {
       type: String,
       required: true
@@ -54,6 +48,39 @@ const userSchema = new mongoose.Schema(
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Stretch'
+      }
+    ],
+    dailyStretches: {
+      completed: {
+        type: Number
+      },
+      goal: {
+        type: Number
+      }
+    },
+
+    weeklyStretches: {
+      completed: {
+        type: Number
+      },
+      goal: {
+        type: Number
+      }
+    },
+    monthlyStretches: {
+      completed: {
+        type: Number
+      },
+      goal: {
+        type: Number
+      }
+    },
+    tokens: [
+      {
+        token: {
+          type: String,
+          required: true
+        }
       }
     ]
   },

@@ -1,11 +1,44 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { AppContext } from '../context/AppContext';
+import { useHistory, Link } from 'react-router-dom';
+import { Modal, Form, Button } from 'react-bootstrap';
+import axios from 'axios';
+import swal from 'sweetalert';
 
-const LoginModal = () => {
+const LoginModal = ({ show, hide }) => {
+  const { setCurrentUser, setLoading } = useContext(AppContext);
+  const [formData, setFormData] = useState(null);
+  const history = useHistory();
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await axios.post('/api/login', formData);
+      setCurrentUser(response.data);
+      sessionStorage.setItem('user', response.data);
+      history.push('/profile');
+      swal('Welcome', "Let's Stretch it Out", 'success');
+    } catch (error) {
+      swal('Oops!', 'try again');
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
-    <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
-      <Modal.Header closeButton></Modal.Header>
-      <Modal.Body>
-        <Form onSubmit={handleSubmit}>
+    <Modal
+      className="login"
+      size="sm"
+      show={show}
+      onHide={hide}
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header className="login-modal-header" closeButton></Modal.Header>
+      <Modal.Body className="login-modal">
+        <Form className="login-form" onSubmit={handleLogin}>
           <Form.Group>
             <Form.Label>Email</Form.Label>
             <Form.Control
@@ -26,12 +59,14 @@ const LoginModal = () => {
               required
             />
           </Form.Group>
-          <Form.Group>
-            <Button type="submit">Log In</Button>
+          <Form.Group className="login-button-div">
+            <Button className="login-button" block type="submit">
+              Log In
+            </Button>
           </Form.Group>
         </Form>
+        <Link to="/sign-up"> Don't have an account?</Link>
       </Modal.Body>
-      <Link to="/sign-up"> Don't have an account?</Link>
     </Modal>
   );
 };
