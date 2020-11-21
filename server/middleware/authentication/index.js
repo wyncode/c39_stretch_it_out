@@ -28,7 +28,7 @@ passport.use(
       //this is what happens if you've been logged in too long
     }
     let { iat, exp, ...userData } = jwtPayload;
-    console.log(jwtPayload);
+
     //above, we are destructuring the data from the token that we set up in the genAuthToken in the users.js model
     userData = await User.findById(userData._id);
     //overriding the user data so that instead of just _id and name, it is all the userData from the User model;

@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { AppContextProvider } from './context/AppContext';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import AnonHomePage from './pages/AnonHomePage';
+import StretchCategory from './pages/StretchCategory';
+import IndividualStretch from './pages/IndividualStretch';
+import PrivateRoute from './components/PrivateRoute';
+import UserHomePage from './pages/UserHomePage';
+import Quiz from './pages/Quiz';
 
 import './App.css';
 
 const App = () => {
-  const [serverMessage, setServerMessage] = useState('');
-
-  const fetchDemoData = () => {
-    fetch('/api/demo')
-      .then((response) => response.json())
-      .then((data) => setServerMessage(data.message));
-  };
-
-  useEffect(fetchDemoData, []);
-
   return (
     <AppContextProvider>
-      <div id="demo">
-        <h3>Hello from client/src/App.js</h3>
-
-        <h3>{serverMessage}</h3>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={AnonHomePage} />
+          <Route exact path="/body-area" component={StretchCategory} />
+          <Route exact path="/stretch/:id" component={IndividualStretch} />
+          <Route eact path="/sign-up" component={Quiz} />
+          <PrivateRoute exact path="/profile" component={UserHomePage} />
+        </Switch>
+      </BrowserRouter>
     </AppContextProvider>
   );
 };
