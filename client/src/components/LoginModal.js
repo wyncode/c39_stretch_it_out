@@ -21,9 +21,10 @@ const LoginModal = ({ show, hide }) => {
       sessionStorage.setItem('user', response.data);
       history.push('/profile');
       swal('Welcome', "Let's Stretch it Out", 'success');
-      setLoading(false);
     } catch (error) {
       swal('Oops!', 'try again');
+    } finally {
+      setLoading(false);
     }
   };
   return (

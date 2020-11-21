@@ -17,12 +17,11 @@ const Logout = () => {
         withCredentials: true
       });
       //const response = await axios.post('/api/users/logout',{withCredentials:true})
-      setCurrentUser(response.data);
+
       sessionStorage.removeItem('user');
       setCurrentUser(null);
-      swal(response.data.message, 'You have signed out!', 'success').then(() =>
-        history.push('/')
-      );
+      swal(response.data.message, 'You have signed out!', 'success');
+      history.push('/');
     } catch (error) {
       console.log('Login Error: ' + error);
     }

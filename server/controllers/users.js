@@ -29,7 +29,7 @@ exports.createUser = async (req, res) => {
     res.cookie('jwt', token, {
       httpOnly: true,
       sameSite: 'Strict',
-      secure: process.env.NODE_ENV !== 'production' ? false : true
+      secure: process.env.NODE_ENV !== 'production'
     });
     res.status(201).json(user);
   } catch (error) {
