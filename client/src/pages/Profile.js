@@ -3,7 +3,7 @@ import { Container, Image, Button } from 'react-bootstrap';
 import { AuthContext } from '../context/AuthContext';
 import axios from 'axios';
 import swal from 'sweetalert';
-import Navbar from '../components/Navbar';
+import Navigation from '../components/Navigation';
 
 const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading } = useContext(AuthContext);
@@ -74,7 +74,7 @@ const Profile = ({ history: { push } }) => {
   };
   return (
     <>
-      <Navbar />
+      <Navigation />
       <Container
         className="d-flex justify-content-center align-items-center
          flex-column"

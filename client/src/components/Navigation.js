@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Dropdown, Image } from 'react-bootstrap';
-import { AppContext } from '../context/Appcontext';
+import { AppContext } from '../context/AppContext';
 import Logout from './Logout';
 
-const Navbar = () => {
+const Navigation = () => {
   const { currentUser } = useContext(AppContext);
 
   return (
@@ -12,7 +12,7 @@ const Navbar = () => {
       <Navbar.Brand as={Link} to="/">
         Find a Stretch
       </Navbar.Brand>
-      <Navbar.toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Item className="mr-2">Stretches</Nav.Item>
@@ -29,12 +29,12 @@ const Navbar = () => {
                   roundedCircle
                 />
               </Dropdown.Toggle>
-              <Dropdown.menu>
+              <Dropdown.Menu>
                 <Dropdown.Item as={Link} to="/profile">
                   Profile
                 </Dropdown.Item>
                 <Logout />
-              </Dropdown.menu>
+              </Dropdown.Menu>
             </Dropdown>
           </Nav.Item>
           <Nav.Item>Start Trial</Nav.Item>
@@ -44,4 +44,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navigation;
