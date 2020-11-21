@@ -7,6 +7,7 @@ import IndividualStretch from './pages/IndividualStretch';
 import PrivateRoute from './components/PrivateRoute';
 import UserHomePage from './pages/UserHomePage';
 import Quiz from './pages/Quiz';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
