@@ -8,7 +8,7 @@ const Navbar = () => {
   const { currentUser } = useContext(AppContext);
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" sticky="top">
       <Navbar.Brand as={Link} to="/">
         Find a Stretch
       </Navbar.Brand>
