@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import LoginModal from '../components/LoginModal';
-import Navbar from '../components/Navbar';
+import Navigation from '../components/Navigation';
 import WhiteSpace from '../components/WhiteSpace';
 import CardGroup1 from '../components/PainCards';
 import WhiteSpace2 from '../components/WhiteSpace2';
@@ -21,7 +21,7 @@ const AnonHomePage = () => {
       <h1>This is home</h1>
       <button onClick={handleShow}>Log In</button>
       <LoginModal show={show} hide={handleClose} />
-      <Navbar />
+      <Navigation />
       <JumbotronHeader />
       <WhiteSpace />
       <CardGroup1 />

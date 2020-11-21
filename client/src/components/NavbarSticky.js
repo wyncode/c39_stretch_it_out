@@ -4,7 +4,7 @@ import { Navbar, Nav, Dropdown, Image } from 'react-bootstrap';
 import { AppContext } from '../context/Appcontext';
 import Logout from './Logout';
 
-const Navbar = () => {
+const NavbarSticky = () => {
   const { currentUser } = useContext(AppContext);
 
   return (
@@ -44,4 +44,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarSticky;

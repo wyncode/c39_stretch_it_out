@@ -1,9 +1,9 @@
 import React, { useEffect, useContext } from 'react';
 //import { Container, Table } from 'react-bootstrap';
 import axios from 'axios';
-import Navbar from '../components/Navbar';
+import Navigation from '../components/Navigation';
 import CategoryCard from '../components/CategoryCard';
-import Search from './Search';
+import Search from '../components/Search';
 import { AppContext } from '../context/AppContext';
 
 const StretchCategory = () => {
@@ -30,7 +30,7 @@ const StretchCategory = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navigation />
       <CategoryCard />
     </div>
   );
