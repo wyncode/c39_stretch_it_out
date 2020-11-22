@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Dropdown, Image } from 'react-bootstrap';
 import { AppContext } from '../context/Appcontext';
-import Logout from './Logout';
+import Logout from '../components/Logout';
 
 const Navbar = () => {
   const { currentUser } = useContext(AppContext);

@@ -3,6 +3,7 @@ import React, { useEffect, useContext } from 'react';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 import CategoryCard from '../components/CategoryCard';
+import Stretches from './Stretches';
 import Search from './Search';
 import { AppContext } from '../context/AppContext';
 
