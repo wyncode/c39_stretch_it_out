@@ -1,5 +1,5 @@
 import Level from './quizpages/Level';
-import Welcome from './quizpages/Welcome';
+import Welcome from './Welcome';
 import Description from './quizpages/Description';
 import Dedication from './quizpages/Dedication';
 import Info from './quizpages/Info';

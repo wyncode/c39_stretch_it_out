@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import Welcome from './quizpages/Welcome';
 import SubmitForward from './components/SubmitForward';
 import SkipButton from './components/SkipButton';
+import { useHistory } from 'react-router-dom';
+import { Modal } from 'react-bootstrap';
 import PreviousButton from './components/PreviousButton';
 
 import { emptyFormData, schema } from './Schema';
 import swal from 'sweetalert';
 
-const Quiz = () => {
+const Quiz = ({ show, hide }) => {
   const [formData, setFormData] = useState(emptyFormData);
   const [activeSchema, setActiveSchema] = useState(schema.description);
-
-  const initForm = () => {
-    setActiveSchema(schema.description);
-  };
+  const history = useHistory();
+  // const initForm = () => {
+  //   setActiveSchema(schema.description);
+  // };
 
   const handleChange = (field) => (e) => {
     setFormData({ ...formData, [field]: e.target.value });
@@ -32,7 +33,7 @@ const Quiz = () => {
     console.log(formData);
     swal('Success!', "You've started your trial", 'success');
     setFormData(emptyFormData);
-    setActiveSchema(null);
+    history.push('/profile');
   };
 
   const handlePrevious = () => {
@@ -46,15 +47,26 @@ const Quiz = () => {
   const ActiveForm = activeSchema.form;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <PreviousButton
-        activeSchema={activeSchema}
-        handlePrevious={handlePrevious}
-      />
-      <ActiveForm formData={formData} handleChange={handleChange} />
-      <SubmitForward activeSchema={activeSchema} />
-      <SkipButton handleSkip={handleSkip} activeSchema={activeSchema} />
-    </form>
+    <Modal
+      size="lg"
+      show={show}
+      onHide={hide}
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton></Modal.Header>
+      <Modal.Body>
+        <form onSubmit={handleSubmit}>
+          <PreviousButton
+            activeSchema={activeSchema}
+            handlePrevious={handlePrevious}
+          />
+          <ActiveForm formData={formData} handleChange={handleChange} />
+          <SubmitForward activeSchema={activeSchema} />
+          <SkipButton handleSkip={handleSkip} activeSchema={activeSchema} />
+        </form>
+      </Modal.Body>
+    </Modal>
   );
 };
 
