@@ -4,6 +4,8 @@ import axios from 'axios';
 import Navigation from '../components/Navigation';
 import CategoryCard from '../components/CategoryCard';
 import Search from '../components/Search';
+import Stretches from './Stretches';
+
 import { AppContext } from '../context/AppContext';
 
 const StretchCategory = () => {
