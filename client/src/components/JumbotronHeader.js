@@ -4,15 +4,19 @@ import { Jumbotron, Button } from 'react-bootstrap';
 
 const JumbotronHeader = () => {
   return (
-    <Jumbotron className="jumboHeader" background->
-      <h1>Easy Stretches For</h1>
-      <h1>Everyone to Enjoy!</h1>
-      <p>Explore Quick Stretches</p>
-      <p>From Your Desk to the Gym</p>
-      <p>
-        <Button variant="primary">Find a Stretch</Button>
-      </p>
-    </Jumbotron>
+    <div className="jumboHeader">
+      <div className="headerText">
+        <h1>Easy Stretches For</h1>
+        <h1>Everyone to Enjoy!</h1>
+      </div>
+      <div className="headerBtnText">
+        <p>Explore Quick Stretches</p>
+        <p>From Your Desk to the Gym</p>
+        <div>
+          <Button variant="primary">Find a Stretch</Button>
+        </div>
+      </div>
+    </div>
   );
 };
 

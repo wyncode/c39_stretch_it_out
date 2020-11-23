@@ -1,10 +1,24 @@
 .ws {
   display: flex;
-  margin-bottom: 35px;
+  margin: 35px;
+  margin-left: 40%;
+}
+
+.ws-title {
+  margin: 50px;
 }
 
 .ws-text {
-  margin-left: 40%;
+  list-style: none;
+}
+
+.ws-text li::before {
+  content: '\2022';
+  color: #048e98;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 .ws-img {
@@ -12,17 +26,41 @@
   height: 425px;
   border-radius: 50px;
   margin-left: 300px;
-  -webkit-box-shadow: -50px -1px 0px -4px #e0eaed;
-  -moz-box-shadow: -50px -1px 0px -4px #e0eaed;
-  box-shadow: -50px -1px 0px -4px #e0eaed;
 }
 
 .jumboHeader {
-  background-image: url('https://www.flexispot.com/media/magefan_blog/workrestingstretching_1.jpg');
+  background-image: url('../images/Hero-Image.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
+  height: 718px;
+}
+
+.headerText {
+  padding: 60px;
+  font-weight: 800;
+  font-size: 55px;
+}
+
+.headerText h1 {
+  margin-left: 50px;
+  margin-top: 0px;
+}
+
+.headerBtnText {
+  padding: 99px;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.headerBtnText button {
+  margin-top: 30px;
+  padding: 20px;
+  width: 282px;
+  background-color: #347a8c;
+  font-size: 30px;
 }
 
 .cgDiv {
@@ -185,7 +223,19 @@
 
 .blogContainer {
   border-radius: 200px 0px 0px 0px;
-  /* background-color: #e0eaed; */
+  background-color: #e0eaed;
   width: 100%;
   height: 680px;
+}
+
+.blogTitle {
+  padding: 40px;
+  text-align: center;
+}
+
+.blogCards {
+  width: 70%;
+  height: 200px;
+  align-items: center;
+  margin-left: 40%;
 }

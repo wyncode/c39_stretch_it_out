@@ -27,8 +27,8 @@ const AnonHomePage = () => {
       <CardGroup1 />
       <WhiteSpace2 />
       <VideoCarousel />
-      <WhiteSpace3 />
       <BlogSpace />
+      <WhiteSpace3 />
       <GetStartedFooter />
       <ContactFooter />
     </div>
