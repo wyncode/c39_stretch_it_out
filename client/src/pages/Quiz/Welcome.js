@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+
 // import AnonHomePage from '../AnonHomePage';
 import Quiz from './Quiz';
 import StretchIcon from './images/StretchIcon.png';

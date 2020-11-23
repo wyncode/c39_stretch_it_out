@@ -1,8 +1,9 @@
 import React from 'react';
 import Progress3 from '../images/Progress-3.png';
-import { Button } from 'react-bootstrap';
 
-const Info = ({ handleChange, formData }) => {
+import swal from 'sweetalert';
+
+const Info = ({ handleChange, formData, setChecked, checked }) => {
   return (
     <>
       <img src={Progress3} alt="progress bar" />
@@ -51,9 +52,10 @@ const Info = ({ handleChange, formData }) => {
           <input
             type="checkbox"
             id="agreeToTerms"
-            onChange={handleChange('agreeToTerms')}
-            value={formData.agreeToTerms}
-            checked={formData.agreeToTerms}
+            name="agreeToTerms"
+            // onChange={handleChange('agreeToTerms')}
+            onChange={() => setChecked(!checked)}
+            checked={checked}
           />
           <label for="agreeToTerms">
             I agree to Stretch It Out’s Terms of Use and Privacy Poilcy.{' '}
