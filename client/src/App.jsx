@@ -9,6 +9,7 @@ import UserHomePage from './pages/UserHomePage';
 import Quiz from './pages/Quiz';
 import Benefits from './pages/Benefits';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import StretchModal from './components/StretchModal';
 
 import './App.css';
 
@@ -21,7 +22,8 @@ const App = () => {
           <Route exact path="/" component={AnonHomePage} />
           <Route exact path="/body-area" component={StretchCategory} />
           <Route exact path="/stretch/:id" component={IndividualStretch} />
-          <Route eact path="/sign-up" component={Quiz} />
+          <Route exact path="/sign-up" component={Quiz} />
+          <Route exact path="/modal" component={StretchModal} />
           <PrivateRoute exact path="/profile" component={UserHomePage} />
         </Switch>
       </BrowserRouter>
