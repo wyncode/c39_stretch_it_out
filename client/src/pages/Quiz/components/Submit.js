@@ -1,10 +1,12 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const Submit = ({ activeSchema }) =>
+const Submit = ({ activeSchema, handleSubmit }) =>
   !activeSchema.next ? (
     <div className="form-group submit-group">
-      <Button type="submit">Submit</Button>
+      <Button onClick={handleSubmit} type="submit">
+        Submit
+      </Button>
     </div>
   ) : null;
 

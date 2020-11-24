@@ -10,7 +10,7 @@ import axios from 'axios';
 import { schema, emptyFormData } from './Schema';
 import swal from 'sweetalert';
 
-const Quiz = ({ show, hide }) => {
+const Quiz = ({ show, hide, setShow }) => {
   const [formData, setFormData] = useState(emptyFormData);
   const [activeSchema, setActiveSchema] = useState(schema.description);
   const [checked, setChecked] = useState(false);
@@ -21,15 +21,31 @@ const Quiz = ({ show, hide }) => {
     setFormData({ ...formData, [field]: e.target.value });
   };
 
-  // const handleCheckBox = (e) => {
-  //   // debugger;
-  //   setFormData({ ...formData, agreeToTerms: e.target.checked });
-  //   setChecked (e.target.checked)
-  // };
-  console.log(formData);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // console.log(formData);
 
+  const handlePrevious = () => {
+    setActiveSchema(schema[activeSchema.previous]);
+  };
+
+  const handleSkip = () => {
+    setActiveSchema(schema[activeSchema.next]);
+
+    const nextForm = activeSchema?.next;
+
+    if (nextForm) {
+      setActiveSchema(schema[nextForm]);
+      //This is setting the state of activeSchema to one of the schema objects in Schema.js
+      return;
+    }
+    return;
+  };
+
+  const ActiveForm = activeSchema.form;
+
+  const handleSubmit = async (e) => {
+    setLoading(true);
+    e.preventDefault();
+    console.log('this is working');
     if (
       formData.password.toLowerCase().includes('password') ||
       formData.password.length < 6
@@ -48,50 +64,23 @@ const Quiz = ({ show, hide }) => {
       );
       return;
     }
-    setLoading(true);
-    // const nextForm = activeSchema?.next;
 
-    // if (nextForm) {
-    //   setActiveSchema(schema[nextForm]);
-    //   //This is setting the state of activeSchema to one of the schema objects in Schema.js
-    //   return;
-    // }
     try {
-      const response = await axios({
-        method: 'POST',
-        url: '/api',
-        withCredentials: true,
-        data: formData
-      });
-      setCurrentUser(response.data.user);
+      console.log(formData);
+      const response = await axios.post('/api', formData);
+      console.log(response);
       sessionStorage.setItem('user', response.data);
-      setFormData(null);
+      setCurrentUser(response.data.user);
+      setShow(false);
+      swal('Success!', "You've started your trial", 'success');
+
       setLoading(false);
+      // setFormData(null);
+      history.push('/profile');
     } catch (error) {
-      swal('Oh no!', 'something went wrong', 'danger');
+      swal('Oh no!', 'something went wrong', 'warning');
     }
-    swal('Success!', "You've started your trial", 'success');
-    // setFormData(null);
-    history.push('/profile');
   };
-
-  const handlePrevious = () => {
-    setActiveSchema(schema[activeSchema.previous]);
-  };
-  const handleSkip = () => {
-    setActiveSchema(schema[activeSchema.next]);
-
-    const nextForm = activeSchema?.next;
-
-    if (nextForm) {
-      setActiveSchema(schema[nextForm]);
-      //This is setting the state of activeSchema to one of the schema objects in Schema.js
-      return;
-    }
-    return;
-  };
-
-  const ActiveForm = activeSchema.form;
 
   return (
     <Modal
@@ -117,7 +106,7 @@ const Quiz = ({ show, hide }) => {
           />
           <Continue handleSkip={handleSkip} activeSchema={activeSchema} />
           <SkipButton handleSkip={handleSkip} activeSchema={activeSchema} />
-          <Submit activeSchema={activeSchema} />
+          <Submit handleSubmit={handleSubmit} activeSchema={activeSchema} />
         </form>
       </Modal.Body>
     </Modal>

@@ -21,7 +21,7 @@ const Welcome = () => {
       </p>
       <Link to="/">No Thanks</Link>
       <Button onClick={handleShow}>Sounds Good</Button>
-      <Quiz show={show} hide={handleClose} />
+      <Quiz show={show} hide={handleClose} setShow={setShow} />
     </div>
   );
 };

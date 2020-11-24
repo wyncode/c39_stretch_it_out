@@ -24,12 +24,11 @@ exports.createUser = async (req, res) => {
       stretchingLevel,
       timeDedicated
     });
-    const token = await user.generateToken();
-
+    const token = await user.generateAuthToken();
     res.cookie('jwt', token, {
       httpOnly: true,
       sameSite: 'Strict',
-      secure: process.env.NODE_ENV !== 'production'
+      secure: process.env.NODE_ENV !== 'production' ? false : true
     });
     res.status(201).json(user);
   } catch (error) {
@@ -41,11 +40,11 @@ exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.findByCredentials(email, password);
-    const token = await user.generateToken();
+    const token = await user.generateAuthToken();
     res.cookie('jwt', token, {
       httpOnly: true,
       sameSite: 'Strict',
-      secure: process.env.NODE_ENV === 'production'
+      secure: process.env.NODE_ENV === 'production' ? false : true
     });
     res.json(user);
   } catch (error) {
@@ -66,8 +65,8 @@ exports.getCurrentUser = async (req, res) => {
 
 exports.logoutUser = async (req, res) => {
   try {
-    req.user.tokens = req.user.tokens.filter(({ token }) => {
-      return token !== req.cookies.jwt;
+    req.user.tokens = req.user.tokens.filter((token) => {
+      return token.token !== req.cookies.jwt;
     });
     await req.user.save();
     res.clearCookie('jwt');
