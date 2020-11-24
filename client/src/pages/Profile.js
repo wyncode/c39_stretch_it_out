@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { Container, Image, Button } from 'react-bootstrap';
-import { AuthContext } from '../context/AuthContext';
+import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 import swal from 'sweetalert';
 import Navigation from '../components/Navigation';
 
 const Profile = ({ history: { push } }) => {
-  const { currentUser, setCurrentUser, setLoading } = useContext(AuthContext);
+  const { currentUser, setCurrentUser, setLoading } = useContext(AppContext);
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
 
