@@ -63,7 +63,7 @@ const Quiz = ({ show, hide, setShow }) => {
         'warning'
       );
       return;
-      q;
+      
     }
 
     try {
