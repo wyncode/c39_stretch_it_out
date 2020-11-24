@@ -8,7 +8,6 @@ import Navigation from '../components/Navigation';
 
 import Navbar from '../components/Navbar';
 
-
 const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading } = useContext(AppContext);
   const [image, setImage] = useState(null);
@@ -78,7 +77,6 @@ const Profile = ({ history: { push } }) => {
   };
   return (
     <>
-
       <Navigation />
 
       <Navbar />
