@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Nunito&display=swap');
+
+.continue-skip-button-div {
+  width: 500x;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h3 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bolder !important;
+}
+
+img {
+  margin-bottom: 30px;
+}
+.text-input {
+  margin-left: 15px;
+}
+.modal-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-body {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.modal-header {
+  border-bottom: 0 none !important;
+}
+.no-thanks-link {
+  text-decoration: underline;
+  color: black;
+  font-family: 'Lato', sans-serif;
+}
+label {
+  margin-left: 15px;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+}
+p {
+  text-align: center;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+.progress-bar {
+  width: 500px;
+}
+.radio-button {
+  background-color: #e0eaed;
+  margin: 10px 0;
+  display: flex;
+  align-items: baseline;
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.skip-button {
+  background-color: white !important;
+  border-color: white !important;
+  color: black !important;
+  text-decoration: underline;
+}
+.sounds-good-button {
+  background-color: #377c8d !important;
+  border-color: #377c8d !important;
+  height: 60px !important;
+  width: 150px !important;
+  border-radius: 10px !important;
+  font-family: 'Lato', sans-serif;
+}
+
+.welcome-button-div {
+  width: 300px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.welcome-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+  height: 420px;
+}
+.welcome-paragraph {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
