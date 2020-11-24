@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Container } from 'react-bootstrap';
 import Navigation from '../components/Navigation';
 import CategoryCard from '../components/CategoryCard';
+<<<<<<< HEAD
 import Search from '../components/Search';
 
 import Neck from '../assets/Neck for beginners card.jpg';
@@ -24,6 +25,10 @@ import Featured from '../assets/Featured card.jpg';
 import Levels from '../assets/Levels card.jpg';
 import TimeOfDay from '../assets/Time of day card.jpg';
 
+=======
+import Stretches from './Stretches';
+import Search from './Search';
+>>>>>>> added search file
 import { AppContext } from '../context/AppContext';
 
 const StretchCategory = () => {
