@@ -8,7 +8,7 @@ export const AppContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [targetArea, setTargetArea] = useState(null);
-  const [stretchName, setStretchName] = useState(null);
+  const [stretchNames, setStretchNames] = useState([]);
   const user = sessionStorage.getItem('user');
 
   useEffect(() => {
@@ -33,8 +33,8 @@ export const AppContextProvider = ({ children }) => {
         setLoading,
         targetArea,
         setTargetArea,
-        stretchName,
-        setStretchName
+        stretchNames,
+        setStretchNames
       }}
     >
       {children}

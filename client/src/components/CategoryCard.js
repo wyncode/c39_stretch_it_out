@@ -1,111 +1,102 @@
-import React, { useState, useContext } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import React, { useState, useContext, useEffect } from 'react';
+import { Card, Button, CardDeck, CardColumns } from 'react-bootstrap';
 import { AppContext } from '../context/AppContext';
 import StretchModal from '../components/StretchModal';
+import axios from 'axios';
 
 const CategoryCard = () => {
   const [modalShow, setModalShow] = useState(false);
-  const { targetArea, setTargetArea } = useContext(AppContext);
+  const {
+    targetArea,
+    setTargetArea,
+    stretchNames,
+    setStretchNames
+  } = useContext(AppContext);
 
-  const handleClick = (e) => {
-    console.log(e.target.value);
-    setModalShow(true);
+  const handleClick = async (e) => {
     setTargetArea(e.target.value);
-    console.log(modalShow);
+    setModalShow(true);
+    console.log(e.target.value);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get(`/api/stretches/${targetArea}`);
+      console.log(result.data);
+      setStretchNames(result.data.stretchName);
+      console.log(stretchNames);
+    };
+    fetchData();
+  }, [targetArea]);
 
   return (
     <div>
-      <div>
+      <CardColumns>
         <Card>
           {/* <Card.Img src={}/> */}
-          <Button value="Neck" onClick={handleClick}>
+          <Button value="neck" onClick={handleClick}>
             Neck
           </Button>
         </Card>
 
         <Card value="Shoulder">
           {/* <Card.Img src={}/> */}
-          <Button>Shoulder</Button>
+          <Card.Title>Shoulder</Card.Title>
         </Card>
 
         <Card value="Upper Back">
           {/* <Card.Img src={}/> */}
-          <Button>Upper Back</Button>
+          <Card.Title>Upper Back</Card.Title>
         </Card>
 
         <Card value="Wrist">
           {/* <Card.Img src={}/> */}
-          <Button>Wrist</Button>
+          <Card.Title>Wrist</Card.Title>
         </Card>
 
         <Card value="Lower Back">
           {/* <Card.Img src={}/> */}
-          <Button>Lower Back</Button>
+          <Card.Title>Lower Back</Card.Title>
         </Card>
         <Card value="Chest">
           {/* <Card.Img src={}/> */}
-          <Button>Chest</Button>
+          <Card.Title>Chest</Card.Title>
         </Card>
-      </div>
-      <div>
+      </CardColumns>
+
+      <CardColumns>
         <Card value="Glutes">
           {/* <Card.Img src={}/> */}
-          <Button>Glutes</Button>
+          <Card.Title>Glutes</Card.Title>
         </Card>
 
         <Card value="Quads">
           {/* <Card.Img src={}/> */}
-          <Button>Quads</Button>
+          <Card.Title>Quads</Card.Title>
         </Card>
 
         <Card value="Hamstrings">
           {/* <Card.Img src={}/> */}
-          <Button>Hamstrings</Button>
+          <Card.Title>Hamstrings</Card.Title>
         </Card>
 
         <Card value="Knee">
           {/* <Card.Img src={}/> */}
-          <Button>Knee</Button>
+          <Card.Title>Knee</Card.Title>
         </Card>
 
         <Card value="Groin">
           {/* <Card.Img src={}/> */}
-          <Button>Groin</Button>
+          <Card.Title>Groin</Card.Title>
         </Card>
 
         <Card value="Calves">
           {/* <Card.Img src={}/> */}
-          <Button>Calves</Button>
+          <Card.Title>Calves</Card.Title>
         </Card>
-      </div>
-      <div>
-        <Card>
-          {/* <Card.Img src={}/> */}
-          <Button></Button>
-        </Card>
-
-        <Card>
-          {/* <Card.Img src={}/> */}
-          <Button></Button>
-        </Card>
-
-        <Card>
-          {/* <Card.Img src={}/> */}
-          <Button></Button>
-        </Card>
-
-        <Card>
-          {/* <Card.Img src={}/> */}
-          <Button></Button>
-        </Card>
-
-        <Card>
-          <Card.Img />
-          <Button></Button>
-        </Card>
-      </div>
+      </CardColumns>
       <StretchModal
+        stretch={stretchNames}
         target={targetArea}
         show={modalShow}
         onHide={() => setModalShow(false)}
@@ -115,3 +106,16 @@ const CategoryCard = () => {
 };
 
 export default CategoryCard;
+//   useEffect(async () => {
+//     console.log(targetArea)
+//     try {
+//         const response = await axios.get(`/api/stretches/${targetArea}`)
+//         const stretches = response.data.filter((bodyPart) => {
+//             return bodyPart.stretchName
+//         })
+//         console.log('stretches=', stretches)
+
+//      } catch {
+//          console.log('whoppps')
+//      }
+// }, [targetArea])

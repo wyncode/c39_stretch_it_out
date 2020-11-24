@@ -4,16 +4,32 @@ import axios from 'axios';
 import { Modal, Card, Button, Dropdown, CardColumns } from 'react-bootstrap';
 
 const StretchModal = (props) => {
-  const { stretchName, setStretchName } = useContext(AppContext);
+  const {
+    stretchNames,
+    setStretchNames,
+    targetArea,
+    setTargetArea
+  } = useContext(AppContext);
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
+    console.log(targetArea);
+    console.log(stretchNames);
+    try {
+      const response = await axios.get(`/api/stretches/${targetArea}`);
+      const stretches = response.data.filter((bodyPart) => {
+        return bodyPart.stretchName;
+      });
+      console.log(stretches);
+    } catch {
+      console.log('whoppps');
+    }
   };
 
   return (
     <Modal {...props}>
       <Modal.Header closeButton>
-        <Modal.Title>X Stretches</Modal.Title>
+        <Modal.Title>{targetArea} Stretches</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Dropdown>
@@ -31,7 +47,7 @@ const StretchModal = (props) => {
         <CardColumns>
           <Card>
             <Card.Img />
-            <Button></Button>
+            <Button onClick={handleClick}></Button>
           </Card>
           <Card>
             <Card.Img />
