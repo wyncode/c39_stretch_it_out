@@ -66,16 +66,15 @@ const Quiz = ({ show, hide, setShow }) => {
     }
 
     try {
-      console.log(formData);
       const response = await axios.post('/api', formData);
-      console.log(response);
+
       sessionStorage.setItem('user', response.data);
       setCurrentUser(response.data.user);
       setShow(false);
       swal('Success!', "You've started your trial", 'success');
 
       setLoading(false);
-      // setFormData(null);
+
       history.push('/profile');
     } catch (error) {
       swal('Oh no!', 'something went wrong', 'warning');
