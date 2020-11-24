@@ -6,6 +6,7 @@ import Clock15 from '../images/clock-icon-15min.png';
 import AnimatedPeople from '../images/animated-people-talking.png';
 import Statistic1 from '../images/statistic1.png';
 import Statistic2 from '../images/statistic2.png';
+import VideosImg from '../images/homepage-videos.png';
 
 const WhiteSpace2 = () => {
   return (
@@ -37,7 +38,12 @@ const WhiteSpace2 = () => {
             <img src={Statistic2} alt="" />
           </div>
         </div>
-        <div>{/* <h2>Browse Our Instructional Stretching Videos</h2> */}</div>
+        <div>
+          {/* <h2>Browse Our Instructional Stretching Videos</h2> */}
+          <div>
+            <img src={VideosImg} alt="videos" />
+          </div>
+        </div>
       </Container>
     </>
   );

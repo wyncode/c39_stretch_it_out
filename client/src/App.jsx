@@ -7,6 +7,7 @@ import IndividualStretch from './pages/IndividualStretch';
 import PrivateRoute from './components/PrivateRoute';
 import UserHomePage from './pages/UserHomePage';
 import Quiz from './pages/Quiz';
+import Benefits from './pages/Benefits';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
@@ -16,6 +17,7 @@ const App = () => {
     <AppContextProvider>
       <BrowserRouter>
         <Switch>
+          <Route exact path="/benefits" component={Benefits} />
           <Route exact path="/" component={AnonHomePage} />
           <Route exact path="/body-area" component={StretchCategory} />
           <Route exact path="/stretch/:id" component={IndividualStretch} />
