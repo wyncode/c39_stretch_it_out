@@ -17,7 +17,6 @@ import './App.css';
 const App = () => {
   return (
     <AppContextProvider>
-
       <BrowserRouter>
         <Switch>
           <Route exact path="/benefits" component={Benefits} />
@@ -28,13 +27,6 @@ const App = () => {
           <PrivateRoute exact path="/profile" component={UserHomePage} />
         </Switch>
       </BrowserRouter>
-
-      <div id="demo">
-        <h3>Hello from client/src/App.js</h3>
-
-        <h3>{serverMessage}</h3>
-      </div>
-
     </AppContextProvider>
   );
 };
