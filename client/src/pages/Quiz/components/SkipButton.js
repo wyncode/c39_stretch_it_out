@@ -4,7 +4,9 @@ import { Button } from 'react-bootstrap';
 const SkipButton = ({ activeSchema, handleSkip }) =>
   activeSchema.next ? (
     <div>
-      <Button onClick={handleSkip}>Skip</Button>
+      <Button className="skip-button" onClick={handleSkip}>
+        Skip
+      </Button>
     </div>
   ) : null;
 

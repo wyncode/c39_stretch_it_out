@@ -1,9 +1,11 @@
 import React from 'react';
+import Back from '../images/Back.png';
+import Image from 'react-bootstrap/Image';
 
 const PreviousButton = ({ activeSchema, handlePrevious }) =>
   activeSchema.previous ? (
     <div onClick={handlePrevious} className="previous">
-      <h3>Previous</h3>
+      <Image src={Back} alt="back-arrow" />
     </div>
   ) : null;
 

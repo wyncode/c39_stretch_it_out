@@ -16,13 +16,13 @@ export const emptyFormData = {
 };
 
 export const schema = {
-  welcome: {
-    previous: null,
-    form: Welcome,
-    next: 'description'
-  },
+  // welcome: {
+  //   previous: null,
+  //   form: Welcome,
+  //   next: 'description'
+  // },
   description: {
-    previous: 'welcome',
+    previous: null,
     form: Description,
     next: 'level'
   },

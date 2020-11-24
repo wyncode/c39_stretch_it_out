@@ -1,11 +1,12 @@
 import React from 'react';
 import Progress1 from '../images/Progress-1.png';
+import Image from 'react-bootstrap/Image';
 
 const Description = ({ handleChange, formData }) => {
   return (
-    <div>
-      <img src={Progress1} alt="progress-bar" />
-      <h3>Which person best describes who you are?</h3>
+    <div className="modal-div">
+      <Image fluid src={Progress1} alt="progress-bar" />
+      <h4>Which person best describes who you are?</h4>
       <p>Select one answer</p>
       <div className="form-group">
         <div className="radio-button">

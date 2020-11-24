@@ -1,9 +1,10 @@
 import React from 'react';
 import Progress1Filled from '../images/Progress-1-filled.png';
+import Image from 'react-bootstrap/image';
 const Level = ({ handleChange, formData }) => {
   return (
-    <div>
-      <img src={Progress1Filled} alt="progress bar" />
+    <div className="modal-div">
+      <Image fluid src={Progress1Filled} alt="progress bar" />
       <h3>What is your stretching level?</h3>
       <p>Select one answer</p>
       <div className="form-group">

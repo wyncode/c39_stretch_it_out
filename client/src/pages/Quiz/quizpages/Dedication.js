@@ -1,9 +1,10 @@
 import React from 'react';
 import Progress2 from '../images/Progress-2.png';
+import Image from 'react-bootstrap/image';
 const Dedication = ({ handleChange, formData }) => {
   return (
-    <div>
-      <img src={Progress2} alt="progress bar" />
+    <div className="modal-div">
+      <Image fluid src={Progress2} alt="progress bar" />
       <h3>How much time would you dedicate to stretching?</h3>
       <p>Select one answer</p>
       <div className="form-group">

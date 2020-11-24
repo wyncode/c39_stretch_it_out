@@ -9,6 +9,7 @@ import Continue from './components/Continue';
 import axios from 'axios';
 import { schema, emptyFormData } from './Schema';
 import swal from 'sweetalert';
+import './Quiz.css';
 
 const Quiz = ({ show, hide, setShow }) => {
   const [formData, setFormData] = useState(emptyFormData);
@@ -20,8 +21,6 @@ const Quiz = ({ show, hide, setShow }) => {
   const handleChange = (field) => (e) => {
     setFormData({ ...formData, [field]: e.target.value });
   };
-
-  // console.log(formData);
 
   const handlePrevious = () => {
     setActiveSchema(schema[activeSchema.previous]);
@@ -43,8 +42,9 @@ const Quiz = ({ show, hide, setShow }) => {
   const ActiveForm = activeSchema.form;
 
   const handleSubmit = async (e) => {
-    setLoading(true);
     e.preventDefault();
+    setLoading(true);
+
     console.log('this is working');
     if (
       formData.password.toLowerCase().includes('password') ||
@@ -60,7 +60,7 @@ const Quiz = ({ show, hide, setShow }) => {
     if (!checked) {
       swal(
         "You must agree to Stretch It Out's Terms of Use and Privacy Policy",
-        'danger'
+        'warning'
       );
       return;
     }
@@ -90,13 +90,14 @@ const Quiz = ({ show, hide, setShow }) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton></Modal.Header>
-      <Modal.Body>
+      <Modal.Header closeButton>
+        <PreviousButton
+          activeSchema={activeSchema}
+          handlePrevious={handlePrevious}
+        />
+      </Modal.Header>
+      <Modal.Body className="modal-body">
         <form onSubmit={handleSubmit}>
-          <PreviousButton
-            activeSchema={activeSchema}
-            handlePrevious={handlePrevious}
-          />
           <ActiveForm
             formData={formData}
             handleChange={handleChange}
@@ -104,9 +105,12 @@ const Quiz = ({ show, hide, setShow }) => {
             checked={checked}
             setChecked={setChecked}
           />
-          <Continue handleSkip={handleSkip} activeSchema={activeSchema} />
-          <SkipButton handleSkip={handleSkip} activeSchema={activeSchema} />
-          <Submit handleSubmit={handleSubmit} activeSchema={activeSchema} />
+
+          <div className="continue-skip-button-div">
+            <SkipButton handleSkip={handleSkip} activeSchema={activeSchema} />
+            <Continue handleSkip={handleSkip} activeSchema={activeSchema} />
+            <Submit handleSubmit={handleSubmit} activeSchema={activeSchema} />
+          </div>
         </form>
       </Modal.Body>
     </Modal>
