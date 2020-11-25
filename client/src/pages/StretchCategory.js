@@ -23,9 +23,6 @@ import Challenges from '../assets/Challenge card.jpg';
 import Featured from '../assets/Featured card.jpg';
 import Levels from '../assets/Levels card.jpg';
 import TimeOfDay from '../assets/Time of day card.jpg';
-
-import Stretches from './Stretches';
-import Search from './Search';
 import { AppContext } from '../context/AppContext';
 
 const StretchCategory = () => {
