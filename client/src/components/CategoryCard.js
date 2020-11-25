@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Card, Button, CardDeck, CardColumns } from 'react-bootstrap';
+import { Card, Button, CardColumns } from 'react-bootstrap';
 import { AppContext } from '../context/AppContext';
 import StretchModal from '../components/StretchModal';
 import axios from 'axios';
@@ -16,22 +16,20 @@ const CategoryCard = () => {
   const handleClick = async (e) => {
     setTargetArea(e.target.value);
     setModalShow(true);
-    console.log(e.target.value);
   };
 
   const fetchData = async () => {
-    const { data } = await axios.get(`/api/stretches/neck`);
-    setStretchNames(data);
-    console.log(data);
-    // console.log(stretchNames);
+    const response = await axios.get(`/api/stretches/${targetArea}`);
+    try {
+      setStretchNames(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     fetchData();
-    console.log(targetArea);
-  }, []);
-
-  console.log(stretchNames);
+  }, [targetArea]);
 
   return (
     <div>
@@ -110,17 +108,3 @@ const CategoryCard = () => {
 };
 
 export default CategoryCard;
-
-//   useEffect(async () => {
-//     console.log(targetArea)
-//     try {
-//         const response = await axios.get(`/api/stretches/${targetArea}`)
-//         const stretches = response.data.filter((bodyPart) => {
-//             return bodyPart.stretchName
-//         })
-//         console.log('stretches=', stretches)
-
-//      } catch {
-//          console.log('whoppps')
-//      }
-// }, [targetArea])

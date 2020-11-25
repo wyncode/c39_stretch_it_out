@@ -3,7 +3,7 @@ import { AppContext } from '../context/AppContext';
 import { Card, CardColumns, Button } from 'react-bootstrap';
 import axios from 'axios';
 
-const IndividualStretchCard = () => {
+const IndividualStretchCard = (props) => {
   const {
     stretchNames,
     setStretchNames,
@@ -25,12 +25,13 @@ const IndividualStretchCard = () => {
       console.log('whoppps');
     }
   };
+
   return (
     <div>
       <CardColumns>
         <Card>
-          <Card.Img />
-          <Button onClick={handleClick}></Button>
+          <Card.Img src={props.illustration} />
+          <Button onClick={handleClick}>{props.stretchName}</Button>
         </Card>
         <Card>
           <Card.Img />

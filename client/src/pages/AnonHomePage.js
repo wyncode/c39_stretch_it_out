@@ -26,7 +26,7 @@ const AnonHomePage = () => {
       <WhiteSpace />
       <CardGroup1 />
       <WhiteSpace2 />
-      <VideoCarousel />
+      {/* <VideoCarousel /> */}
       <BlogSpace />
       <WhiteSpace3 />
       <GetStartedFooter />

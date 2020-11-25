@@ -26,6 +26,7 @@ const StretchModal = (props) => {
   //       console.log('whoppps');
   //     }
   //   };
+  console.log('props', props);
 
   return (
     <Modal {...props}>
@@ -45,13 +46,18 @@ const StretchModal = (props) => {
           <Dropdown.Item>Intermediate</Dropdown.Item>
           <Dropdown.Item>Advanced</Dropdown.Item>
         </Dropdown>
-        {stretchNames &&
-          stretchNames.map((stretch) => (
-            <IndividualStretchCard
-              key={stretch._id}
-              stretchName={stretch.stretchName}
-            />
-          ))}
+        <div>
+          {props.stretch &&
+            props.stretch.map((stretch) => {
+              return (
+                <IndividualStretchCard
+                  key={stretch._id}
+                  stretchName={stretch.stretchName}
+                  illustration={stretch.illustration}
+                />
+              );
+            })}
+        </div>
       </Modal.Body>
       <Modal.Footer>
         <Button>Cancel</Button>
