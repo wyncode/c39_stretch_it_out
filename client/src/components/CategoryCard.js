@@ -19,15 +19,19 @@ const CategoryCard = () => {
     console.log(e.target.value);
   };
 
+  const fetchData = async () => {
+    const { data } = await axios.get(`/api/stretches/neck`);
+    setStretchNames(data);
+    console.log(data);
+    // console.log(stretchNames);
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get(`/api/stretches/${targetArea}`);
-      console.log(result.data);
-      setStretchNames(result.data.stretchName);
-      console.log(stretchNames);
-    };
     fetchData();
-  }, [targetArea]);
+    console.log(targetArea);
+  }, []);
+
+  console.log(stretchNames);
 
   return (
     <div>
@@ -96,7 +100,7 @@ const CategoryCard = () => {
         </Card>
       </CardColumns>
       <StretchModal
-        stretch={stretchNames}
+        stretch={stretchNames && stretchNames}
         target={targetArea}
         show={modalShow}
         onHide={() => setModalShow(false)}
@@ -106,6 +110,7 @@ const CategoryCard = () => {
 };
 
 export default CategoryCard;
+
 //   useEffect(async () => {
 //     console.log(targetArea)
 //     try {
