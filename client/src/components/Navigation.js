@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Dropdown, Image } from 'react-bootstrap';
-import { AppContext } from '../context/AppContext';
-import Logout from './Logout';
+import { AppContext } from '../context/Appcontext';
+import Logout from '../components/Logout';
 
 const Navigation = () => {
   const { currentUser } = useContext(AppContext);

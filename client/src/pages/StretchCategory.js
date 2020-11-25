@@ -3,8 +3,6 @@ import axios from 'axios';
 import { Container } from 'react-bootstrap';
 import Navigation from '../components/Navigation';
 import CategoryCard from '../components/CategoryCard';
-import Search from '../components/Search';
-
 import Neck from '../assets/Neck for beginners card.jpg';
 import Shoulder from '../assets/Shoulder card.jpg';
 import UpperBack from '../assets/Upper back card.jpg';
@@ -23,9 +21,6 @@ import Challenges from '../assets/Challenge card.jpg';
 import Featured from '../assets/Featured card.jpg';
 import Levels from '../assets/Levels card.jpg';
 import TimeOfDay from '../assets/Time of day card.jpg';
-
-import Stretches from './Stretches';
-import Search from './Search';
 import { AppContext } from '../context/AppContext';
 
 const StretchCategory = () => {
