@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Container } from 'react-bootstrap';
 import Navigation from '../components/Navigation';
 import CategoryCard from '../components/CategoryCard';
-import Search from '../components/Search';
 
 import Neck from '../assets/Neck for beginners card.jpg';
 import Shoulder from '../assets/Shoulder card.jpg';
