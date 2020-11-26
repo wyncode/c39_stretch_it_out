@@ -10,12 +10,10 @@ import {
 import IndividualStretchCard from './IndividualStretchCard';
 
 const StretchModal = (props) => {
-  const { targetArea } = useContext(AppContext);
-
   return (
     <Modal {...props}>
       <Modal.Header closeButton>
-        <Modal.Title>{targetArea} Stretches</Modal.Title>
+        <Modal.Title>{props.target} Stretches</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Container>

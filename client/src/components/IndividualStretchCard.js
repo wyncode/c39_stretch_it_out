@@ -2,28 +2,21 @@ import React, { useContext } from 'react';
 import { Card, CardDeck, Button } from 'react-bootstrap';
 import axios from 'axios';
 import { AppContext } from '../context/AppContext';
+import { useHistory } from 'react-router-dom';
 
-const IndividualStretchCard = (props) => {
-  const { selectedStretch, setSelectedStretch } = useContext(AppContext);
+const IndividualStretchCard = ({ id, stretchName, illustration }) => {
+  const history = useHistory();
 
-  const handleClick = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.get(`/api/stretch/${props.id}`);
-      const stretch = response.data.filter((bodyPart) => {
-        return bodyPart.stretchName;
-      });
-      console.log(stretch);
-    } catch {
-      console.log('whoppps');
-    }
+  const handleClick = (id) => {
+    history.push(`/stretch/${id}`);
   };
+
   return (
     <div>
       <CardDeck>
         <Card>
-          <Card.Img src={props.illustration} />
-          <Button onClick={handleClick}>{props.stretchName}</Button>
+          <Card.Img src={illustration} />
+          <Button onClick={() => handleClick(id)}>{stretchName}</Button>
         </Card>
       </CardDeck>
     </div>
