@@ -21,10 +21,12 @@
   padding-bottom: 0;
   margin: 30px;
 }
+
 .user-pref-buttons {
   display: flex;
   justify-content: space-between;
-  margin: 7px;
+  margin: 30px;
+  width: 80%;
 }
 .user-greeting-div {
   display: flex;
@@ -32,4 +34,18 @@
   align-items: baseline;
   justify-content: center;
   margin: 20px;
+}
+.user-profile-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 50vh;
+  width: 100vw;
+}
+.user-stats-visible {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 80vw;
 }

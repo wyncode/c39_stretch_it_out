@@ -3,7 +3,7 @@ import { Modal, Form, Button } from 'react-bootstrap';
 import swal from 'sweetalert';
 import axios from 'axios';
 
-const ProfilePref = ({ show, hide }) => {
+const ProfilePref = ({ show, hide, setCurrentUser }) => {
   const [formData, setFormData] = useState();
 
   const handleChange = (e) => {
@@ -12,11 +12,16 @@ const ProfilePref = ({ show, hide }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.put('/api/users/update', {
-      stretchingLevel: formData.stretchingLevel,
-      timeDedicated: formData.timeDedicated
-    });
-    swal('Your preferences have been updated!');
+    try {
+      const { data } = await axios.put('/api/users/update', {
+        stretchingLevel: formData.stretchingLevel,
+        timeDedicated: formData.timeDedicated
+      });
+      setCurrentUser(data);
+      swal('Your preferences have been updated!');
+    } catch (error) {
+      swal('Unable to update');
+    }
   };
   return (
     <Modal

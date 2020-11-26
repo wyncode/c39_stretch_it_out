@@ -10,45 +10,39 @@ import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import AnonPic from './images/AnonPic.png';
 import Navigation from '../../components/Navigation';
 import AccountPref from './components/AccountPref';
+import UploadPic from './components/UploadPic';
 
 const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading } = useContext(AppContext);
-  const [image, setImage] = useState(null);
   const [formData, setFormData] = useState();
   const [preview, setPreview] = useState(null);
   const [show, setShow] = useState(false);
   const [showTwo, setShowTwo] = useState(false);
+  const [showThree, setShowThree] = useState(false);
+  const [dailyStretchNum, setDailyStretchNum] = useState(0);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   const handleShowTwo = () => setShowTwo(true);
   const handleCloseTwo = () => setShowTwo(false);
-  const handleImageSelect = async (e) => {
-    setPreview(URL.createObjectURL(e.target.files[0]));
-    setImage(e.target.files[0]);
-  };
-  const value = 1;
+  const handleShowThree = () => setShowThree(true);
+  const handleCloseThree = () => setShowThree(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const setDailyStretches=async()=>{
 
-    const avatar = new FormData();
-    avatar.append('avatar', image, image.name);
-    try {
-      const updatedUser = await axios({
-        method: 'POST',
-        url: '/api/users/avatar',
-        data: avatar,
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-      setCurrentUser({ ...currentUser, avatar: updatedUser.data.secure_url });
-      swal('Sweet!', 'Your image has been updated!', 'success');
-    } catch (error) {
-      swal('Error', 'OOps, something went wrong.');
-    }
+  //   try {
+
+  //   } catch (error) {
+
+  //   }
+  // }
+  let count = 0;
+  const addStretch = () => {
+    setDailyStretchNum((dailyStretchNum) => {
+      return { count: dailyStretchNum + 1 };
+    });
   };
+
+  const value = count;
 
   const handleDelete = async () => {
     setLoading(true);
@@ -97,6 +91,7 @@ const Profile = ({ history: { push } }) => {
             height={250}
             roundedCircle
           />
+          {/* Image must stay on this page */}
         </div>
         <div className="user-greeting-div">
           <h1 className="user-greeting-text">
@@ -107,58 +102,68 @@ const Profile = ({ history: { push } }) => {
           </h3>
         </div>
       </div>
-      <div className="user-pref-buttons">
-        <Button onClick={handleShow}>Stretch Preferences</Button>
-        <Button onClick={handleShowTwo}>Account Settings</Button>
-        <ProfilePref show={show} hide={handleClose} />
-        <AccountPref
-          setCurrentUser={setCurrentUser}
-          show={showTwo}
-          hide={handleCloseTwo}
-        />
-      </div>
-      <div style={{ width: '25%', overflowWrap: 'break-word' }}>
-        <CircularProgressbar
-          value={value}
-          maxValue={3}
-          text={`${value} Stretch`}
-          styles={buildStyles({ textSize: '10px' })}
-        />
-      </div>
-      ;
-      <Container
-        className="d-flex justify-content-center align-items-center
-         flex-column"
-      >
-        <div className="mt-4"></div>
-        <div className="mt-4">
-          <form onSubmit={handleSubmit} className="d-flex flex-column">
-            <input
-              type="file"
-              onChange={handleImageSelect}
-              accept="image/*"
-              required
-            />
-            <Button type="submit" size="sm" className="mt-4">
-              Save Image
-            </Button>
-          </form>
-        </div>
-        <div
-          className="d-flex flex-column align-items-center 
-             justify-content-center mt-4"
-        >
-          <div className="d-flex">
-            <label htmlFor="email" className="pr-4 font-weight-bold">
-              Email:
-            </label>
-            <p>{currentUser?.email}</p>
-          </div>
+      <div className="user-profile-body">
+        <div className="user-pref-buttons">
+          <Button onClick={handleShow}>Stretch Preferences</Button>
+          <Button onClick={handleShowTwo}>Account Settings</Button>
+          <Button onClick={handleShowThree}>Choose Avatar</Button>
           <Button variant="danger" onClick={handleDelete}>
             Delete Account
           </Button>
+          <ProfilePref
+            setCurrentUser={setCurrentUser}
+            show={show}
+            hide={handleClose}
+          />
+          <AccountPref
+            setCurrentUser={setCurrentUser}
+            show={showTwo}
+            hide={handleCloseTwo}
+          />
+          <UploadPic
+            preview={preview}
+            setPreview={setPreview}
+            show={showThree}
+            hide={handleCloseThree}
+          />
         </div>
-      </Container>
+        <h3>Stretches Completed Today</h3>
+        <div style={{ width: '200px', overflowWrap: 'break-word' }}>
+          <CircularProgressbar
+            value={value}
+            maxValue={3}
+            text={`${value} Stretch`}
+            styles={buildStyles({ textSize: '10px' })}
+          />
+        </div>
+
+        <Button onClick={addStretch}>Add Stretch</Button>
+        <div className="user-stats-visible">
+          <label htmlFor="email" className="pr-4 font-weight-bold">
+            Name:
+          </label>
+          <p>
+            {currentUser?.firstName} {currentUser?.lastName}
+          </p>
+          <label htmlFor="email" className="pr-4 font-weight-bold">
+            Email:
+          </label>
+          <p>{currentUser?.email}</p>
+          <label htmlFor="email" className="pr-4 font-weight-bold">
+            Level:
+          </label>
+          <p>{currentUser?.stretchingLevel}</p>
+          <label htmlFor="email" className="pr-4 font-weight-bold">
+            Stretch Time:
+          </label>
+          <p>{currentUser?.timeDedicated}</p>
+          {/* </div> */}
+          {/* <Button variant="danger" onClick={handleDelete}>
+            Delete Account
+          </Button> */}
+        </div>
+        {/* </Container> */}
+      </div>
     </>
   );
 };
