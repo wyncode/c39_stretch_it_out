@@ -2,6 +2,10 @@ const User = require('../db/models/user');
 const jwt = require('jsonwebtoken');
 const cloudinary = require('cloudinary').v2;
 
+const isEmpty = (value) => {
+  return value === undefined || value === null || value === '';
+};
+
 //Create a new user//
 
 exports.createUser = async (req, res) => {
@@ -77,7 +81,10 @@ exports.logoutUser = async (req, res) => {
 };
 //UPDATE USER
 exports.updateUser = async (req, res) => {
-  const updates = Object.keys(req.body);
+  const updates = Object.keys(req.body).filter(
+    (update) => !isEmpty(req.body[update])
+  );
+
   const allowedUpdates = [
     'firstName',
     'lastName',
@@ -90,11 +97,15 @@ exports.updateUser = async (req, res) => {
     'stretches'
   ];
   const isValid = updates.every((update) => allowedUpdates.includes(update));
+
   if (!isValid)
     return res.status(400).json({ error: 'You cannot update this field' });
+
   try {
     updates.forEach((update) => (req.user[update] = req.body[update]));
+    console.log('about to update');
     await req.user.save();
+    console.log('about to respond');
     res.json(req.user);
   } catch (error) {
     res.status(400).json({ error: error.message });

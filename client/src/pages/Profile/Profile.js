@@ -9,7 +9,7 @@ import swal from 'sweetalert';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import AnonPic from './images/AnonPic.png';
 import Navigation from '../../components/Navigation';
-import AccountPref from './components/ProfilePref';
+import AccountPref from './components/AccountPref';
 
 const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading } = useContext(AppContext);
@@ -17,19 +17,12 @@ const Profile = ({ history: { push } }) => {
   const [formData, setFormData] = useState();
   const [preview, setPreview] = useState(null);
   const [show, setShow] = useState(false);
-  const [show2, setShow2] = useState(false);
+  const [showTwo, setShowTwo] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => {
-    setShow(true);
-    console.log('show 1', show);
-  };
-  console.log('show 2', show2);
-  const handleClose2 = () => setShow2(false);
-  const handleShow2 = () => {
-    setShow2(true);
-    console.log('show 2-2', show2);
-    console.log('show 1-2', show);
-  };
+  const handleShow = () => setShow(true);
+
+  const handleShowTwo = () => setShowTwo(true);
+  const handleCloseTwo = () => setShowTwo(false);
   const handleImageSelect = async (e) => {
     setPreview(URL.createObjectURL(e.target.files[0]));
     setImage(e.target.files[0]);
@@ -116,9 +109,13 @@ const Profile = ({ history: { push } }) => {
       </div>
       <div className="user-pref-buttons">
         <Button onClick={handleShow}>Stretch Preferences</Button>
-        <Button onClick={handleShow2}>Account Settings</Button>
+        <Button onClick={handleShowTwo}>Account Settings</Button>
         <ProfilePref show={show} hide={handleClose} />
-        <AccountPref show={show2} hide={handleClose2} />
+        <AccountPref
+          setCurrentUser={setCurrentUser}
+          show={showTwo}
+          hide={handleCloseTwo}
+        />
       </div>
       <div style={{ width: '25%', overflowWrap: 'break-word' }}>
         <CircularProgressbar

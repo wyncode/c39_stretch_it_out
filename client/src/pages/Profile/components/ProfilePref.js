@@ -64,7 +64,7 @@ const ProfilePref = ({ show, hide }) => {
                 <label for="personType3">Advanced</label>
               </div>
             </div>
-            <h3 className="preferences-header">Level</h3>
+            <h3 className="preferences-header">Duration</h3>
             <div className="form-group">
               <div>
                 <input
