@@ -22,7 +22,7 @@ export const AppContextProvider = ({ children }) => {
         })
         .catch((error) => swal('oops!', error.toString()));
     }
-  }, [currentUser, user]);
+  }, [currentUser, user, setCurrentUser]);
 
   return (
     <AppContext.Provider
