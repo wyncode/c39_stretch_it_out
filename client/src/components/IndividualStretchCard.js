@@ -10,27 +10,17 @@ const IndividualStretchCard = ({ id, stretchName, illustration }) => {
   );
   const history = useHistory();
 
-  const handleClick = async (e) => {
-    const path = `/stretch/${selectedStretch}`;
-    try {
-      setSelectedStretch({ id });
-
-      setModalShow(false);
-    } catch (e) {
-      console.log(e);
-    }
+  const handleClick = (id) => {
+    history.push(`/stretch/${id}`);
+    setModalShow(false);
   };
-
-  console.log(selectedStretch);
 
   return (
     <div>
       <CardDeck>
         <Card>
           <Card.Img src={illustration} />
-          <Button onClick={() => handleClick(id)} value={id}>
-            {stretchName}
-          </Button>
+          <Button onClick={() => handleClick(id)}>{stretchName}</Button>
         </Card>
       </CardDeck>
     </div>
