@@ -1,37 +1,13 @@
-import React, { useContext } from 'react';
-import { AppContext } from '../context/AppContext';
+import React from 'react';
 import { Card, CardColumns, Button } from 'react-bootstrap';
-import axios from 'axios';
 
 const IndividualStretchCard = (props) => {
-  const {
-    stretchNames,
-    setStretchNames,
-    targetArea,
-    setTargetArea
-  } = useContext(AppContext);
-
-  const handleClick = async (e) => {
-    e.preventDefault();
-    console.log(targetArea);
-    console.log(stretchNames);
-    try {
-      const response = await axios.get(`/api/stretches/${targetArea}`);
-      const stretches = response.data.filter((bodyPart) => {
-        return bodyPart.stretchName;
-      });
-      console.log(stretches);
-    } catch {
-      console.log('whoppps');
-    }
-  };
-
   return (
     <div>
       <CardColumns>
         <Card>
           <Card.Img src={props.illustration} />
-          <Button onClick={handleClick}>{props.stretchName}</Button>
+          <Button>{props.stretchName}</Button>
         </Card>
         <Card>
           <Card.Img />

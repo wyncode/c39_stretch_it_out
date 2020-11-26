@@ -1,32 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import axios from 'axios';
-import { Modal, Card, Button, Dropdown, CardColumns } from 'react-bootstrap';
+import { Modal, Button, Dropdown } from 'react-bootstrap';
 import IndividualStretchCard from './IndividualStretchCard';
 
 const StretchModal = (props) => {
-  const {
-    stretchNames,
-    setStretchNames,
-    targetArea,
-    setTargetArea
-  } = useContext(AppContext);
-
-  //   const handleClick = async (e) => {
-  //     e.preventDefault();
-  //     console.log(targetArea);
-  //     console.log(stretchNames);
-  //     try {
-  //       const response = await axios.get(`/api/stretches/${targetArea}`);
-  //       const stretches = response.data.filter((bodyPart) => {
-  //         return bodyPart.stretchName;
-  //       });
-  //       console.log(stretches);
-  //     } catch {
-  //       console.log('whoppps');
-  //     }
-  //   };
-  console.log('props', props);
+  const { targetArea } = useContext(AppContext);
 
   return (
     <Modal {...props}>
