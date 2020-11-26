@@ -19,8 +19,8 @@ const CategoryCard = () => {
   };
 
   const fetchData = async () => {
-    const response = await axios.get(`/api/stretches/${targetArea}`);
     try {
+      const response = await axios.get(`/api/stretches/${targetArea}`);
       setStretchNames(response.data);
     } catch (error) {
       console.log(error);
@@ -98,7 +98,7 @@ const CategoryCard = () => {
         </Card>
       </CardColumns>
       <StretchModal
-        stretch={stretchNames && stretchNames}
+        stretch={stretchNames}
         target={targetArea}
         show={modalShow}
         onHide={() => setModalShow(false)}
