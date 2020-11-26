@@ -7,6 +7,8 @@ export const AppContext = createContext();
 export const AppContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [targetArea, setTargetArea] = useState(null);
+  const [stretchNames, setStretchNames] = useState([]);
   const user = sessionStorage.getItem('user');
 
   useEffect(() => {
@@ -28,7 +30,11 @@ export const AppContextProvider = ({ children }) => {
         currentUser,
         setCurrentUser,
         loading,
-        setLoading
+        setLoading,
+        targetArea,
+        setTargetArea,
+        stretchNames,
+        setStretchNames
       }}
     >
       {children}
