@@ -11,15 +11,15 @@ const Logout = () => {
   const history = useHistory();
   const handleLogOut = async () => {
     try {
-      const response = await axios({
+      await axios({
         method: 'POST',
         url: '/api/users/logout',
         withCredentials: true
       });
-      setCurrentUser(response.data);
+
       sessionStorage.removeItem('user');
       setCurrentUser(null);
-      swal(response.data.message, 'You have signed out!', 'success');
+      // swal(response.data.message, 'You have signed out!', 'success');
       history.push('/');
     } catch (error) {
       console.log('Login Error: ' + error);

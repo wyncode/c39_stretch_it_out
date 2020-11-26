@@ -1,25 +1,44 @@
 import React, { useState, useContext } from 'react';
-import { Container, Image, Button } from 'react-bootstrap';
-import { AppContext } from '../context/AppContext';
+import { Container, Image, Button, Form } from 'react-bootstrap';
+import 'react-circular-progressbar/dist/styles.css';
+import { AppContext } from '../../context/AppContext';
+import ProfilePref from './components/ProfilePref';
 import axios from 'axios';
+import './Profile.css';
 import swal from 'sweetalert';
-import Navigation from '../components/Navigation';
+import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
+import AnonPic from './images/AnonPic.png';
+import Navigation from '../../components/Navigation';
+import AccountPref from './components/ProfilePref';
 
 const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading } = useContext(AppContext);
   const [image, setImage] = useState(null);
+  const [formData, setFormData] = useState();
   const [preview, setPreview] = useState(null);
-
+  const [show, setShow] = useState(false);
+  const [show2, setShow2] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => {
+    setShow(true);
+    console.log('show 1', show);
+  };
+  console.log('show 2', show2);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => {
+    setShow2(true);
+    console.log('show 2-2', show2);
+    console.log('show 1-2', show);
+  };
   const handleImageSelect = async (e) => {
-    if (e.target.files[0].size > 1000000)
-      throw new Error('file size is too large');
     setPreview(URL.createObjectURL(e.target.files[0]));
     setImage(e.target.files[0]);
   };
+  const value = 1;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+
     const avatar = new FormData();
     avatar.append('avatar', image, image.name);
     try {
@@ -59,7 +78,7 @@ const Profile = ({ history: { push } }) => {
             icon: 'success'
           });
           setLoading(false);
-          sessionStorage.remooveItem('user');
+          sessionStorage.removeItem('user');
           setCurrentUser(null);
           push('/login');
         } catch (error) {
@@ -75,28 +94,48 @@ const Profile = ({ history: { push } }) => {
   return (
     <>
       <Navigation />
+      <div className="profile-banner">
+        <div className="user-pic-div">
+          <Image
+            // src={currentUser?.avatar ? currentUser.avatar : Amy}
+            src={preview || currentUser?.avatar || AnonPic}
+            alt="profile-picture"
+            width={250}
+            height={250}
+            roundedCircle
+          />
+        </div>
+        <div className="user-greeting-div">
+          <h1 className="user-greeting-text">
+            Hi there, {currentUser?.firstName}!
+          </h1>
+          <h3 className="user-greeting-text">
+            What would you like to do right now?
+          </h3>
+        </div>
+      </div>
+      <div className="user-pref-buttons">
+        <Button onClick={handleShow}>Stretch Preferences</Button>
+        <Button onClick={handleShow2}>Account Settings</Button>
+        <ProfilePref show={show} hide={handleClose} />
+        <AccountPref show={show2} hide={handleClose2} />
+      </div>
+      <div style={{ width: '25%', overflowWrap: 'break-word' }}>
+        <CircularProgressbar
+          value={value}
+          maxValue={3}
+          text={`${value} Stretch`}
+          styles={buildStyles({ textSize: '10px' })}
+        />
+      </div>
+      ;
       <Container
         className="d-flex justify-content-center align-items-center
          flex-column"
       >
-        <h1 className="mt-4">Your Profile</h1>
+        <div className="mt-4"></div>
         <div className="mt-4">
-          <Image
-            src={
-              // preview ? preview: currentUser?.avatar ? currentUser.avatar
-            }
-            alt="profile-picture"
-            width={250}
-            height={250}
-            roundCircle
-          />
-        </div>
-        <div className="mt-4">
-          <Form
-            Datamethod="post"
-            onSubmit={handleSubmit}
-            className="d-flex flex-column"
-          >
+          <form onSubmit={handleSubmit} className="d-flex flex-column">
             <input
               type="file"
               onChange={handleImageSelect}
@@ -106,18 +145,12 @@ const Profile = ({ history: { push } }) => {
             <Button type="submit" size="sm" className="mt-4">
               Save Image
             </Button>
-          </Form>
+          </form>
         </div>
         <div
           className="d-flex flex-column align-items-center 
              justify-content-center mt-4"
         >
-          <div className="d-flex">
-            <label htmlFor="name" className="pr-4 font-weight-bold">
-              Name:
-            </label>
-            <p>{currentUser?.name}</p>
-          </div>
           <div className="d-flex">
             <label htmlFor="email" className="pr-4 font-weight-bold">
               Email:

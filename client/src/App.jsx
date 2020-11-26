@@ -5,7 +5,7 @@ import AnonHomePage from './pages/AnonHomePage';
 import StretchCategory from './pages/StretchCategory';
 import IndividualStretch from './pages/IndividualStretch';
 import PrivateRoute from './components/PrivateRoute';
-import UserHomePage from './pages/UserHomePage';
+import Profile from './pages/Profile/Profile';
 import Benefits from './pages/Benefits';
 import Quiz from './pages/Quiz/Quiz';
 import Welcome from './pages/Quiz/Welcome';
@@ -25,7 +25,7 @@ const App = () => {
           <Route exact path="/stretch/:id" component={IndividualStretch} />
           <Route exact path="/modal" component={StretchModal} />
           <Route exact path="/sign-up" component={Welcome} />
-          <PrivateRoute exact path="/profile" component={UserHomePage} />
+          <PrivateRoute exact path="/profile" component={Profile} />
         </Switch>
       </BrowserRouter>
     </AppContextProvider>

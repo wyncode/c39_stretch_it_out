@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Nunito&display=swap');
+
+.preferences-header {
+  color: black;
+  font-family: 'Nunito', sans-serif;
+}
+.profile-banner {
+  background-image: url('./images/profilebanner.png');
+  width: 100vw;
+  height: 300px;
+  display: flex;
+  padding-top: 30px;
+  justify-content: baseline;
+}
+.user-greeting-text {
+  font-family: 'Nunito', sans-serif;
+  color: white;
+}
+.user-pic-div {
+  align-self: center;
+  padding-bottom: 0;
+  margin: 30px;
+}
+.user-pref-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 7px;
+}
+.user-greeting-div {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  margin: 20px;
+}

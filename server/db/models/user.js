@@ -103,7 +103,7 @@ userSchema.methods.toJSON = function () {
 userSchema.pre('save', async function (next) {
   const user = this;
   if (user.isModified('password'))
-    user.password = await bcrypt.hash(user.password, 16);
+    user.password = await bcrypt.hash(user.password, 8);
   next();
 });
 
@@ -113,7 +113,7 @@ userSchema.methods.generateAuthToken = async function () {
   const token = jwt.sign(
     {
       _id: user._id.toString(),
-      name: `${user.firstName} ${user.lastName}`
+      name: user.firstName
     },
     process.env.JWT_SECRET,
     { expiresIn: '24h' }
