@@ -13,10 +13,14 @@ const ProfilePref = ({ show, hide, setCurrentUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put('/api/users/update', {
-        stretchingLevel: formData.stretchingLevel,
-        timeDedicated: formData.timeDedicated
-      });
+      const { data } = await axios.put(
+        '/api/users/update',
+        {
+          stretchingLevel: formData.stretchingLevel,
+          timeDedicated: formData.timeDedicated
+        },
+        { withCredentials: true }
+      );
       setCurrentUser(data);
       swal('Your preferences have been updated!');
     } catch (error) {

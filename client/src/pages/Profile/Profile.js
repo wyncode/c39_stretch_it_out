@@ -14,7 +14,9 @@ import UploadPic from './components/UploadPic';
 import AddStretch from './components/AddStretch';
 
 const Profile = ({ history: { push } }) => {
-  const { currentUser, setCurrentUser, setLoading } = useContext(AppContext);
+  const { currentUser, setCurrentUser, setLoading, count } = useContext(
+    AppContext
+  );
   const [formData, setFormData] = useState();
   const [preview, setPreview] = useState(null);
   const [show, setShow] = useState(false);
@@ -34,8 +36,16 @@ const Profile = ({ history: { push } }) => {
 
   //make a function that adds 1 to
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     console.log('updating');
+  //     const { data } = await axios.put('/api/users/update', {
+  //       dailyStretches:
+  //     };
+
   useEffect(() => {
-    setDailyStretchNum(currentUser?.dailyStretches.completed);
+    setDailyStretchNum(currentUser?.dailyStretches?.completed);
   }, [currentUser]);
 
   const value = dailyStretchNum;

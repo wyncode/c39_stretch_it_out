@@ -142,4 +142,14 @@ exports.deleteUser = async (req, res) => {
   }
 };
 
-///ADD STRETCH TO USER////
+///ADD DAILY STRETCH TO USER////
+
+exports.incrementDailyStretch = async (req, res) => {
+  try {
+    await req.user.dailyStretches.completed++;
+    await req.user.save();
+    res.json(req.user);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};

@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
+import { AppContext } from '../../../context/AppContext';
+import axios from 'axios';
 
 const AddStretch = () => {
-  const [count, setCount] = useState(0);
-  const incrementCount = () => {
-    setCount(count + 1);
+  const { currentUser, setCurrentUser } = useContext(AppContext);
+
+  const handleClick = async () => {
+    const { data } = await axios.put('/api/users/increment', {
+      withCredentials: true
+    });
+    setCurrentUser(data);
   };
+
   return (
     <>
-      <Button onClick={incrementCount}>increment</Button>
-      <span>{count}</span>
+      <Button onClick={handleClick}>increment</Button>
+      <span>{currentUser?.dailyStretches?.completed}</span>
     </>
   );
 };

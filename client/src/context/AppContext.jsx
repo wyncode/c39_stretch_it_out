@@ -19,6 +19,7 @@ export const AppContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [targetArea, setTargetArea] = useState(null);
   const [stretchNames, setStretchNames] = useState([]);
+
   const user = sessionStorage.getItem('user');
 
   useEffect(() => {
@@ -34,6 +35,12 @@ export const AppContextProvider = ({ children }) => {
     }
   }, [currentUser, user]);
 
+  const number = currentUser?.dailyStretches.completed;
+  const [count, setCount] = useState(number || null);
+
+  //move the logic of addStretch to set the AppContext.
+  //Pass the setCount and count from Appcontext to Profile
+
   return (
     <AppContext.Provider
       value={{
@@ -44,7 +51,9 @@ export const AppContextProvider = ({ children }) => {
         targetArea,
         setTargetArea,
         stretchNames,
-        setStretchNames
+        setStretchNames,
+        count,
+        setCount
       }}
     >
       {children}
