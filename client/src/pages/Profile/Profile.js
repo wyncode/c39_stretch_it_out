@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Container, Image, Button, Form } from 'react-bootstrap';
 import 'react-circular-progressbar/dist/styles.css';
 import { AppContext } from '../../context/AppContext';
@@ -11,6 +11,7 @@ import AnonPic from './images/AnonPic.png';
 import Navigation from '../../components/Navigation';
 import AccountPref from './components/AccountPref';
 import UploadPic from './components/UploadPic';
+import AddStretch from './components/AddStretch';
 
 const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading } = useContext(AppContext);
@@ -27,22 +28,17 @@ const Profile = ({ history: { push } }) => {
   const handleShowThree = () => setShowThree(true);
   const handleCloseThree = () => setShowThree(false);
 
-  // const setDailyStretches=async()=>{
+  ///make a put request that edits the dailyStretches
+  //the value you assign to dailyStretches is a variable
+  //this variable is dailyStretches + 1
 
-  //   try {
+  //make a function that adds 1 to
 
-  //   } catch (error) {
+  useEffect(() => {
+    setDailyStretchNum(currentUser?.dailyStretches.completed);
+  }, [currentUser]);
 
-  //   }
-  // }
-  let count = 0;
-  const addStretch = () => {
-    setDailyStretchNum((dailyStretchNum) => {
-      return { count: dailyStretchNum + 1 };
-    });
-  };
-
-  const value = count;
+  const value = dailyStretchNum;
 
   const handleDelete = async () => {
     setLoading(true);
@@ -110,6 +106,7 @@ const Profile = ({ history: { push } }) => {
           <Button variant="danger" onClick={handleDelete}>
             Delete Account
           </Button>
+          <AddStretch />
           <ProfilePref
             setCurrentUser={setCurrentUser}
             show={show}
@@ -137,7 +134,6 @@ const Profile = ({ history: { push } }) => {
           />
         </div>
 
-        <Button onClick={addStretch}>Add Stretch</Button>
         <div className="user-stats-visible">
           <label htmlFor="email" className="pr-4 font-weight-bold">
             Name:

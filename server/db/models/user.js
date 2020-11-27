@@ -54,7 +54,8 @@ const userSchema = new mongoose.Schema(
     ],
     dailyStretches: {
       completed: {
-        type: Number
+        type: Number,
+        default: 0
       },
       goal: {
         type: Number
@@ -90,7 +91,7 @@ const userSchema = new mongoose.Schema(
     timestamps: true
   }
 );
-
+const options = { upsert: true, setDefaultsOnInsert: true };
 //DELETE METHOD to delete password and tokens from new user instance when it is passed back to the user.
 userSchema.methods.toJSON = function () {
   const user = this;

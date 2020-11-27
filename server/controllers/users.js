@@ -16,7 +16,8 @@ exports.createUser = async (req, res) => {
     password,
     personType,
     stretchingLevel,
-    timeDedicated
+    timeDedicated,
+    dailyStretches
   } = req.body;
   try {
     const user = new User({
@@ -26,7 +27,8 @@ exports.createUser = async (req, res) => {
       password,
       personType,
       stretchingLevel,
-      timeDedicated
+      timeDedicated,
+      dailyStretches
     });
     const token = await user.generateAuthToken();
     res.cookie('jwt', token, {
@@ -94,7 +96,10 @@ exports.updateUser = async (req, res) => {
     'stretchingLevel',
     'timeDedicated',
     'avatar',
-    'stretches'
+    'stretches',
+    'dailyStretches',
+    'weeklyStretches',
+    'monthlyStretches'
   ];
   const isValid = updates.every((update) => allowedUpdates.includes(update));
 

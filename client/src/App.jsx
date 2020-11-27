@@ -23,7 +23,6 @@ const App = () => {
           <Route exact path="/" component={AnonHomePage} />
           <Route exact path="/body-area" component={StretchCategory} />
           <Route exact path="/stretch/:id" component={IndividualStretch} />
-          <Route exact path="/modal" component={StretchModal} />
           <Route exact path="/sign-up" component={Welcome} />
           <PrivateRoute exact path="/profile" component={Profile} />
         </Switch>
