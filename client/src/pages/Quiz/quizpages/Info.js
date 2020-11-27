@@ -1,6 +1,6 @@
 import React from 'react';
 import Progress3 from '../images/Progress-3.png';
-import Image from 'react-bootstrap/image';
+import Image from 'react-bootstrap/Image';
 
 import swal from 'sweetalert';
 
