@@ -10,7 +10,8 @@ const IndividualStretchCard = ({ id, stretchName, illustration }) => {
   );
   const history = useHistory();
 
-  const handleClick = (id) => {
+  console.log(id);
+  const handleClick = () => {
     history.push(`/stretch/${id}`);
     setModalShow(false);
   };

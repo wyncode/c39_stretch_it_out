@@ -15,6 +15,6 @@ export const Calves = require('./Calves.png');
 export const NeckForBeginners = require('./NeckForBeginners.png');
 export const FiveMinNeck = require('./5MinNeck.png');
 export const NeckandShoulder = require('./Neck+Shoulder.png');
-export const NeckStretch = require('./NeckStretch.png');
+export const NeckStretch = require('./NeckStretch2.0.png');
 export const NeckPain = require('./NeckPain.png');
 export const FullBodyStretch = require('./FullBodyStretch.png');

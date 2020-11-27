@@ -8,17 +8,17 @@ const SelectedStretch = () => {
   const { selectedStretch, setSelectedStretch } = useContext(AppContext);
   const history = useHistory();
 
-  useEffect(() => {
-    history.push(`/stretch/${selectedStretch}`);
-    // setSelectedStretch(response.data.results);
-  }, [selectedStretch]);
+  // useEffect(() => {
+  //   history.push(`/stretch/${selectedStretch}`);
+  //   // setSelectedStretch(response.data.results);
+  // }, [selectedStretch]);
 
   return (
     <div>
-      <h1> hello </h1>
+      <h1>hello</h1>
       <Container>
         <ResponsiveEmbed>
-          <video />
+          <video src="https://www.youtube.com/watch?v=U7eGCZAfDyU" />
         </ResponsiveEmbed>
       </Container>
     </div>
