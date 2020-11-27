@@ -1,35 +1,87 @@
 import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
 import ItemsCarousel from 'react-items-carousel';
 
 const VideoCarousel = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const chevronWidth = 40;
   return (
-    <div style={{ padding: `0 ${chevronWidth}px` }}>
+    <div
+      style={{
+        padding: `0 ${chevronWidth}px`,
+        maxWidth: '65%',
+
+        justifyContent: 'center'
+      }}
+    >
+      <h2>Browse Our Instructional Stretching Videos</h2>
       <ItemsCarousel
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
-        numberOfCards={2}
+        numberOfCards={3}
         gutter={20}
         leftChevron={<button>{'<'}</button>}
         rightChevron={<button>{'>'}</button>}
         outsideChevron
         chevronWidth={chevronWidth}
       >
-        <div style={{ height: 400, width: 800, background: '#EEE' }}>
+        <div style={{ height: 400, width: 600, background: '#EEE' }}>
           <iframe
-            width="1185"
-            height="667"
+            margin="20"
+            width="600"
+            height="400"
             src="https://www.youtube.com/embed/cxDcpvD68GQ"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
-          Your browser does not support the video tag.
         </div>
-        <div style={{ height: 400, background: '#EEE' }}>Second card</div>
-        <div style={{ height: 400, background: '#EEE' }}>Third card</div>
-        <div style={{ height: 400, background: '#EEE' }}>Fourth card</div>
+        <div style={{ height: 400, width: 600, background: '#EEE' }}>
+          {' '}
+          <iframe
+            width="600"
+            height="400"
+            src="https://www.youtube.com/embed/cxDcpvD68GQ"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div style={{ height: 400, width: 600, background: '#EEE' }}>
+          {' '}
+          <iframe
+            width="600"
+            height="400"
+            src="https://www.youtube.com/embed/cxDcpvD68GQ"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div style={{ height: 400, width: 600, background: '#EEE' }}>
+          {' '}
+          <iframe
+            width="600"
+            height="400"
+            src="https://www.youtube.com/embed/cxDcpvD68GQ"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div style={{ height: 400, width: 600, background: '#EEE' }}>
+          {' '}
+          <iframe
+            width="600"
+            height="400"
+            src="https://www.youtube.com/embed/cxDcpvD68GQ"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </ItemsCarousel>
     </div>
   );

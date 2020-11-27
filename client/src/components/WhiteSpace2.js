@@ -7,30 +7,31 @@ import AnimatedPeople from '../images/animated-people-talking.png';
 import Statistic1 from '../images/statistic1.png';
 import Statistic2 from '../images/statistic2.png';
 import VideosImg from '../images/homepage-videos.png';
+import VideoCarousel from './VideoCarousel';
 
 const WhiteSpace2 = () => {
   return (
     <>
-      <Container>
+      <div>
         <div className="ws2-text">
-          <h2 id="ws2-title">Pressed For Time?</h2>
-          <h4 id="ws2-subtitle">Quick Stretch-From-Your-Desk Programs</h4>
+          <h2>Pressed For Time?</h2>
+          <h4>Quick Stretch-From-Your-Desk Programs</h4>
         </div>
-        <div className="clocks">
-          <div className="5clock">
-            <img src={Clock5} alt="clock displaying 5minutes" />
-          </div>
-          <div className="10clock">
-            <img src={Clock10} alt="clock displaying 10miunutes" />
-          </div>
-          <div className="15clock">
-            <img src={Clock15} alt="clock displaying 15minutes" />
-          </div>
+      </div>
+      <div className="clocks">
+        <div className="5clock">
+          <img src={Clock5} alt="clock displaying 5minutes" />
         </div>
-      </Container>
-      <Container>
-        <div className="stats">
-          <div className="peopleTalking">
+        <div className="10clock">
+          <img src={Clock10} alt="clock displaying 10miunutes" />
+        </div>
+        <div className="15clock">
+          <img src={Clock15} alt="clock displaying 15minutes" />
+        </div>
+      </div>
+      <div>
+        <div className="statsContainer">
+          <div className="statsImg">
             <img src={AnimatedPeople} alt-="people talking" />
           </div>
           <div className="statsText">
@@ -38,13 +39,7 @@ const WhiteSpace2 = () => {
             <img src={Statistic2} alt="" />
           </div>
         </div>
-        <div>
-          {/* <h2>Browse Our Instructional Stretching Videos</h2> */}
-          <div>
-            <img src={VideosImg} alt="videos" />
-          </div>
-        </div>
-      </Container>
+      </div>
     </>
   );
 };

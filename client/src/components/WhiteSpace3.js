@@ -5,22 +5,22 @@ import ReviewCards from '../images/customer-reviews.png';
 
 const WhiteSpace3 = () => {
   return (
-    <Container>
-      <div>
-        <h2 id="ws3-title">Stretch On Your Favorite Device</h2>
-      </div>
-      <div id="ws3-deviceImage">
-        <img src={DevicesImg} alt="Image of smart watch, tablet and phone" />
-      </div>
-      <div>
-        <h2 id="ws3-reviewTitle">
-          Check Out Some Customer Ratings on The APP Store
+    <div className="d-flex flex-column align-items-center">
+      <div id="ws3Title">
+        <h2 id="ws3Title">
+          <span>Stretch </span> On Your Favorite Device
         </h2>
       </div>
-      <div id="ws3-reviews">
+      <div id="ws3DeviceImage">
+        <img src={DevicesImg} alt="Image of smart watch, tablet and phone" />
+      </div>
+      <div id="ws3ReviewTitle">
+        <h2>Check Out Some Customer Ratings on The APP Store</h2>
+      </div>
+      <div id="ws3ReviewCards">
         <img src={ReviewCards} alt="customer reviews" />
       </div>
-    </Container>
+    </div>
   );
 };
 
