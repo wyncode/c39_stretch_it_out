@@ -1,6 +1,6 @@
 import React from 'react';
 import Progress1Filled from '../images/Progress-1-filled.png';
-import Image from 'react-bootstrap/image';
+import Image from 'react-bootstrap/Image';
 const Level = ({ handleChange, formData }) => {
   return (
     <div className="modal-div">

@@ -1,6 +1,6 @@
 import React from 'react';
 import Progress2 from '../images/Progress-2.png';
-import Image from 'react-bootstrap/image';
+import Image from 'react-bootstrap/Image';
 const Dedication = ({ handleChange, formData }) => {
   return (
     <div className="modal-div">
