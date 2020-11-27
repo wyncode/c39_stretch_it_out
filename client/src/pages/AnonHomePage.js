@@ -17,7 +17,7 @@ const AnonHomePage = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div>
+    <div className="d-flex flex-column align-items-center">
       <h1>This is home</h1>
       <button onClick={handleShow}>Log In</button>
       <LoginModal show={show} hide={handleClose} />

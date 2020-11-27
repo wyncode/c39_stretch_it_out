@@ -1,5 +1,22 @@
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.benefitsHeader {
+  width: 100vw;
+}
+
 .benefitsHeader img {
   width: 100%;
+}
+
+.benefitsPageContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .benefitsHeaderTitle h1 {
@@ -7,11 +24,241 @@
   height: 55px;
   font-weight: 800;
   font-size: 40px;
-  margin: 15vh;
+  margin-top: 8vh;
+  margin-left: 6vh;
+}
+
+.benefitsContainer {
+  padding: 2rem;
+  max-width: 1800px;
 }
 
 .decreasedStress {
   display: flex;
   width: 100%;
-  background-color: ;
+}
+
+.decreasedStress img {
+  margin-left: 3rem;
+  padding-left: 5rem;
+  width: 684px;
+  height: 621px;
+}
+
+.decreasedStressText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.decreasedStressText h2 {
+  width: 285px;
+  height: 41px;
+  font-weight: 700;
+  line-height: 40px;
+  font-size: 30px;
+}
+
+.decreasedStressText p {
+  width: 546px;
+  height: 93px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.decreasedStressText a {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  height: 24px;
+  color: black;
+  text-decoration: underline;
+}
+
+.reducedPain {
+  display: flex;
+  width: 100%;
+}
+
+.reducedPainImg {
+  padding-right: 130rem;
+  margin-right: 14rem;
+}
+
+.reducedPainImg img {
+  width: 1000px;
+  height: 625px;
+}
+
+.reducedPainText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+  margin-left: 8rem;
+}
+
+.reducedPainText h2 {
+  width: 428px;
+  height: 41px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.reducedPainText p {
+  width: 544px;
+  height: 91px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.reducedPainText a {
+  width: 110px;
+  height: 24px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration: underline;
+  color: black;
+}
+
+.improvedHealth {
+  display: flex;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.improvedHealthImg img {
+  width: 900px;
+  height: 501px;
+}
+
+.improvedHealthText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+  height: 501px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  width: 536px;
+}
+
+.improvedHealthText h2 {
+  height: 41px;
+  width: 356px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.improvedHealthText p {
+  width: 546px;
+  height: 88px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.improvedHealthText a {
+  width: 110px;
+  height: 24px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration: underline;
+  color: black;
+}
+
+.improvedMuscular {
+  display: flex;
+  width: 100%;
+}
+
+.improvedMuscularImg img {
+  height: 650px;
+  width: 464px;
+}
+
+.improvedMuscularText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+  height: 650px;
+  margin-left: 8rem;
+}
+
+.improvedMuscularText h2 {
+  width: 445px;
+  height: 41px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.improvedMuscularText p {
+  width: 546px;
+  height: 88px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.improvedMuscularText a {
+  width: 110px;
+  height: 24px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration: underline;
+  color: black;
+}
+
+.reducedRisk {
+  display: flex;
+  width: 100%;
+}
+
+.reducedRiskImg img {
+  width: 860px;
+  height: 485px;
+}
+
+.reducedRiskText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+  height: 485px;
+}
+
+.reducedRiskText h2 {
+  width: 432px;
+  height: 41px;
+  font-weight: 700;
+  line-height: 40px;
+  font-size: 30px;
+}
+
+.reducedRiskText p {
+  width: 490px;
+  height: 90px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.reducedRiskText a {
+  width: 110px;
+  height: 24px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration: underline;
+  color: black;
 }
