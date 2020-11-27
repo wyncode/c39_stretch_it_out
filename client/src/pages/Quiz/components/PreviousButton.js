@@ -1,6 +1,6 @@
 import React from 'react';
 import Back from '../images/Back.png';
-import Image from 'react-bootstrap/Image';
+import Image from 'react-bootstrap/image';
 
 const PreviousButton = ({ activeSchema, handlePrevious }) =>
   activeSchema.previous ? (
