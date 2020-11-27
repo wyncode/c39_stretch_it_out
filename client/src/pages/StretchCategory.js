@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Container } from 'react-bootstrap';
 import Navigation from '../components/Navigation';
 import CategoryCard from '../components/CategoryCard';
-
 import Neck from '../assets/Neck for beginners card.jpg';
 import Shoulder from '../assets/Shoulder card.jpg';
 import UpperBack from '../assets/Upper back card.jpg';
@@ -23,29 +22,12 @@ import Featured from '../assets/Featured card.jpg';
 import Levels from '../assets/Levels card.jpg';
 import TimeOfDay from '../assets/Time of day card.jpg';
 import { AppContext } from '../context/AppContext';
-
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import Navigation from '../components/Navigation';
+import CategoryCard from '../components/CategoryCard';
+import Search from '../components/Search';
 const StretchCategory = () => {
-  const {
-    setStretches,
-    search,
-    filteredStretches,
-    setFilteredStretches,
-    loading
-  } = useContext(AppContext);
-  useEffect(() => {
-    axios
-      .get('/api/stretches?sortBy=Category', {
-        withCredentials: true
-      })
-      .then((response) => {
-        setStretches(response.data);
-        setFilteredStretches(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [setStretches, setFilteredStretches, search, loading]);
-
   return (
     <div>
       <Navigation />
@@ -86,7 +68,6 @@ const StretchCategory = () => {
             })}
         </div>
       </Container>
-
       <Container
         className="LowerBodyStretches"
         container
@@ -129,7 +110,6 @@ const StretchCategory = () => {
             })}
         </div>
       </Container>
-
       <Container className="PremiumStretches container justify-content-center align-items-center padding-5">
         <div
           style={{
@@ -165,9 +145,10 @@ const StretchCategory = () => {
               );
             })}
         </div>
+      <Container>
+        <CategoryCard />
       </Container>
     </div>
   );
 };
-
 export default StretchCategory;
