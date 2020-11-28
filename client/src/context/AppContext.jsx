@@ -20,7 +20,7 @@ export const AppContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [targetArea, setTargetArea] = useState(null);
   const [stretchNames, setStretchNames] = useState([]);
-  const [selectedStretch, setSelectedStretch] = useState(null);
+  const [selectedStretch, setSelectedStretch] = useState({});
   const user = sessionStorage.getItem('user');
 
   useEffect(() => {

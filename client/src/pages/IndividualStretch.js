@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import SelectedStretch from '../components/SelectedStretch';
+import SelectedStretch from '../components/FindingAStretch/SelectedStretch';
 
 const IndividualStretch = () => {
   return (

@@ -1,16 +1,12 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Card, CardDeck, Button } from 'react-bootstrap';
-import axios from 'axios';
-import { AppContext } from '../context/AppContext';
+import { AppContext } from '../../context/AppContext';
 import { useHistory } from 'react-router-dom';
 
 const IndividualStretchCard = ({ id, stretchName, illustration }) => {
-  const { setModalShow, selectedStretch, setSelectedStretch } = useContext(
-    AppContext
-  );
+  const { setModalShow } = useContext(AppContext);
   const history = useHistory();
 
-  console.log(id);
   const handleClick = () => {
     history.push(`/stretch/${id}`);
     setModalShow(false);

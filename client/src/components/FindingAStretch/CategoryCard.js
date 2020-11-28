@@ -1,7 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Card, Button, CardColumns } from 'react-bootstrap';
-import { AppContext } from '../context/AppContext';
-import StretchModal from '../components/StretchModal';
+import { AppContext } from '../../context/AppContext';
+import StretchModal from '../FindingAStretch/StretchModal';
 import axios from 'axios';
 import {
   Neck,
@@ -16,7 +16,7 @@ import {
   Knee,
   Groin,
   Calves
-} from '../StretchImages';
+} from '../../StretchImages/index.js';
 
 const CategoryCard = () => {
   const {
@@ -46,9 +46,6 @@ const CategoryCard = () => {
   useEffect(() => {
     fetchData();
   }, [targetArea]);
-
-  console.log(stretchNames);
-  console.log(targetArea);
 
   return (
     <div>

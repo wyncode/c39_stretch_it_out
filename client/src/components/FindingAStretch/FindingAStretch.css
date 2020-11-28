@@ -1,0 +1,11 @@
+.selected-stretch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.share-your-feedback {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
