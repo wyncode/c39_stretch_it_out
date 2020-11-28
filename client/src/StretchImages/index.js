@@ -18,3 +18,5 @@ export const NeckandShoulder = require('./Neck+Shoulder.png');
 export const NeckStretch = require('./NeckStretch2.0.png');
 export const NeckPain = require('./NeckPain.png');
 export const FullBodyStretch = require('./FullBodyStretch.png');
+
+export const StretchBanner = require('./FindYourStretchBanner.png');

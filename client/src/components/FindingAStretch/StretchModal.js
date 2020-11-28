@@ -9,15 +9,17 @@ import {
 import IndividualStretchCard from './IndividualStretchCard';
 
 const StretchModal = (props) => {
+  const slicedArray = props.stretch.slice(0, 3);
+  console.log(slicedArray);
   return (
-    <Modal {...props} className="stretch-modal">
+    <Modal {...props} size="xl">
       <Modal.Header closeButton className="stretch-modal-header">
         <Modal.Title className="stretch-modal-title">
           {props.target} Stretches
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <Container>
+      <Modal.Body className="d-flex">
+        <Container className="dropdowns">
           <DropdownButton title="Time">
             <Dropdown.Item>5 minutes</Dropdown.Item>
             <Dropdown.Item>10 minutes</Dropdown.Item>
@@ -29,9 +31,9 @@ const StretchModal = (props) => {
             <Dropdown.Item>Advanced</Dropdown.Item>
           </DropdownButton>
         </Container>
-        <div>
+        <div className="stretch-card-container">
           {props.stretch &&
-            props.stretch.map((stretch) => {
+            slicedArray.map((stretch) => {
               return (
                 <IndividualStretchCard
                   key={stretch._id}

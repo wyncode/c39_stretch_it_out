@@ -46,3 +46,18 @@
 .stretch-modal-title {
   display: flex;
 }
+
+.dropdowns {
+  display: flex;
+}
+
+.stretch-modal-cards {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.stretch-card-container {
+  width: 100%;
+  display: flex;
+}

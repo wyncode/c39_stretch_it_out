@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Container, ResponsiveEmbed } from 'react-bootstrap';
+import { Container, ResponsiveEmbed, Button } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import axios from 'axios';
@@ -23,6 +23,18 @@ const SelectedStretch = () => {
     }
   }, [id]);
 
+  const handleClick = async () => {
+    try {
+      let response = axios.get(`/api/me`);
+      console.log(response);
+      const userStretches = await response.data.stretches;
+      console.log(userStretches);
+      userStretches.push(id);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <div>
       <Container className="selected-stretch-container">
@@ -34,15 +46,26 @@ const SelectedStretch = () => {
             but not pain.
           </p>
         </div>
-        {/* <ResponsiveEmbed>
-           <video src={selectedStretch?.video} />
-          </ResponsiveEmbed> */}
+        <ResponsiveEmbed>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/u3Ocw5UIpYs"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </ResponsiveEmbed>
         <Link className="share-your-feedback">
           <u>Share Your Feedback</u>
         </Link>
-        <Link className="add-to-my-programs" to="/profile">
+        <Button
+          className="add-to-my-programs"
+          to="/profile"
+          onClick={handleClick}
+        >
           Add to my programs
-        </Link>
+        </Button>
       </Container>
       <Container>
         <h3>Suggested Stretches</h3>

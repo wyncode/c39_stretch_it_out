@@ -60,58 +60,58 @@ const CategoryCard = () => {
 
         <Card value="Shoulder">
           <Card.Img src={Shoulder} />
-          <Card.Title value="Shoulder">Shoulder</Card.Title>
+          <Button value="Shoulder">Shoulder</Button>
         </Card>
 
         <Card value="Upper Back">
           <Card.Img src={UpperBack} />
-          <Card.Title>Upper Back</Card.Title>
+          <Button>Upper Back</Button>
         </Card>
 
         <Card value="Wrist">
           <Card.Img src={Wrist} />
-          <Card.Title>Wrist</Card.Title>
+          <Button>Wrist</Button>
         </Card>
 
         <Card value="Lower Back">
           <Card.Img src={LowerBack} />
-          <Card.Title>Lower Back</Card.Title>
+          <Button>Lower Back</Button>
         </Card>
         <Card value="Chest">
           <Card.Img src={Chest} />
-          <Card.Title>Chest</Card.Title>
+          <Button>Chest</Button>
         </Card>
       </CardColumns>
       <h2>Lower body Stretches</h2>
       <CardColumns>
         <Card value="Glutes">
           <Card.Img src={Glutes} />
-          <Card.Title>Glutes</Card.Title>
+          <Button>Glutes</Button>
         </Card>
 
         <Card value="Quads">
           <Card.Img src={Quads} />
-          <Card.Title>Quads</Card.Title>
+          <Button>Quads</Button>
         </Card>
 
         <Card value="Hamstrings">
           <Card.Img src={Hamstrings} />
-          <Card.Title>Hamstrings</Card.Title>
+          <Button>Hamstrings</Button>
         </Card>
 
         <Card value="Knee">
           <Card.Img src={Knee} />
-          <Card.Title>Knee</Card.Title>
+          <Button>Knee</Button>
         </Card>
 
         <Card value="Groin">
           <Card.Img src={Groin} />
-          <Card.Title>Groin</Card.Title>
+          <Button>Groin</Button>
         </Card>
 
         <Card value="Calves">
           <Card.Img src={Calves} />
-          <Card.Title>Calves</Card.Title>
+          <Button>Calves</Button>
         </Card>
       </CardColumns>
       <StretchModal
