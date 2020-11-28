@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Container, Image, Button, Form } from 'react-bootstrap';
+import { Image, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import 'react-circular-progressbar/dist/styles.css';
 import { AppContext } from '../../context/AppContext';
 import ProfilePref from './components/ProfilePref';
@@ -12,6 +13,10 @@ import Navigation from '../../components/Navigation';
 import AccountPref from './components/AccountPref';
 import UploadPic from './components/UploadPic';
 import AddStretch from './components/AddStretch';
+import Cog from './images/cog.png';
+import UserCog from './images/user-cog.png';
+import Camera from './images/camera.png';
+import Trash from './images/trash.png';
 
 const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading, count } = useContext(
@@ -23,6 +28,7 @@ const Profile = ({ history: { push } }) => {
   const [showTwo, setShowTwo] = useState(false);
   const [showThree, setShowThree] = useState(false);
   const [dailyStretchNum, setDailyStretchNum] = useState(0);
+  const [maxValue, setMaxValue] = useState(3);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleShowTwo = () => setShowTwo(true);
@@ -30,25 +36,20 @@ const Profile = ({ history: { push } }) => {
   const handleShowThree = () => setShowThree(true);
   const handleCloseThree = () => setShowThree(false);
 
-  ///make a put request that edits the dailyStretches
-  //the value you assign to dailyStretches is a variable
-  //this variable is dailyStretches + 1
-
-  //make a function that adds 1 to
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     console.log('updating');
-  //     const { data } = await axios.put('/api/users/update', {
-  //       dailyStretches:
-  //     };
-
   useEffect(() => {
     setDailyStretchNum(currentUser?.dailyStretches?.completed);
   }, [currentUser]);
 
+  useEffect(() => {
+    if (currentUser?.stretchingLevel === 'Beginner') {
+      setMaxValue(3);
+    } else if (currentUser?.stretchingLevel === 'Intermediate') {
+      setMaxValue(5);
+    } else setMaxValue(7);
+  }, [currentUser]);
+
   const value = dailyStretchNum;
+  const value2 = currentUser?.weeklyStretches.completed;
 
   const handleDelete = async () => {
     setLoading(true);
@@ -110,13 +111,31 @@ const Profile = ({ history: { push } }) => {
       </div>
       <div className="user-profile-body">
         <div className="user-pref-buttons">
-          <Button onClick={handleShow}>Stretch Preferences</Button>
-          <Button onClick={handleShowTwo}>Account Settings</Button>
-          <Button onClick={handleShowThree}>Choose Avatar</Button>
-          <Button variant="danger" onClick={handleDelete}>
-            Delete Account
-          </Button>
-          <AddStretch />
+          <div className="button-sub-div-1">
+            <Button className="profile-buttons" onClick={handleShow}>
+              <img className="cog" src={Cog} /> Stretch Preferences
+            </Button>
+            <Button className="profile-buttons" onClick={handleShowTwo}>
+              <img className="cog" src={UserCog} /> Account Settings
+            </Button>
+          </div>
+          <div className="button-sub-div-2">
+            <Button className="profile-buttons" onClick={handleShowThree}>
+              <img className="cog" src={Camera} /> Choose Avatar
+            </Button>
+            <Button
+              className="profile-buttons"
+              variant="danger"
+              onClick={handleDelete}
+            >
+              <img className="cog" src={Trash} />
+              Delete Account
+            </Button>
+          </div>
+          {/* <AddStretch /> */}
+          <Link className="find-a-stretch" to="/body-area">
+            Find a Stretch!
+          </Link>
           <ProfilePref
             setCurrentUser={setCurrentUser}
             show={show}
@@ -134,41 +153,79 @@ const Profile = ({ history: { push } }) => {
             hide={handleCloseThree}
           />
         </div>
-        <h3>Stretches Completed Today</h3>
-        <div style={{ width: '200px', overflowWrap: 'break-word' }}>
-          <CircularProgressbar
-            value={value}
-            maxValue={3}
-            text={`${value} Stretch`}
-            styles={buildStyles({ textSize: '10px' })}
-          />
-        </div>
-
         <div className="user-stats-visible">
-          <label htmlFor="email" className="pr-4 font-weight-bold">
+          <div className="user-stat">
+            <label className="pr-4 font-weight-bold">Name:</label>
+            <p>
+              {currentUser?.firstName} {currentUser?.lastName}
+            </p>
+          </div>
+          <div className="user-stat">
+            <label htmlFor="email" className="pr-4 font-weight-bold">
+              Email:
+            </label>
+            <p>{currentUser?.email}</p>
+          </div>
+          <div className="user-stat">
+            <label htmlFor="email" className="pr-4 font-weight-bold">
+              Level:
+            </label>
+            <p>{currentUser?.stretchingLevel}</p>
+          </div>
+          <div className="user-stat">
+            <label htmlFor="email" className="pr-4 font-weight-bold">
+              Stretch Time:
+            </label>
+            <p>{currentUser?.timeDedicated}</p>
+          </div>
+        </div>
+        <div className="stretch-tracker">
+          <div className="daily-stretches">
+            <h3>Stretches Completed Today</h3>
+            <div style={{ width: '200px', overflowWrap: 'break-word' }}>
+              <CircularProgressbar
+                value={value}
+                maxValue={maxValue}
+                text={`${value} / ${maxValue} Stretches`}
+                styles={buildStyles({ textSize: '10px' })}
+              />
+            </div>
+          </div>
+          <div className="day-count">
+            <h3 className="day-count-header">You've Met Stretch Goal For: </h3>
+            <div className="day-count-value">
+              <h3>{value2} days</h3>
+            </div>
+          </div>
+        </div>
+        {/* <div className="user-stats-visible">
+          <div className="user-stat">
+          <label  className="pr-4 font-weight-bold">
             Name:
           </label>
           <p>
             {currentUser?.firstName} {currentUser?.lastName}
           </p>
+          </div>
+          <div className="user-stat">
           <label htmlFor="email" className="pr-4 font-weight-bold">
             Email:
           </label>
           <p>{currentUser?.email}</p>
+          </div>
+          <div className="user-stat">
           <label htmlFor="email" className="pr-4 font-weight-bold">
             Level:
           </label>
           <p>{currentUser?.stretchingLevel}</p>
+          </div>
+          <div className="user-stat">
           <label htmlFor="email" className="pr-4 font-weight-bold">
             Stretch Time:
           </label>
           <p>{currentUser?.timeDedicated}</p>
-          {/* </div> */}
-          {/* <Button variant="danger" onClick={handleDelete}>
-            Delete Account
-          </Button> */}
-        </div>
-        {/* </Container> */}
+          </div>
+        </div> */}
       </div>
     </>
   );

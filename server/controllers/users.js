@@ -144,12 +144,50 @@ exports.deleteUser = async (req, res) => {
 
 ///ADD DAILY STRETCH TO USER////
 
+////if it is today, stop incrementing the weekly stretches
+//when it is tomorrow, increment weekly stretches
+
 exports.incrementDailyStretch = async (req, res) => {
-  try {
-    await req.user.dailyStretches.completed++;
-    await req.user.save();
-    res.json(req.user);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
+  const d = new Date();
+  today = d.getDate();
+  if (req.user.stretchingLevel === 'Beginner') {
+    try {
+      if (req.user.dailyStretches.completed < 3) {
+        req.user.dailyStretches.completed++;
+      } else {
+        req.user.weeklyStretches.completed++;
+        req.user.dailyStretches.completed = 0;
+      }
+      await req.user.save();
+      res.json(req.user);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  } else if (req.user.stretchingLevel === 'Intermediate') {
+    try {
+      if (req.user.dailyStretches.completed < 5) {
+        req.user.dailyStretches.completed++;
+      } else {
+        req.user.weeklyStretches.completed++;
+        req.user.dailyStretches.completed = 0;
+      }
+      await req.user.save();
+      res.json(req.user);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  } else {
+    try {
+      if (req.user.dailyStretches.completed < 7) {
+        req.user.dailyStretches.completed++;
+      } else {
+        req.user.weeklyStretches.completed++;
+        req.user.dailyStretches.completed = 0;
+      }
+      await req.user.save();
+      res.json(req.user);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
   }
 };

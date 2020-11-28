@@ -1,5 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Nunito&display=swap');
 
+.button-sub-div-1 {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.button-sub-div-2 {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+.cog {
+  width: 10%;
+  margin-right: 10px;
+}
+
+.daily-stretches {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.day-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.day-count-header {
+  margin-bottom: 40px;
+}
+.day-count-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #eaf7f7;
+  height: 70px;
+  width: 200px;
+  border-radius: 10px;
+}
+.find-a-stretch {
+  background-color: #377c8d !important;
+  border-color: #377c8d !important;
+  margin: 20px;
+  height: 60px !important;
+  width: 150px !important;
+  border-radius: 10px !important;
+  font-family: 'Lato', sans-serif;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .preferences-header {
   color: black;
   font-family: 'Nunito', sans-serif;
@@ -11,6 +66,21 @@
   display: flex;
   padding-top: 30px;
   justify-content: baseline;
+}
+.profile-buttons {
+  background-color: #eaf7f7 !important;
+  width: 200px !important;
+  height: 50px !important;
+  border-color: #eaf7f7 !important;
+  color: black !important;
+  display: flex !important ;
+  align-items: baseline !important;
+}
+.stretch-tracker {
+  display: flex;
+  width: 60vw;
+  justify-content: space-between;
+  padding-bottom: 30px;
 }
 .user-greeting-text {
   font-family: 'Nunito', sans-serif;
@@ -24,6 +94,8 @@
 
 .user-pref-buttons {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   margin: 30px;
   width: 80%;
@@ -40,12 +112,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 50vh;
+  height: 60vh;
   width: 100vw;
 }
 .user-stats-visible {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  width: 80vw;
+  width: 60vw;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
 }

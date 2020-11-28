@@ -64,7 +64,8 @@ const userSchema = new mongoose.Schema(
 
     weeklyStretches: {
       completed: {
-        type: Number
+        type: Number,
+        default: 0
       },
       goal: {
         type: Number
