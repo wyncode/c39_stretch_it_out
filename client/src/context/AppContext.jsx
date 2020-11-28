@@ -15,11 +15,12 @@ export const AppContextProvider = ({ children }) => {
   //   return [state, setState];
   // };
   // const [currentUser, setCurrentUser] = usePersistedState('user');
+  const [modalShow, setModalShow] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [targetArea, setTargetArea] = useState(null);
   const [stretchNames, setStretchNames] = useState([]);
-
+  const [selectedStretch, setSelectedStretch] = useState({});
   const user = sessionStorage.getItem('user');
 
   useEffect(() => {
@@ -44,6 +45,8 @@ export const AppContextProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        modalShow,
+        setModalShow,
         currentUser,
         setCurrentUser,
         loading,
@@ -53,7 +56,9 @@ export const AppContextProvider = ({ children }) => {
         stretchNames,
         setStretchNames,
         count,
-        setCount
+        setCount,
+        selectedStretch,
+        setSelectedStretch
       }}
     >
       {children}

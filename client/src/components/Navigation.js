@@ -14,16 +14,16 @@ const Navigation = () => {
 
   return (
     <Navbar className="container-fluid vw-100" bg="light" expand="lg">
-      <Navbar.Brand as={Link} to="/">
+      <Navbar.Brand as={Link} to="/body-area">
         Find a Stretch
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Item className="mr-2">Stretches</Nav.Item>
-          <Nav.Item as={Link} to="/benefits">
-            Benefits
+          <Nav.Item className="mr-2" as={Link} to="/body-area">
+            Stretches
           </Nav.Item>
+          <Nav.Item>Benefits</Nav.Item>
           <Nav.Item>Blog</Nav.Item>
 
           <Nav.Item>

@@ -1,0 +1,63 @@
+.selected-stretch-container {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stretch-name {
+  margin: 10px;
+  display: flex;
+}
+
+.reminder-div {
+  display: flex;
+  align-items: center;
+}
+.reminder {
+  margin-left: 15px;
+  font-size: 15px;
+  display: flex;
+}
+
+.share-your-feedback {
+  margin: 10px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-to-my-programs {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stretch-modal {
+  display: flex;
+}
+
+.stretch-modal-header {
+  display: flex;
+}
+
+.stretch-modal-title {
+  display: flex;
+}
+
+.dropdowns {
+  display: flex;
+}
+
+.stretch-modal-cards {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.stretch-card-container {
+  width: 100%;
+  display: flex;
+}

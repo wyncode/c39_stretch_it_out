@@ -15,8 +15,9 @@ const AddStretch = () => {
 
   return (
     <>
-      <Button onClick={handleClick}>increment</Button>
-      <span>{currentUser?.dailyStretches?.completed}</span>
+      <Button className="add-stretch-button" onClick={handleClick}>
+        Mark Stretch as Completed
+      </Button>
     </>
   );
 };
