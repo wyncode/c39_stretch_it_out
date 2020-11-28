@@ -15,6 +15,7 @@ export const AppContextProvider = ({ children }) => {
   //   return [state, setState];
   // };
   // const [currentUser, setCurrentUser] = usePersistedState('user');
+  const [modalShow, setModalShow] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [targetArea, setTargetArea] = useState(null);
@@ -44,6 +45,8 @@ export const AppContextProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        modalShow,
+        setModalShow,
         currentUser,
         setCurrentUser,
         loading,

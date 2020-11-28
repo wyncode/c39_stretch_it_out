@@ -5,8 +5,9 @@ import StretchModal from '../components/StretchModal';
 import axios from 'axios';
 
 const CategoryCard = () => {
-  const [modalShow, setModalShow] = useState(false);
   const {
+    modalShow,
+    setModalShow,
     targetArea,
     setTargetArea,
     stretchNames,
@@ -30,6 +31,9 @@ const CategoryCard = () => {
   useEffect(() => {
     fetchData();
   }, [targetArea]);
+
+  console.log(stretchNames);
+  console.log(targetArea);
 
   return (
     <div>
