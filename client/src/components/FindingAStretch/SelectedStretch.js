@@ -1,13 +1,19 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Container, ResponsiveEmbed, Button } from 'react-bootstrap';
+import React, { useEffect, useContext } from 'react';
+import { Container, Button } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import axios from 'axios';
 import './FindingAStretch.css';
 import Lightbulb from './Group.png';
+import AddStretch from '../../pages/Profile/components/AddStretch';
 
 const SelectedStretch = () => {
-  const { selectedStretch, setSelectedStretch } = useContext(AppContext);
+  const {
+    selectedStretch,
+    setSelectedStretch,
+    currentUser,
+    setCurrentUser
+  } = useContext(AppContext);
 
   let { id } = useParams();
 
@@ -23,14 +29,18 @@ const SelectedStretch = () => {
     }
   }, [id]);
 
-  const handleClick = async () => {
+  const handleClick = async (e) => {
+    e.preventDefault();
     try {
-      let response = axios.get(`/api/me`);
-      console.log(response);
-      const userStretches = await response.data.stretches;
-      console.log(userStretches);
-      userStretches.push(id);
-    } catch (e) {
+      const user = currentUser?.stretches;
+      user.push(id);
+      const { update } = await axios.put(
+        '/api/users/update',
+        { stretches: user },
+        { withCredentials: true }
+      );
+      setCurrentUser(update);
+    } catch (error) {
       console.log(e);
     }
   };
@@ -46,19 +56,11 @@ const SelectedStretch = () => {
             but not pain.
           </p>
         </div>
-        <ResponsiveEmbed>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/u3Ocw5UIpYs"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </ResponsiveEmbed>
+        <img src={selectedStretch?.video} />
         <Link className="share-your-feedback">
           <u>Share Your Feedback</u>
         </Link>
+        <AddStretch />
         <Button
           className="add-to-my-programs"
           to="/profile"

@@ -63,6 +63,7 @@ exports.loginUser = async (req, res) => {
 
 exports.getCurrentUser = async (req, res) => {
   try {
+    await req.user.populate('stretches').execPopulate();
     res.json(req.user);
   } catch (error) {
     res.status(400).json({ error: error.message });

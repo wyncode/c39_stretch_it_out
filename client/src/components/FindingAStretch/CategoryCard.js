@@ -36,7 +36,6 @@ const CategoryCard = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(`/api/stretches/${targetArea}`);
-      console.log(response);
       setStretchNames(response.data);
     } catch (error) {
       console.log(error);
@@ -50,6 +49,7 @@ const CategoryCard = () => {
   return (
     <div>
       <h2>Upper Body Stretches</h2>
+
       <CardColumns>
         <Card>
           <Card.Img src={Neck} />
@@ -58,60 +58,85 @@ const CategoryCard = () => {
           </Button>
         </Card>
 
-        <Card value="Shoulder">
+        <Card>
           <Card.Img src={Shoulder} />
-          <Button value="Shoulder">Shoulder</Button>
+          <Button value="Shoulder" onClick={handleClick}>
+            Shoulder
+          </Button>
         </Card>
 
-        <Card value="Upper Back">
+        <Card>
           <Card.Img src={UpperBack} />
-          <Button>Upper Back</Button>
+          <Button value="Upper Back" onClick={handleClick}>
+            Upper Back
+          </Button>
         </Card>
 
-        <Card value="Wrist">
+        <Card>
           <Card.Img src={Wrist} />
-          <Button>Wrist</Button>
+          <Button value="Wrist" onClick={handleClick}>
+            Wrist
+          </Button>
         </Card>
 
-        <Card value="Lower Back">
+        <Card>
           <Card.Img src={LowerBack} />
-          <Button>Lower Back</Button>
+          <Button value="Lower Back" onClick={handleClick}>
+            Lower Back
+          </Button>
         </Card>
-        <Card value="Chest">
+
+        <Card>
           <Card.Img src={Chest} />
-          <Button>Chest</Button>
+          <Button value="Chest" onClick={handleClick}>
+            Chest
+          </Button>
         </Card>
       </CardColumns>
+
       <h2>Lower body Stretches</h2>
+
       <CardColumns>
-        <Card value="Glutes">
+        <Card>
           <Card.Img src={Glutes} />
-          <Button>Glutes</Button>
+          <Button value="Glutes" onClick={handleClick}>
+            Glutes
+          </Button>
         </Card>
 
-        <Card value="Quads">
+        <Card>
           <Card.Img src={Quads} />
-          <Button>Quads</Button>
+          <Button value="Quads" onClick={handleClick}>
+            Quads
+          </Button>
         </Card>
 
-        <Card value="Hamstrings">
+        <Card>
           <Card.Img src={Hamstrings} />
-          <Button>Hamstrings</Button>
+          <Button value="Hamstrings" onClick={handleClick}>
+            Hamstrings
+          </Button>
         </Card>
 
-        <Card value="Knee">
+        <Card>
           <Card.Img src={Knee} />
-          <Button>Knee</Button>
+          <Button value="Knee" onClick={handleClick}>
+            Knee
+          </Button>
         </Card>
 
-        <Card value="Groin">
+        <Card>
           <Card.Img src={Groin} />
-          <Button>Groin</Button>
+          <Button value="Groin" onClick={handleClick}>
+            Groin
+          </Button>
         </Card>
 
-        <Card value="Calves">
+        <Card>
           <Card.Img src={Calves} />
-          <Button>Calves</Button>
+          <Button value="Calves" onClick={handleClick}>
+            Calves
+          </Button>
         </Card>
       </CardColumns>
       <StretchModal

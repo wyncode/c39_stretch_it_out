@@ -10,7 +10,7 @@ import IndividualStretchCard from './IndividualStretchCard';
 
 const StretchModal = (props) => {
   const slicedArray = props.stretch.slice(0, 3);
-  console.log(slicedArray);
+
   return (
     <Modal {...props} size="xl">
       <Modal.Header closeButton className="stretch-modal-header">

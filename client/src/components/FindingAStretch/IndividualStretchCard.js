@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Card, CardColumns, Button } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import { AppContext } from '../../context/AppContext';
 import { useHistory } from 'react-router-dom';
 

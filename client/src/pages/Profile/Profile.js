@@ -12,7 +12,6 @@ import AnonPic from './images/AnonPic.png';
 import Navigation from '../../components/Navigation';
 import AccountPref from './components/AccountPref';
 import UploadPic from './components/UploadPic';
-import AddStretch from './components/AddStretch';
 import Cog from './images/cog.png';
 import UserCog from './images/user-cog.png';
 import Camera from './images/camera.png';
@@ -85,6 +84,7 @@ const Profile = ({ history: { push } }) => {
       swal('Oops!', 'Something went wrong.');
     }
   };
+
   return (
     <>
       <Navigation />
@@ -178,6 +178,19 @@ const Profile = ({ history: { push } }) => {
             </label>
             <p>{currentUser?.timeDedicated}</p>
           </div>
+          <div>
+            <label>My Favorite Stretches:</label>
+            <div className="favorite-stretch-list">
+              {currentUser &&
+                currentUser.stretches.map((stretch) => {
+                  return (
+                    <Link as={Link} to="/body-area/">
+                      {stretch.stretchName}
+                    </Link>
+                  );
+                })}
+            </div>
+          </div>
         </div>
         <div className="stretch-tracker">
           <div className="daily-stretches">
@@ -198,34 +211,6 @@ const Profile = ({ history: { push } }) => {
             </div>
           </div>
         </div>
-        {/* <div className="user-stats-visible">
-          <div className="user-stat">
-          <label  className="pr-4 font-weight-bold">
-            Name:
-          </label>
-          <p>
-            {currentUser?.firstName} {currentUser?.lastName}
-          </p>
-          </div>
-          <div className="user-stat">
-          <label htmlFor="email" className="pr-4 font-weight-bold">
-            Email:
-          </label>
-          <p>{currentUser?.email}</p>
-          </div>
-          <div className="user-stat">
-          <label htmlFor="email" className="pr-4 font-weight-bold">
-            Level:
-          </label>
-          <p>{currentUser?.stretchingLevel}</p>
-          </div>
-          <div className="user-stat">
-          <label htmlFor="email" className="pr-4 font-weight-bold">
-            Stretch Time:
-          </label>
-          <p>{currentUser?.timeDedicated}</p>
-          </div>
-        </div> */}
       </div>
     </>
   );
