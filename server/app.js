@@ -21,6 +21,14 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: '/tmp/images'
+    //this is a bug--it's saving all the images onto our computer!
+  })
+);
+
 // Any authentication middleware and related routing would be here.
 app.use('/api/*', passport.authenticate('jwt', { session: false }));
 app.use('/api/users', userRouter);
@@ -31,11 +39,4 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.use(
-  fileUpload({
-    useTempFiles: true,
-    tempFileDir: '/tmp/images'
-    //this is a bug--it's saving all the images onto our computer!
-  })
-);
 module.exports = app;

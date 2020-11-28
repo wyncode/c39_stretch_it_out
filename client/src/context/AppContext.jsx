@@ -5,10 +5,21 @@ import swal from 'sweetalert';
 export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
+  // const usePersistedState = (key) => {
+  //   const [state, setState] = useState(
+  //     () => JSON.parse(sessionStorage.getItem(key)) || null
+  //   );
+  //   useEffect(() => {
+  //     sessionStorage.setItem(key, JSON.stringify(state));
+  //   }, [key, state]);
+  //   return [state, setState];
+  // };
+  // const [currentUser, setCurrentUser] = usePersistedState('user');
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [targetArea, setTargetArea] = useState(null);
   const [stretchNames, setStretchNames] = useState([]);
+
   const user = sessionStorage.getItem('user');
 
   useEffect(() => {
@@ -20,9 +31,15 @@ export const AppContextProvider = ({ children }) => {
         .then(({ data }) => {
           setCurrentUser(data);
         })
-        .catch((error) => swal('oops!', error.toString()));
+        .catch((error) => swal('oops! appcontext error', error.toString()));
     }
-  }, [currentUser, user, setCurrentUser]);
+  }, [currentUser, user]);
+
+  const number = currentUser?.dailyStretches.completed;
+  const [count, setCount] = useState(number || null);
+
+  //move the logic of addStretch to set the AppContext.
+  //Pass the setCount and count from Appcontext to Profile
 
   return (
     <AppContext.Provider
@@ -34,7 +51,9 @@ export const AppContextProvider = ({ children }) => {
         targetArea,
         setTargetArea,
         stretchNames,
-        setStretchNames
+        setStretchNames,
+        count,
+        setCount
       }}
     >
       {children}

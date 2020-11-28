@@ -54,7 +54,8 @@ const userSchema = new mongoose.Schema(
     ],
     dailyStretches: {
       completed: {
-        type: Number
+        type: Number,
+        default: 0
       },
       goal: {
         type: Number
@@ -63,7 +64,8 @@ const userSchema = new mongoose.Schema(
 
     weeklyStretches: {
       completed: {
-        type: Number
+        type: Number,
+        default: 0
       },
       goal: {
         type: Number
@@ -90,7 +92,7 @@ const userSchema = new mongoose.Schema(
     timestamps: true
   }
 );
-
+const options = { upsert: true, setDefaultsOnInsert: true };
 //DELETE METHOD to delete password and tokens from new user instance when it is passed back to the user.
 userSchema.methods.toJSON = function () {
   const user = this;
@@ -103,7 +105,7 @@ userSchema.methods.toJSON = function () {
 userSchema.pre('save', async function (next) {
   const user = this;
   if (user.isModified('password'))
-    user.password = await bcrypt.hash(user.password, 16);
+    user.password = await bcrypt.hash(user.password, 8);
   next();
 });
 
@@ -113,7 +115,7 @@ userSchema.methods.generateAuthToken = async function () {
   const token = jwt.sign(
     {
       _id: user._id.toString(),
-      name: `${user.firstName} ${user.lastName}`
+      name: user.firstName
     },
     process.env.JWT_SECRET,
     { expiresIn: '24h' }

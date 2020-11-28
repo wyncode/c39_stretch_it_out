@@ -23,7 +23,7 @@ const LoginModal = ({ show, hide }) => {
       history.push('/profile');
       swal('Welcome', "Let's Stretch it Out", 'success');
     } catch (error) {
-      swal('Oops!', 'try again');
+      swal('Oops!', 'login error');
     } finally {
       setLoading(false);
     }

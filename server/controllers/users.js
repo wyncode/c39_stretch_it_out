@@ -2,6 +2,10 @@ const User = require('../db/models/user');
 const jwt = require('jsonwebtoken');
 const cloudinary = require('cloudinary').v2;
 
+const isEmpty = (value) => {
+  return value === undefined || value === null || value === '';
+};
+
 //Create a new user//
 
 exports.createUser = async (req, res) => {
@@ -12,7 +16,8 @@ exports.createUser = async (req, res) => {
     password,
     personType,
     stretchingLevel,
-    timeDedicated
+    timeDedicated,
+    dailyStretches
   } = req.body;
   try {
     const user = new User({
@@ -22,7 +27,8 @@ exports.createUser = async (req, res) => {
       password,
       personType,
       stretchingLevel,
-      timeDedicated
+      timeDedicated,
+      dailyStretches
     });
     const token = await user.generateAuthToken();
     res.cookie('jwt', token, {
@@ -44,7 +50,7 @@ exports.loginUser = async (req, res) => {
     res.cookie('jwt', token, {
       httpOnly: true,
       sameSite: 'Strict',
-      secure: process.env.NODE_ENV === 'production' ? false : true
+      secure: process.env.NODE_ENV !== 'production' ? false : true
     });
     res.json(user);
   } catch (error) {
@@ -77,7 +83,10 @@ exports.logoutUser = async (req, res) => {
 };
 //UPDATE USER
 exports.updateUser = async (req, res) => {
-  const updates = Object.keys(req.body);
+  const updates = Object.keys(req.body).filter(
+    (update) => !isEmpty(req.body[update])
+  );
+
   const allowedUpdates = [
     'firstName',
     'lastName',
@@ -87,14 +96,21 @@ exports.updateUser = async (req, res) => {
     'stretchingLevel',
     'timeDedicated',
     'avatar',
-    'stretches'
+    'stretches',
+    'dailyStretches',
+    'weeklyStretches',
+    'monthlyStretches'
   ];
   const isValid = updates.every((update) => allowedUpdates.includes(update));
+
   if (!isValid)
     return res.status(400).json({ error: 'You cannot update this field' });
+
   try {
     updates.forEach((update) => (req.user[update] = req.body[update]));
+    console.log('about to update');
     await req.user.save();
+    console.log('about to respond');
     res.json(req.user);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -126,4 +142,52 @@ exports.deleteUser = async (req, res) => {
   }
 };
 
-///ADD STRETCH TO USER////
+///ADD DAILY STRETCH TO USER////
+
+////if it is today, stop incrementing the weekly stretches
+//when it is tomorrow, increment weekly stretches
+
+exports.incrementDailyStretch = async (req, res) => {
+  const d = new Date();
+  today = d.getDate();
+  if (req.user.stretchingLevel === 'Beginner') {
+    try {
+      if (req.user.dailyStretches.completed < 3) {
+        req.user.dailyStretches.completed++;
+      } else {
+        req.user.weeklyStretches.completed++;
+        req.user.dailyStretches.completed = 0;
+      }
+      await req.user.save();
+      res.json(req.user);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  } else if (req.user.stretchingLevel === 'Intermediate') {
+    try {
+      if (req.user.dailyStretches.completed < 5) {
+        req.user.dailyStretches.completed++;
+      } else {
+        req.user.weeklyStretches.completed++;
+        req.user.dailyStretches.completed = 0;
+      }
+      await req.user.save();
+      res.json(req.user);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  } else {
+    try {
+      if (req.user.dailyStretches.completed < 7) {
+        req.user.dailyStretches.completed++;
+      } else {
+        req.user.weeklyStretches.completed++;
+        req.user.dailyStretches.completed = 0;
+      }
+      await req.user.save();
+      res.json(req.user);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  }
+};
