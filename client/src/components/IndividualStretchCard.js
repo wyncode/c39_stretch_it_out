@@ -1,35 +1,31 @@
-import React from 'react';
-import { Card, CardColumns, Button } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Card, CardDeck, Button } from 'react-bootstrap';
+import axios from 'axios';
+import { AppContext } from '../context/AppContext';
 
 const IndividualStretchCard = (props) => {
+  const { selectedStretch, setSelectedStretch } = useContext(AppContext);
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.get(`/api/stretch/${props.id}`);
+      const stretch = response.data.filter((bodyPart) => {
+        return bodyPart.stretchName;
+      });
+      console.log(stretch);
+    } catch {
+      console.log('whoppps');
+    }
+  };
   return (
     <div>
-      <CardColumns>
+      <CardDeck>
         <Card>
           <Card.Img src={props.illustration} />
-          <Button>{props.stretchName}</Button>
+          <Button onClick={handleClick}>{props.stretchName}</Button>
         </Card>
-        <Card>
-          <Card.Img />
-          <Button></Button>
-        </Card>
-        <Card>
-          <Card.Img />
-          <Button></Button>
-        </Card>
-        <Card>
-          <Card.Img />
-          <Button></Button>
-        </Card>
-        <Card>
-          <Card.Img />
-          <Button></Button>
-        </Card>
-        <Card>
-          <Card.Img />
-          <Button></Button>
-        </Card>
-      </CardColumns>
+      </CardDeck>
     </div>
   );
 };
