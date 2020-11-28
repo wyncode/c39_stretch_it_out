@@ -1,11 +1,48 @@
-.selected-stretch {
+.selected-stretch-container {
+  margin: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.share-your-feedback {
+.stretch-name {
+  margin: 10px;
   display: flex;
-  flex-direction: column;
+}
+
+.reminder-div {
+  display: flex;
+  align-items: center;
+}
+.reminder {
+  margin-left: 15px;
+  font-size: 15px;
+  display: flex;
+}
+
+.share-your-feedback {
+  margin: 10px;
+  font-size: 25px;
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.add-to-my-programs {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stretch-modal {
+  display: flex;
+}
+
+.stretch-modal-header {
+  display: flex;
+}
+
+.stretch-modal-title {
+  display: flex;
 }

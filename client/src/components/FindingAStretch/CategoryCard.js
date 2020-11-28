@@ -53,14 +53,14 @@ const CategoryCard = () => {
       <CardColumns>
         <Card>
           <Card.Img src={Neck} />
-          <Button value="neck" onClick={handleClick}>
+          <Button value="Neck" onClick={handleClick}>
             Neck
           </Button>
         </Card>
 
         <Card value="Shoulder">
           <Card.Img src={Shoulder} />
-          <Card.Title value="shoulder">Shoulder</Card.Title>
+          <Card.Title value="Shoulder">Shoulder</Card.Title>
         </Card>
 
         <Card value="Upper Back">

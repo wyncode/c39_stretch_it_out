@@ -10,9 +10,11 @@ import IndividualStretchCard from './IndividualStretchCard';
 
 const StretchModal = (props) => {
   return (
-    <Modal {...props}>
-      <Modal.Header closeButton>
-        <Modal.Title>{props.target} Stretches</Modal.Title>
+    <Modal {...props} className="stretch-modal">
+      <Modal.Header closeButton className="stretch-modal-header">
+        <Modal.Title className="stretch-modal-title">
+          {props.target} Stretches
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Container>
