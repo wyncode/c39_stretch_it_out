@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { AppContext } from '../context/AppContext';
 
 const VideoCard = () => {
   return <div></div>;

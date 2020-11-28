@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AppContextProvider } from './context/AppContext';
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import AnonHomePage from './pages/AnonHomePage';
 import StretchCategory from './pages/StretchCategory';
