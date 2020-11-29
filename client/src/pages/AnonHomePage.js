@@ -12,21 +12,25 @@ import BlogSpace from '../components/BlogSpace';
 import './AnonHomePage.css';
 
 const AnonHomePage = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const [show, setShow] = useState(false);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+
   return (
     <div className="d-flex flex-column align-items-center">
-      <Navigation />
-      <JumbotronHeader />
-      <WhiteSpace />
-      <CardGroup1 />
-      <WhiteSpace2 />
-      <VideoCarousel />
-      <BlogSpace />
-      <WhiteSpace3 />
-      <GetStartedFooter />
-      <ContactFooter />
+      <div>
+        <Navigation />
+        <JumbotronHeader />
+        <WhiteSpace />
+        <CardGroup1 />
+        <WhiteSpace2 />
+        <VideoCarousel />
+        <BlogSpace />
+        <WhiteSpace3 />
+        <GetStartedFooter />
+        <ContactFooter />
+      </div>
+      //{' '}
     </div>
   );
 };

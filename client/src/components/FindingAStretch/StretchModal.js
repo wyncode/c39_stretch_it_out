@@ -1,16 +1,25 @@
-import React from 'react';
-import {
-  Container,
-  Modal,
-  Button,
-  Dropdown,
-  DropdownButton,
-  ButtonGroup
-} from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Modal, Dropdown, ButtonGroup } from 'react-bootstrap';
 import IndividualStretchCard from './IndividualStretchCard';
 
 const StretchModal = (props) => {
-  const slicedArray = props.stretch.slice(0, 3);
+  const [filters, setFilters] = useState({});
+
+  const handleFilterChange = (field, val) => {
+    setFilters({ ...filters, [field]: val.toLowerCase() });
+  };
+
+  const filteredStretches = props.stretch.filter((stretch) => {
+    const levelFilter = filters.level
+      ? stretch.level?.toLowerCase().includes(filters.level)
+      : true;
+    const lengthFilter = filters.length
+      ? stretch.length?.toLowerCase().includes(filters.length)
+      : true;
+    return levelFilter && lengthFilter;
+  });
+
+  const slicedArray = filteredStretches.slice(0, 3);
 
   return (
     <Modal {...props} size="xl">
@@ -24,20 +33,27 @@ const StretchModal = (props) => {
           <Dropdown as={ButtonGroup} className="dropdown-button">
             <Dropdown.Toggle variant="outline-dark">Time</Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-item">
-              <Dropdown.Item>5 minutes</Dropdown.Item>
-              <Dropdown.Item>10 minutes</Dropdown.Item>
-              <Dropdown.Item>15 minutes</Dropdown.Item>
+              {['5 minutes', '10 minutes', '15 minutes'].map((len) => (
+                <Dropdown.Item
+                  onClick={() => handleFilterChange('length', len)}
+                >
+                  {len}
+                </Dropdown.Item>
+              ))}
             </Dropdown.Menu>
           </Dropdown>
-          <DropdownButton
-            title="Intensity"
-            variant="outline-dark"
-            className="dropdown-button"
-          >
-            <Dropdown.Item>Beginner</Dropdown.Item>
-            <Dropdown.Item>Intermediate</Dropdown.Item>
-            <Dropdown.Item>Advanced</Dropdown.Item>
-          </DropdownButton>
+          <Dropdown as={ButtonGroup} className="dropdown-button">
+            <Dropdown.Toggle variant="outline-dark">Intensity</Dropdown.Toggle>
+            <Dropdown.Menu className="dropdown-item">
+              {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
+                <Dropdown.Item
+                  onClick={() => handleFilterChange('level', level)}
+                >
+                  {level}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
         </Container>
         <div className="stretch-card-container">
           {props.stretch &&

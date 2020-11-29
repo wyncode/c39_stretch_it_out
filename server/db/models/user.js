@@ -128,7 +128,7 @@ userSchema.methods.generateAuthToken = async function () {
 
 //locating a user by email and password
 userSchema.statics.findByCredentials = async (email, password) => {
-  const user = await User.findOne({ email });
+  const user = await User.findOne({ email }).populate('stretches');
   if (!user) throw new Error('Invalid email or password');
   const matched = await bcrypt.compare(password, user.password);
   if (!matched) throw new Error('Invalid email or password');

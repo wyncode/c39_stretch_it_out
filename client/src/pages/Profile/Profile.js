@@ -24,7 +24,7 @@ const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading, count } = useContext(
     AppContext
   );
-
+  const [savedStretch, setSavedStretch] = useState();
   const [preview, setPreview] = useState(null);
   const [show, setShow] = useState(false);
   const [showTwo, setShowTwo] = useState(false);
@@ -187,7 +187,7 @@ const Profile = ({ history: { push } }) => {
             </label>
             <div className="favorite-stretch-list">
               {currentUser &&
-                currentUser.stretches.map((stretch) => {
+                currentUser?.stretches?.map((stretch) => {
                   return (
                     <Link as={Link} to="/body-area/">
                       {stretch.stretchName}

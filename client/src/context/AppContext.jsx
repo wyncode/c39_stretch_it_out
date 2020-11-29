@@ -24,6 +24,10 @@ export const AppContextProvider = ({ children }) => {
   const user = sessionStorage.getItem('user');
 
   useEffect(() => {
+    console.log('this is the user in context', currentUser);
+  }, [currentUser]);
+
+  useEffect(() => {
     if (user && !currentUser) {
       axios
         .get(`/api/users/me`, {
