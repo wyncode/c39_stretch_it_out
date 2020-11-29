@@ -9,7 +9,7 @@ import './Profile.css';
 import swal from 'sweetalert';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import AnonPic from './images/AnonPic.png';
-import Navigation from '../../components/Navigation';
+import Navigation from '../../components/Navigation/Navigation';
 import AccountPref from './components/AccountPref';
 import UploadPic from './components/UploadPic';
 import Cog from './images/cog.png';

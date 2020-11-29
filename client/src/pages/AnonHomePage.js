@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navigation from '../components/Navigation';
+import Navigation from '../components/Navigation/Navigation';
 import WhiteSpace from '../components/WhiteSpace';
 import CardGroup1 from '../components/PainCards';
 import WhiteSpace2 from '../components/WhiteSpace2';
@@ -18,19 +18,16 @@ const AnonHomePage = () => {
 
   return (
     <div className="d-flex flex-column align-items-center">
-      <div>
-        <Navigation />
-        <JumbotronHeader />
-        <WhiteSpace />
-        <CardGroup1 />
-        <WhiteSpace2 />
-        <VideoCarousel />
-        <BlogSpace />
-        <WhiteSpace3 />
-        <GetStartedFooter />
-        <ContactFooter />
-      </div>
-      //{' '}
+      <Navigation />
+      <JumbotronHeader />
+      <WhiteSpace />
+      <CardGroup1 />
+      <WhiteSpace2 />
+      <VideoCarousel />
+      <BlogSpace />
+      <WhiteSpace3 />
+      <GetStartedFooter />
+      <ContactFooter />
     </div>
   );
 };

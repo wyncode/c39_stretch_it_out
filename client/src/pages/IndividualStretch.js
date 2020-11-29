@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import SelectedStretch from '../components/FindingAStretch/SelectedStretch';
-import Navigation from '../components/Navigation';
+import Navigation from '../components/Navigation/Navigation';
 
 const IndividualStretch = () => {
   return (

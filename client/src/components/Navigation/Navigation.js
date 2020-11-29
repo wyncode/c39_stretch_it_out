@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Image, NavItem, Dropdown } from 'react-bootstrap';
-import { AppContext } from '../context/AppContext';
-import { Logo, StartTrial } from '../../src/images/index';
-import AnonPic from '../pages/Profile/images/AnonPic.png';
-import Logout from './Logout';
-import LoginModal from './LoginModal';
+import { AppContext } from '../../context/AppContext';
+import { Logo, StartTrial } from '../../images/index';
+import AnonPic from '../../pages/Profile/images/AnonPic.png';
+import Logout from '../Logout';
+import LoginModal from '../LoginModal';
 
 import './Navigation.css';
 
