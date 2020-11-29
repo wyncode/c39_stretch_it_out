@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import ItemsCarousel from 'react-items-carousel';
 
 const VideoCarousel = () => {
@@ -14,7 +14,7 @@ const VideoCarousel = () => {
         justifyContent: 'center'
       }}
     >
-      <h2>Browse Our Instructional Stretching Videos</h2>
+      <h2 className="videoTitle">Browse Our Instructional Stretching Videos</h2>
       <ItemsCarousel
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
@@ -41,7 +41,7 @@ const VideoCarousel = () => {
           <iframe
             width="600"
             height="400"
-            src="https://www.youtube.com/embed/cxDcpvD68GQ"
+            src="https://www.youtube.com/embed/3siAawcfVjI"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
@@ -52,19 +52,7 @@ const VideoCarousel = () => {
           <iframe
             width="600"
             height="400"
-            src="https://www.youtube.com/embed/cxDcpvD68GQ"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-
-        <div style={{ height: 400, width: 600, background: '#EEE' }}>
-          {' '}
-          <iframe
-            width="600"
-            height="400"
-            src="https://www.youtube.com/embed/cxDcpvD68GQ"
+            src="https://www.youtube.com/embed/e5SE0HCPOlA"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
@@ -76,7 +64,19 @@ const VideoCarousel = () => {
           <iframe
             width="600"
             height="400"
-            src="https://www.youtube.com/embed/cxDcpvD68GQ"
+            src="https://www.youtube.com/embed/2CR9bRqRQbg"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div style={{ height: 400, width: 600, background: '#EEE' }}>
+          {' '}
+          <iframe
+            width="600"
+            height="400"
+            src="https://www.youtube.com/embed/NHO0ARPVifs"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen

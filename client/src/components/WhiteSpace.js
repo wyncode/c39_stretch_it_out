@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import YogaGirl from '../images/ws2-picture.png';
 
 const Whitespace = () => {

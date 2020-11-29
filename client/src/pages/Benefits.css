@@ -20,12 +20,11 @@ body {
 }
 
 .benefitsHeaderTitle h1 {
-  width: 906px;
-  height: 55px;
   font-weight: 800;
-  font-size: 40px;
+  font-size: 50px;
   margin-top: 8vh;
   margin-left: 6vh;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .benefitsContainer {
@@ -41,8 +40,8 @@ body {
 .decreasedStress img {
   margin-left: 3rem;
   padding-left: 5rem;
-  width: 684px;
-  height: 621px;
+  width: 784px;
+  height: 721px;
 }
 
 .decreasedStressText {
@@ -50,6 +49,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding-top: 20px;
+  margin-left: 16rem;
 }
 
 .decreasedStressText h2 {
@@ -58,6 +58,7 @@ body {
   font-weight: 700;
   line-height: 40px;
   font-size: 30px;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .decreasedStressText p {
@@ -66,6 +67,7 @@ body {
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
+  font-family: 'Lato', sans-serif;
 }
 
 .decreasedStressText a {
@@ -75,6 +77,7 @@ body {
   height: 24px;
   color: black;
   text-decoration: underline;
+  font-family: 'Lato', sans-serif;
 }
 
 .reducedPain {
@@ -83,8 +86,7 @@ body {
 }
 
 .reducedPainImg {
-  padding-right: 130rem;
-  margin-right: 14rem;
+  margin-right: 20rem;
 }
 
 .reducedPainImg img {
@@ -106,6 +108,7 @@ body {
   font-weight: 700;
   font-size: 30px;
   line-height: 40px;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .reducedPainText p {
@@ -114,6 +117,7 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  font-family: 'Lato', sans-serif;
 }
 
 .reducedPainText a {
@@ -124,6 +128,7 @@ body {
   line-height: 24px;
   text-decoration: underline;
   color: black;
+  font-family: 'Lato', sans-serif;
 }
 
 .improvedHealth {
@@ -134,7 +139,7 @@ body {
 
 .improvedHealthImg img {
   width: 900px;
-  height: 501px;
+  height: 601px;
 }
 
 .improvedHealthText {
@@ -147,6 +152,7 @@ body {
   font-size: 20px;
   line-height: 24px;
   width: 536px;
+  margin-left: 14rem;
 }
 
 .improvedHealthText h2 {
@@ -155,6 +161,7 @@ body {
   font-weight: 700;
   font-size: 30px;
   line-height: 40px;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .improvedHealthText p {
@@ -162,6 +169,7 @@ body {
   height: 88px;
   font-size: 20px;
   font-weight: 400;
+  font-family: 'Lato', sans-serif;
 }
 
 .improvedHealthText a {
@@ -172,6 +180,7 @@ body {
   line-height: 24px;
   text-decoration: underline;
   color: black;
+  font-family: 'Lato', sans-serif;
 }
 
 .improvedMuscular {
@@ -180,8 +189,9 @@ body {
 }
 
 .improvedMuscularImg img {
-  height: 650px;
-  width: 464px;
+  height: 700px;
+  width: 564px;
+  margin-left: 6rem;
 }
 
 .improvedMuscularText {
@@ -199,6 +209,7 @@ body {
   font-size: 30px;
   font-weight: 700;
   line-height: 40px;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .improvedMuscularText p {
@@ -207,6 +218,7 @@ body {
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
+  font-family: 'Lato', sans-serif;
 }
 
 .improvedMuscularText a {
@@ -217,6 +229,7 @@ body {
   line-height: 24px;
   text-decoration: underline;
   color: black;
+  font-family: 'Lato', sans-serif;
 }
 
 .reducedRisk {
@@ -227,6 +240,7 @@ body {
 .reducedRiskImg img {
   width: 860px;
   height: 485px;
+  margin-left: 4rem;
 }
 
 .reducedRiskText {
@@ -235,6 +249,7 @@ body {
   justify-content: center;
   padding-top: 20px;
   height: 485px;
+  margin-left: 16rem;
 }
 
 .reducedRiskText h2 {
@@ -243,6 +258,7 @@ body {
   font-weight: 700;
   line-height: 40px;
   font-size: 30px;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .reducedRiskText p {
@@ -251,6 +267,7 @@ body {
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
+  font-family: 'Lato', sans-serif;
 }
 
 .reducedRiskText a {
@@ -261,4 +278,5 @@ body {
   line-height: 24px;
   text-decoration: underline;
   color: black;
+  font-family: 'Lato', sans-serif;
 }
