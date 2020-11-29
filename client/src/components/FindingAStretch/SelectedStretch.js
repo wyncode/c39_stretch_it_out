@@ -6,6 +6,7 @@ import axios from 'axios';
 import './FindingAStretch.css';
 import Lightbulb from './Group.png';
 import AddStretch from '../../pages/Profile/components/AddStretch';
+import swal from 'sweetalert';
 
 const SelectedStretch = () => {
   const {
@@ -40,6 +41,11 @@ const SelectedStretch = () => {
         { withCredentials: true }
       );
       setCurrentUser(update);
+      swal(
+        'Glad you liked it!',
+        'Stretch added to Favorite Stretches',
+        'success'
+      );
     } catch (error) {
       console.log(e);
     }
@@ -57,7 +63,17 @@ const SelectedStretch = () => {
           </p>
         </div>
 
-        <Image src={selectedStretch?.video} fluid />
+        <Container className="video-div">
+          <iframe
+            margin="20"
+            width="840"
+            height="460"
+            src={selectedStretch?.video}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </Container>
 
         <Container className="stretch-user-buttons">
           <AddStretch />

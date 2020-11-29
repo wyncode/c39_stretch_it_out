@@ -32,7 +32,7 @@ const StretchModal = (props) => {
         <Container className="dropdowns">
           <Dropdown as={ButtonGroup} className="dropdown-button">
             <Dropdown.Toggle variant="outline-dark">Time</Dropdown.Toggle>
-            <Dropdown.Menu className="dropdown-item">
+            <Dropdown.Menu className="dropdown-item" align="right">
               {['5 minutes', '10 minutes', '15 minutes'].map((len) => (
                 <Dropdown.Item
                   onClick={() => handleFilterChange('length', len)}
@@ -44,7 +44,7 @@ const StretchModal = (props) => {
           </Dropdown>
           <Dropdown as={ButtonGroup} className="dropdown-button">
             <Dropdown.Toggle variant="outline-dark">Intensity</Dropdown.Toggle>
-            <Dropdown.Menu className="dropdown-item">
+            <Dropdown.Menu className="dropdown-item" align="right">
               {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
                 <Dropdown.Item
                   onClick={() => handleFilterChange('level', level)}

@@ -210,7 +210,9 @@ const Profile = ({ history: { push } }) => {
             </div>
           </div>
           <div className="day-count">
-            <h3 className="day-count-header">You've Met Stretch Goal For: </h3>
+            <h3 className="day-count-header">
+              You've Met Your Stretch Goal For:{' '}
+            </h3>
             <div className="day-count-value">
               <h3>{value2} days</h3>
             </div>

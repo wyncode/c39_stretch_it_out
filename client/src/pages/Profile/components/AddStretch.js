@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { AppContext } from '../../../context/AppContext';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const AddStretch = () => {
   const { currentUser, setCurrentUser } = useContext(AppContext);
@@ -11,11 +12,16 @@ const AddStretch = () => {
       withCredentials: true
     });
     setCurrentUser(data);
+    swal('Good Work!', 'Stretch added to Daily Goal', 'success');
   };
 
   return (
     <>
-      <Button className="add-stretch-button" onClick={handleClick}>
+      <Button
+        className="add-stretch-button"
+        onClick={handleClick}
+        variant="outline-dark"
+      >
         Mark Stretch as Completed
       </Button>
     </>
