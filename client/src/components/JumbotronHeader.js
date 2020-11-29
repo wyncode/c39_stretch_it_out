@@ -1,6 +1,6 @@
 import React from 'react';
 import { Jumbotron, Button } from 'react-bootstrap';
-//import HeaderImg from '../images/Hero Image.png';
+import { Link } from 'react-router-dom';
 
 const JumbotronHeader = () => {
   return (
@@ -18,7 +18,9 @@ const JumbotronHeader = () => {
             From Your Desk to the Gym
           </p>
           <div>
-            <Button variant="primary">Find a Stretch</Button>
+            <Link to="/body-area">
+              <Button variant="primary">Find a Stretch</Button>
+            </Link>
           </div>
         </div>
       </div>
