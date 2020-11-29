@@ -4,7 +4,8 @@ import {
   Modal,
   Button,
   Dropdown,
-  DropdownButton
+  DropdownButton,
+  ButtonGroup
 } from 'react-bootstrap';
 import IndividualStretchCard from './IndividualStretchCard';
 
@@ -20,12 +21,19 @@ const StretchModal = (props) => {
       </Modal.Header>
       <Modal.Body className="d-flex">
         <Container className="dropdowns">
-          <DropdownButton title="Time">
-            <Dropdown.Item>5 minutes</Dropdown.Item>
-            <Dropdown.Item>10 minutes</Dropdown.Item>
-            <Dropdown.Item>15 minutes</Dropdown.Item>
-          </DropdownButton>
-          <DropdownButton title="Intensity">
+          <Dropdown as={ButtonGroup} className="dropdown-button">
+            <Dropdown.Toggle variant="outline-dark">Time</Dropdown.Toggle>
+            <Dropdown.Menu className="dropdown-item">
+              <Dropdown.Item>5 minutes</Dropdown.Item>
+              <Dropdown.Item>10 minutes</Dropdown.Item>
+              <Dropdown.Item>15 minutes</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          <DropdownButton
+            title="Intensity"
+            variant="outline-dark"
+            className="dropdown-button"
+          >
             <Dropdown.Item>Beginner</Dropdown.Item>
             <Dropdown.Item>Intermediate</Dropdown.Item>
             <Dropdown.Item>Advanced</Dropdown.Item>
@@ -45,9 +53,6 @@ const StretchModal = (props) => {
             })}
         </div>
       </Modal.Body>
-      <Modal.Footer>
-        <Button>Cancel</Button>
-      </Modal.Footer>
     </Modal>
   );
 };

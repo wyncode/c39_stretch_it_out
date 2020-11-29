@@ -8,7 +8,7 @@ const StretchCategory = () => {
   return (
     <div>
       <Navigation />
-      <img src={StretchBanner} />
+      <img src={StretchBanner} className="find-your-stretch" />
       <Container>
         <CategoryCard />
       </Container>

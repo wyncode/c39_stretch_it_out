@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Button, ResponsiveEmbed, Image } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import axios from 'axios';
@@ -46,32 +46,39 @@ const SelectedStretch = () => {
   };
 
   return (
-    <div>
+    <div className="selected-stretch-div">
       <Container className="selected-stretch-container">
         <h1 className="stretch-name">{selectedStretch?.stretchName}</h1>
         <div className="reminder-div">
-          <img src={Lightbulb} />
+          <Image src={Lightbulb} />
           <p className="reminder">
             Remember that the sensation during the stretch should be discomfort,
             but not pain.
           </p>
         </div>
-        <img src={selectedStretch?.video} />
-        <Link className="share-your-feedback">
-          <u>Share Your Feedback</u>
-        </Link>
-        <AddStretch />
-        <Button
-          className="add-to-my-programs"
-          to="/profile"
-          onClick={handleClick}
-        >
-          Add to my programs
-        </Button>
+
+        <Image src={selectedStretch?.video} fluid />
+
+        <Container className="stretch-user-buttons">
+          <AddStretch />
+          <Button
+            variant="outline-dark"
+            className="add-to-my-programs"
+            to="/profile"
+            onClick={handleClick}
+          >
+            Add to my programs
+          </Button>
+        </Container>
       </Container>
+
       <Container>
         <h3>Suggested Stretches</h3>
       </Container>
+
+      <Link className="share-your-feedback">
+        <u>Share Your Feedback</u>
+      </Link>
     </div>
   );
 };
