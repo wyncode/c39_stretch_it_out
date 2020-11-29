@@ -109,9 +109,12 @@ exports.updateUser = async (req, res) => {
 
   try {
     updates.forEach((update) => (req.user[update] = req.body[update]));
-    console.log('about to update');
+    // console.log('about to update');
+    console.log(req.user);
+    console.log(req.body);
     await req.user.save();
-    console.log('about to respond');
+    // console.log('about to respond');
+
     res.json(req.user);
   } catch (error) {
     res.status(400).json({ error: error.message });

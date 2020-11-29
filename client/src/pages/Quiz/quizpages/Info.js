@@ -55,7 +55,7 @@ const Info = ({ handleChange, formData, setChecked, checked }) => {
       <div className="form-group">
         <div>
           <label for="agreeToTerms">
-            I agree to Stretch It Out’s Terms of Use and Privacy Poilcy.{' '}
+            I agree to Stretch It Out’s Terms of Use and Privacy Policy.{' '}
           </label>
 
           <input

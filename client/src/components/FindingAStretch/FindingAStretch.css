@@ -26,6 +26,12 @@
 .category-card-button {
   display: flex;
 }
+
+.card-category-body {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
 /* // ***********************************************/
 /* Selected Stretch Page 
 /* // ***********************************************/
@@ -125,7 +131,7 @@
   border-radius: 5%;
 }
 
-.dropdown-item {
+.dropdown-menu {
   border-radius: 10px;
 }
 

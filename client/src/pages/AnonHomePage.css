@@ -61,6 +61,8 @@
 }
 
 .headerText h1 {
+  display: flex;
+  justify-content: left;
   font-weight: 800;
   font-size: 70px;
   font-family: 'Nunito Sans', sans-serif;
@@ -68,11 +70,15 @@
 
 .headerWrapper {
   padding-top: 190px;
-  padding-left: 200px;
+  padding-left: 150px;
   width: 800px;
 }
 
 .headerBtnText {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   font-weight: 400;
   font-size: 45px;
   line-height: 30px;
@@ -81,6 +87,10 @@
 }
 
 .headerBtnText p {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
   font-family: 'Lato', sans-serif;
   line-height: 3rem;
 }

@@ -51,7 +51,7 @@ const CategoryCard = () => {
       <h2 className="body-area">Upper Body Stretches</h2>
 
       <CardColumns>
-        <Card className="category-card">
+        <Card className="category-card ">
           <Card.Img src={Neck} />
           <Button
             value="Neck"
