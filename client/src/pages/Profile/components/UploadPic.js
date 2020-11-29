@@ -53,7 +53,7 @@ const UploadPic = ({ show, hide, preview, setPreview }) => {
             accept="image/*"
             required
           />
-          <Button type="submit" size="sm" className="mt-4">
+          <Button type="submit" className="modal-button">
             Save Image
           </Button>
         </form>

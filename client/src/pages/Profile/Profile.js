@@ -16,12 +16,15 @@ import Cog from './images/cog.png';
 import UserCog from './images/user-cog.png';
 import Camera from './images/camera.png';
 import Trash from './images/trash.png';
+import VideoCarousel from '../../components/VideoCarousel';
+import GetStartedFooter from '../../components/GetStartedFooter';
+import ContactFooter from '../../components/ContactFooter';
 
 const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading, count } = useContext(
     AppContext
   );
-  const [formData, setFormData] = useState();
+
   const [preview, setPreview] = useState(null);
   const [show, setShow] = useState(false);
   const [showTwo, setShowTwo] = useState(false);
@@ -179,7 +182,9 @@ const Profile = ({ history: { push } }) => {
             <p>{currentUser?.timeDedicated}</p>
           </div>
           <div>
-            <label>My Favorite Stretches:</label>
+            <label className="pr-4 font-weight-bold">
+              My Favorite Stretches:
+            </label>
             <div className="favorite-stretch-list">
               {currentUser &&
                 currentUser.stretches.map((stretch) => {
@@ -211,6 +216,9 @@ const Profile = ({ history: { push } }) => {
             </div>
           </div>
         </div>
+
+        <GetStartedFooter />
+        <ContactFooter />
       </div>
     </>
   );

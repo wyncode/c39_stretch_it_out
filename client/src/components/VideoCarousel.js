@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Card } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
 import ItemsCarousel from 'react-items-carousel';
+import './VideoCarousel.css';
 
 const VideoCarousel = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
@@ -14,56 +15,45 @@ const VideoCarousel = () => {
         justifyContent: 'center'
       }}
     >
-      <h2 className="videoTitle">Browse Our Instructional Stretching Videos</h2>
+      <h3 className="carousel-header">
+        Browse Our Instructional Stretching Videos
+      </h3>
       <ItemsCarousel
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
-        numberOfCards={3}
+        numberOfCards={2}
         gutter={20}
-        leftChevron={<button>{'<'}</button>}
-        rightChevron={<button>{'>'}</button>}
+        leftChevron={<Button variant="light">{'<'}</Button>}
+        rightChevron={<Button variant="light">{'>'}</Button>}
         outsideChevron
         chevronWidth={chevronWidth}
       >
-        <div style={{ height: 400, width: 600, background: '#EEE' }}>
+        <div style={{ height: 200, width: 400, background: '#EEE' }}>
           <iframe
-            margin="20"
-            width="600"
-            height="400"
-            src="https://www.youtube.com/embed/cxDcpvD68GQ"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div style={{ height: 400, width: 600, background: '#EEE' }}>
-          {' '}
-          <iframe
-            width="600"
-            height="400"
+            width="400"
+            height="200"
             src="https://www.youtube.com/embed/3siAawcfVjI"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
         </div>
-        <div style={{ height: 400, width: 600, background: '#EEE' }}>
+        <div style={{ height: 200, width: 400, background: '#EEE' }}>
           {' '}
           <iframe
-            width="600"
-            height="400"
+            width="400"
+            height="200"
             src="https://www.youtube.com/embed/e5SE0HCPOlA"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
         </div>
-
-        <div style={{ height: 400, width: 600, background: '#EEE' }}>
+        <div style={{ height: 200, width: 400, background: '#EEE' }}>
           {' '}
           <iframe
-            width="600"
-            height="400"
+            width="400"
+            height="200"
             src="https://www.youtube.com/embed/2CR9bRqRQbg"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -71,12 +61,24 @@ const VideoCarousel = () => {
           ></iframe>
         </div>
 
-        <div style={{ height: 400, width: 600, background: '#EEE' }}>
+        <div style={{ height: 200, width: 400, background: '#EEE' }}>
           {' '}
           <iframe
-            width="600"
-            height="400"
+            width="400"
+            height="200"
             src="https://www.youtube.com/embed/NHO0ARPVifs"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div style={{ height: 200, width: 400, background: '#EEE' }}>
+          {' '}
+          <iframe
+            width="400"
+            height="200"
+            src="https://www.youtube.com/embed/vuGnzLxRvZM"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
