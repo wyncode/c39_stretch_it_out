@@ -24,7 +24,11 @@ export const AppContextProvider = ({ children }) => {
   const user = sessionStorage.getItem('user');
 
   useEffect(() => {
-    if (user && !currentUser) {
+    console.log('this is the user in context', currentUser);
+  }, [currentUser]);
+
+  useEffect(() => {
+    if (user) {
       axios
         .get(`/api/users/me`, {
           withCredentials: true
@@ -32,7 +36,7 @@ export const AppContextProvider = ({ children }) => {
         .then(({ data }) => {
           setCurrentUser(data);
         })
-        .catch((error) => swal('oops! appcontext error', error.toString()));
+        .catch((error) => console.log(error));
     }
   }, [currentUser, user]);
 

@@ -12,6 +12,7 @@ const ProfilePref = ({ show, hide, setCurrentUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData);
     try {
       const { data } = await axios.put(
         '/api/users/update',

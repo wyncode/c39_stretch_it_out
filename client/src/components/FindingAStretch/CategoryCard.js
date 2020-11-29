@@ -48,93 +48,153 @@ const CategoryCard = () => {
 
   return (
     <div>
-      <h2>Upper Body Stretches</h2>
+      <h2 className="body-area">Upper Body Stretches</h2>
 
       <CardColumns>
-        <Card>
+        <Card className="category-card ">
           <Card.Img src={Neck} />
-          <Button value="Neck" onClick={handleClick}>
+          <Button
+            value="Neck"
+            onClick={handleClick}
+            className="category-card-button"
+            variant="outline-dark"
+          >
             Neck
           </Button>
         </Card>
 
-        <Card>
+        <Card className="category-card">
           <Card.Img src={Shoulder} />
-          <Button value="Shoulder" onClick={handleClick}>
+          <Button
+            value="Shoulder"
+            onClick={handleClick}
+            className="category-card-button"
+            variant="outline-dark"
+          >
             Shoulder
           </Button>
         </Card>
 
-        <Card>
+        <Card className="category-card">
           <Card.Img src={UpperBack} />
-          <Button value="Upper Back" onClick={handleClick}>
+          <Button
+            value="UpperBack"
+            onClick={handleClick}
+            className="category-card-button"
+            variant="outline-dark"
+          >
             Upper Back
           </Button>
         </Card>
 
-        <Card>
+        <Card className="category-card">
           <Card.Img src={Wrist} />
-          <Button value="Wrist" onClick={handleClick}>
+          <Button
+            value="Wrist"
+            onClick={handleClick}
+            className="category-card-button"
+            variant="outline-dark"
+          >
             Wrist
           </Button>
         </Card>
 
-        <Card>
+        <Card className="category-card">
           <Card.Img src={LowerBack} />
-          <Button value="Lower Back" onClick={handleClick}>
+          <Button
+            value="LowerBack"
+            onClick={handleClick}
+            className="category-card-button"
+            variant="outline-dark"
+          >
             Lower Back
           </Button>
         </Card>
 
-        <Card>
+        <Card className="category-card">
           <Card.Img src={Chest} />
-          <Button value="Chest" onClick={handleClick}>
+          <Button
+            value="Chest"
+            onClick={handleClick}
+            className="category-card-button"
+            variant="outline-dark"
+          >
             Chest
           </Button>
         </Card>
       </CardColumns>
 
-      <h2>Lower body Stretches</h2>
+      <h2 className="body-area">Lower Body Stretches</h2>
 
       <CardColumns>
-        <Card>
+        <Card className="category-card">
           <Card.Img src={Glutes} />
-          <Button value="Glutes" onClick={handleClick}>
+          <Button
+            value="Glutes"
+            onClick={handleClick}
+            className="category-card-button"
+            variant="outline-dark"
+          >
             Glutes
           </Button>
         </Card>
 
-        <Card>
+        <Card className="category-card">
           <Card.Img src={Quads} />
-          <Button value="Quads" onClick={handleClick}>
+          <Button
+            value="Quads"
+            onClick={handleClick}
+            className="category-card-button"
+            variant="outline-dark"
+          >
             Quads
           </Button>
         </Card>
 
-        <Card>
+        <Card className="category-card">
           <Card.Img src={Hamstrings} />
-          <Button value="Hamstrings" onClick={handleClick}>
+          <Button
+            value="Hamstrings"
+            onClick={handleClick}
+            className="category-card-button"
+            variant="outline-dark"
+          >
             Hamstrings
           </Button>
         </Card>
 
-        <Card>
+        <Card className="category-card">
           <Card.Img src={Knee} />
-          <Button value="Knee" onClick={handleClick}>
+          <Button
+            value="Knee"
+            onClick={handleClick}
+            className="category-card-button"
+            variant="outline-dark"
+          >
             Knee
           </Button>
         </Card>
 
-        <Card>
+        <Card className="category-card">
           <Card.Img src={Groin} />
-          <Button value="Groin" onClick={handleClick}>
+          <Button
+            value="Groin"
+            onClick={handleClick}
+            className="category-card-button"
+            variant="outline-dark"
+          >
             Groin
           </Button>
         </Card>
 
-        <Card>
+        <Card className="category-card">
           <Card.Img src={Calves} />
-          <Button value="Calves" onClick={handleClick}>
+          <Button
+            value="Calves"
+            onClick={handleClick}
+            className="category-card-button"
+            variant="outline-dark"
+          >
             Calves
           </Button>
         </Card>

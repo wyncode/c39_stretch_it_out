@@ -1,0 +1,32 @@
+.nav {
+  width: 100vw;
+  /* margin: 15px auto auto 15px; */
+  /* border: solid; */
+  display: flex;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.stretches-benefits-nav {
+  display: flex;
+  align-items: center;
+  /* border: solid */
+}
+
+.nav-items {
+  font-size: 24px;
+}
+
+.profile-trial-nav {
+  display: flex;
+  align-items: center;
+  /* border: solid */
+}
+
+.profile-dropdown-nav {
+  padding-bottom: 0px !important;
+}

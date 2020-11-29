@@ -109,9 +109,12 @@ exports.updateUser = async (req, res) => {
 
   try {
     updates.forEach((update) => (req.user[update] = req.body[update]));
-    console.log('about to update');
+    // console.log('about to update');
+    console.log(req.user);
+    console.log(req.body);
     await req.user.save();
-    console.log('about to respond');
+    // console.log('about to respond');
+
     res.json(req.user);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -149,46 +152,21 @@ exports.deleteUser = async (req, res) => {
 //when it is tomorrow, increment weekly stretches
 
 exports.incrementDailyStretch = async (req, res) => {
-  const d = new Date();
-  today = d.getDate();
-  if (req.user.stretchingLevel === 'Beginner') {
-    try {
-      if (req.user.dailyStretches.completed < 3) {
-        req.user.dailyStretches.completed++;
-      } else {
-        req.user.weeklyStretches.completed++;
-        req.user.dailyStretches.completed = 0;
-      }
-      await req.user.save();
-      res.json(req.user);
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-  } else if (req.user.stretchingLevel === 'Intermediate') {
-    try {
-      if (req.user.dailyStretches.completed < 5) {
-        req.user.dailyStretches.completed++;
-      } else {
-        req.user.weeklyStretches.completed++;
-        req.user.dailyStretches.completed = 0;
-      }
-      await req.user.save();
-      res.json(req.user);
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-  } else {
-    try {
-      if (req.user.dailyStretches.completed < 7) {
-        req.user.dailyStretches.completed++;
-      } else {
-        req.user.weeklyStretches.completed++;
-        req.user.dailyStretches.completed = 0;
-      }
-      await req.user.save();
-      res.json(req.user);
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
+  const maxStretchesMap = {
+    Beginner: 3,
+    Intermediate: 5,
+    Advanced: 7
+  };
+
+  const maxStretches = maxStretchesMap[req.user.stretchingLevel];
+
+  req.user.dailyStretches.completed++;
+
+  if (req.user.dailyStretches.completed >= maxStretches) {
+    req.user.weeklyStretches.completed++;
+    req.user.dailyStretches.completed = 0;
   }
+
+  await req.user.save();
+  res.json(req.user);
 };

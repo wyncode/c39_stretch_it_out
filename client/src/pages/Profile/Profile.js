@@ -9,7 +9,7 @@ import './Profile.css';
 import swal from 'sweetalert';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import AnonPic from './images/AnonPic.png';
-import Navigation from '../../components/Navigation';
+import Navigation from '../../components/Navigation/Navigation';
 import AccountPref from './components/AccountPref';
 import UploadPic from './components/UploadPic';
 import Cog from './images/cog.png';
@@ -24,7 +24,7 @@ const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading, count } = useContext(
     AppContext
   );
-
+  const [savedStretch, setSavedStretch] = useState();
   const [preview, setPreview] = useState(null);
   const [show, setShow] = useState(false);
   const [showTwo, setShowTwo] = useState(false);
@@ -187,7 +187,7 @@ const Profile = ({ history: { push } }) => {
             </label>
             <div className="favorite-stretch-list">
               {currentUser &&
-                currentUser.stretches.map((stretch) => {
+                currentUser?.stretches?.map((stretch) => {
                   return (
                     <Link as={Link} to="/body-area/">
                       {stretch.stretchName}
@@ -210,7 +210,9 @@ const Profile = ({ history: { push } }) => {
             </div>
           </div>
           <div className="day-count">
-            <h3 className="day-count-header">You've Met Stretch Goal For: </h3>
+            <h3 className="day-count-header">
+              You've Met Your Stretch Goal For:{' '}
+            </h3>
             <div className="day-count-value">
               <h3>{value2} days</h3>
             </div>

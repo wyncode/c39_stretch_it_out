@@ -1,5 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Nunito&display=swap');
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
+/* // ***********************************************/
+/* Stretch Category Page 
+/* // ***********************************************/
+
+.body-area {
+  font-family: 'Nunito', sans-serif;
+  margin: 50px auto 5px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 55px;
+}
+
+.category-card {
+  filter: drop-shadow(3px 6px 5px #c0bfbf);
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 15px;
+}
+
+.category-card-button {
+  display: flex;
+}
+
+.card-category-body {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+/* // ***********************************************/
+/* Selected Stretch Page 
+/* // ***********************************************/
+
+.selected-stretch-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 100px;
+}
 .selected-stretch-container {
-  margin: 30px;
+  margin: 30px 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,16 +52,38 @@
 .stretch-name {
   margin: 10px;
   display: flex;
+  color: #363636;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 54.56px;
 }
 
 .reminder-div {
   display: flex;
   align-items: center;
 }
+
 .reminder {
   margin-left: 15px;
-  font-size: 15px;
   display: flex;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.stretch-user-buttons {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-to-my-programs {
+  margin: 15px;
+  background-color: transparent;
+  font-family: 'Nunito', sans-serif;
 }
 
 .share-your-feedback {
@@ -28,12 +94,16 @@
   align-items: center;
 }
 
-.add-to-my-programs {
-  margin: 15px;
+.video-div {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
+
+/* // ***********************************************/
+/* Stretch Modal
+/* // ***********************************************/
 
 .stretch-modal {
   display: flex;
@@ -45,19 +115,36 @@
 
 .stretch-modal-title {
   display: flex;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 300px;
 }
 
 .dropdowns {
   display: flex;
+  flex-direction: row-reverse;
+  margin: 15px;
 }
+
+.dropdown-button {
+  margin: auto 15px;
+  border-radius: 5%;
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+}
+
+/* // ***********************************************/
+/* Stretch Modal Cards 
+/* // ***********************************************/
 
 .stretch-modal-cards {
   display: flex;
   flex-wrap: wrap;
-  height: auto;
+  margin: 20px 10px;
 }
 
 .stretch-card-container {
-  width: 100%;
   display: flex;
 }
