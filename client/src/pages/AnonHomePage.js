@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import LoginModal from '../components/LoginModal';
 import Navigation from '../components/Navigation';
 import WhiteSpace from '../components/WhiteSpace';
 import CardGroup1 from '../components/PainCards';
@@ -18,9 +17,6 @@ const AnonHomePage = () => {
   const handleShow = () => setShow(true);
   return (
     <div className="d-flex flex-column align-items-center">
-      <h1>This is home</h1>
-      <button onClick={handleShow}>Log In</button>
-      <LoginModal show={show} hide={handleClose} />
       <Navigation />
       <JumbotronHeader />
       <WhiteSpace />

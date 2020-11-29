@@ -55,6 +55,10 @@
   align-items: center;
   justify-content: center;
 }
+.modal-button {
+  background-color: #377c8d !important;
+  border-color: #377c8d !important;
+}
 .preferences-header {
   color: black;
   font-family: 'Nunito', sans-serif;
@@ -75,6 +79,11 @@
   color: black !important;
   display: flex !important ;
   align-items: baseline !important;
+}
+.space {
+  height: 40px;
+  width: 100;
+  margin: 40px;
 }
 .stretch-tracker {
   display: flex;

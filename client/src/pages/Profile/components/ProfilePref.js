@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Form, Button } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import swal from 'sweetalert';
 import axios from 'axios';
 
@@ -106,8 +106,10 @@ const ProfilePref = ({ show, hide, setCurrentUser }) => {
                 <label for="timeDedicated3">More than 20 minutes</label>
               </div>
             </div>
+            <Button className="modal-button" type="submit">
+              Submit Updates
+            </Button>
           </div>
-          <Button type="submit">Submit Updates</Button>
         </form>
       </Modal.Body>
     </Modal>

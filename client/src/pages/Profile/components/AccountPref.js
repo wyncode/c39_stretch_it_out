@@ -78,7 +78,7 @@ const AccountPref = ({ show, hide, setCurrentUser }) => {
             />
           </Form.Group>
           <Form.Group>
-            <Button block type="submit">
+            <Button className="modal-button" block type="submit">
               Update Account
             </Button>
           </Form.Group>
