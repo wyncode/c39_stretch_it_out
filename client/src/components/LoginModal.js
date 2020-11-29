@@ -4,6 +4,7 @@ import { useHistory, Link } from 'react-router-dom';
 import { Modal, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import swal from 'sweetalert';
+import './Login.css';
 
 const LoginModal = ({ show, hide }) => {
   const { setCurrentUser, setLoading } = useContext(AppContext);
@@ -31,10 +32,9 @@ const LoginModal = ({ show, hide }) => {
   return (
     <Modal
       className="login"
-      size="sm"
       show={show}
       onHide={hide}
-      aria-labelledby="contained-modal-title-vcenter"
+      // aria-labelledby="contained-modal-title-vcenter"
       centered
     >
       <Modal.Header className="login-modal-header" closeButton></Modal.Header>
@@ -66,7 +66,10 @@ const LoginModal = ({ show, hide }) => {
             </Button>
           </Form.Group>
         </Form>
-        <Link to="/sign-up"> Don't have an account?</Link>
+        <Link className="link" to="/sign-up">
+          {' '}
+          Don't have an account?
+        </Link>
       </Modal.Body>
     </Modal>
   );
