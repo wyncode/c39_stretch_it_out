@@ -1,14 +1,23 @@
+
 # Stretch It Out
+
 
 Hello, Welcome to Stretch It Out!
 
 # What is this App?
+
 
 Stretch-It-Out.heroku.com is an app focused on providing a new, intuitive, meaningful, and accessible way for anyone to implement healthy life choices. Users can create customized stretching routines that cater to their needs and comfort level.
 
 # Status
 
 This project has a status of complete, but there is room for expansion.
+
+# Features:
+
+- Users can track their daily stretches completed and how many days they've achieved their stretching goal.
+- Users can personalize their accounts and filter stretches that are suited to their needs. Any account preferences can be changed at anytime to adapt to changing fitness levels.
+- Users can add to a list of their favorite stretches so they can easily return to the ones they like.
 
 # Demo
 
@@ -26,17 +35,28 @@ This project has a status of complete, but there is room for expansion.
 
 This project was developed for the busy individual who feels that they have little-to-no time to get in better shape. As developers, we know how working at a computer all day can cause many physical ailments, such as poor posture, limited mobility, and diminished overall health. We built this app because we know that our health, both physical and mental, is the key to our success.
 
+
+
 # Our Team
 
-Eric Anderson : https://github.com/ericshuanders
+- Eric Anderson : [Click to see my Github](https://github.com/ericshuanders)
 
-Laurel Galaty : https://github.com/ljgalaty
+- Laurel Galaty : [Click to see my Github](https://github.com/ljgalaty)
 
-Love James : https://github.com/Lovj-web
+- Love James : [Click to see my Github](https://github.com/Lovj-web)
 
-Marlon Angulo : https://github.com/junior033
+- Marlon Angulo : [Click to see my Github](https://github.com/junior033)
 
 # How
+
+## Building Blocks
+
+This project was built with the MERN stack:
+
+MongoDB as the database to store data
+Express for the servers
+React for the front-end
+Node.js as our JavaScript run-time
 
 ### Dependencies:
 
@@ -115,6 +135,19 @@ Marlon Angulo : https://github.com/junior033
 - Fetch Stretches by Body Area: /api/stretches/:bodyArea (GET)
 
 # Try it out Yourself!
+
+## installation
+
+- Clone the Repo
+- git clone
+
+- Run yarn to install the dependencies
+- yarn install
+- yarn && cd client && yarn
+
+- Start your server
+- yarn dev will start up both your server-side and client-side servers
+- yarn server && yarn client will run your server-side and client-side respectively
 
 ## Setup
 
