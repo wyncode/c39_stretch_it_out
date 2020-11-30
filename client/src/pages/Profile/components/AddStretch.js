@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { AppContext } from '../../../context/AppContext';
 import axios from 'axios';
 import swal from 'sweetalert';
 
 const AddStretch = () => {
-  const { currentUser, setCurrentUser } = useContext(AppContext);
+  const { setCurrentUser } = useContext(AppContext);
 
   const handleClick = async () => {
     const { data } = await axios.put('/api/users/increment', {

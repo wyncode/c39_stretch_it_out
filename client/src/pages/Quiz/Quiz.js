@@ -33,7 +33,6 @@ const Quiz = ({ show, hide, setShow }) => {
 
     if (nextForm) {
       setActiveSchema(schema[nextForm]);
-      //This is setting the state of activeSchema to one of the schema objects in Schema.js
       return;
     }
     return;
@@ -45,7 +44,6 @@ const Quiz = ({ show, hide, setShow }) => {
     e.preventDefault();
     setLoading(true);
 
-    console.log('this is working');
     if (
       formData.password.toLowerCase().includes('password') ||
       formData.password.length < 6
@@ -67,7 +65,6 @@ const Quiz = ({ show, hide, setShow }) => {
 
     try {
       const response = await axios.post('/api', formData);
-      console.log(formData);
       sessionStorage.setItem('user', response.data);
       setCurrentUser(response.data.user);
 
@@ -101,7 +98,6 @@ const Quiz = ({ show, hide, setShow }) => {
           <ActiveForm
             formData={formData}
             handleChange={handleChange}
-            // handleCheckBox={handleCheckBox}
             checked={checked}
             setChecked={setChecked}
           />

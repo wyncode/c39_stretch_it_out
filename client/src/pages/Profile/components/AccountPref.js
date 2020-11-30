@@ -12,7 +12,6 @@ const AccountPref = ({ show, hide, setCurrentUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('updating');
       const { data } = await axios.put('/api/users/update', {
         firstName: formData.firstName,
         lastName: formData.lastName,
@@ -20,9 +19,6 @@ const AccountPref = ({ show, hide, setCurrentUser }) => {
         password: formData.password
       });
       setCurrentUser(data);
-
-      console.log('done updating');
-
       swal('Your account details have been updated!');
     } catch (error) {
       swal('Unable to update');

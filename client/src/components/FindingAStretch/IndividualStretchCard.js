@@ -17,7 +17,7 @@ const IndividualStretchCard = ({ id, stretchName, illustration }) => {
       <Card className="stretch-modal-cards">
         <Card.Img src={illustration} />
         <Button onClick={() => handleClick(id)} variant="outline-dark">
-          {stretchName}{' '}
+          {stretchName}
         </Button>
       </Card>
     </div>

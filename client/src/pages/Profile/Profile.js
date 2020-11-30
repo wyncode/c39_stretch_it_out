@@ -16,15 +16,11 @@ import Cog from './images/cog.png';
 import UserCog from './images/user-cog.png';
 import Camera from './images/camera.png';
 import Trash from './images/trash.png';
-import VideoCarousel from '../../components/VideoCarousel';
 import GetStartedFooter from '../../components/GetStartedFooter';
 import ContactFooter from '../../components/ContactFooter';
 
 const Profile = ({ history: { push } }) => {
-  const { currentUser, setCurrentUser, setLoading, count } = useContext(
-    AppContext
-  );
-  const [savedStretch, setSavedStretch] = useState();
+  const { currentUser, setCurrentUser, setLoading } = useContext(AppContext);
   const [preview, setPreview] = useState(null);
   const [show, setShow] = useState(false);
   const [showTwo, setShowTwo] = useState(false);
@@ -94,14 +90,12 @@ const Profile = ({ history: { push } }) => {
       <div className="profile-banner">
         <div className="user-pic-div">
           <Image
-            // src={currentUser?.avatar ? currentUser.avatar : Amy}
             src={preview || currentUser?.avatar || AnonPic}
             alt="profile-picture"
             width={250}
             height={250}
             roundedCircle
           />
-          {/* Image must stay on this page */}
         </div>
         <div className="user-greeting-div">
           <h1 className="user-greeting-text">
@@ -135,7 +129,6 @@ const Profile = ({ history: { push } }) => {
               Delete Account
             </Button>
           </div>
-          {/* <AddStretch /> */}
           <Link className="find-a-stretch" to="/body-area">
             Find a Stretch!
           </Link>
@@ -189,7 +182,7 @@ const Profile = ({ history: { push } }) => {
               {currentUser &&
                 currentUser?.stretches?.map((stretch) => {
                   return (
-                    <Link as={Link} to="/body-area/">
+                    <Link as={Link} to={`/stretch/${stretch._id}`}>
                       {stretch.stretchName}
                     </Link>
                   );

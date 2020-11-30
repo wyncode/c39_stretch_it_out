@@ -18,9 +18,6 @@ const stretchSchema = new mongoose.Schema(
     stretchType: {
       type: String
     },
-    timeOfDay: {
-      type: Date
-    },
     targetArea: {
       type: String
     },
@@ -34,10 +31,7 @@ const stretchSchema = new mongoose.Schema(
       {
         type: String
       }
-    ],
-    premium: {
-      type: Boolean
-    }
+    ]
   },
   {
     timestamps: true

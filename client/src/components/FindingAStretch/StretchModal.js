@@ -43,7 +43,7 @@ const StretchModal = (props) => {
             </Dropdown.Menu>
           </Dropdown>
           <Dropdown as={ButtonGroup} className="dropdown-button">
-            <Dropdown.Toggle>Intensity</Dropdown.Toggle>
+            <Dropdown.Toggle variant="outline-dark">Intensity</Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-menu" align="right">
               {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
                 <Dropdown.Item

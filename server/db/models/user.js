@@ -20,8 +20,7 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
-      unique: false,
-      //leaving false for testing purposes
+      unique: true,
       trim: true
     },
     password: {
@@ -71,14 +70,6 @@ const userSchema = new mongoose.Schema(
         type: Number
       }
     },
-    monthlyStretches: {
-      completed: {
-        type: Number
-      },
-      goal: {
-        type: Number
-      }
-    },
     tokens: [
       {
         token: {
@@ -120,7 +111,6 @@ userSchema.methods.generateAuthToken = async function () {
     process.env.JWT_SECRET,
     { expiresIn: '24h' }
   );
-  // user.tokens = user.tokens.push({ token });
   user.tokens = user.tokens.concat({ token });
   await user.save();
   return token;
