@@ -17,7 +17,7 @@ const Navigation = () => {
 
   return (
     <div>
-      <Nav className="row justify-content-between">
+      <Nav className="row justify-content-around nav">
         <div className="nav-logo">
           <Link to="/">
             <Image src={Logo} />
@@ -25,11 +25,15 @@ const Navigation = () => {
         </div>
 
         <div className="stretches-benefits-nav">
-          <Nav.Item className="nav-items">
-            <Nav.Link href="/body-area">Stretches</Nav.Link>
+          <Nav.Item>
+            <Nav.Link href="/body-area" className="nav-link">
+              Stretches
+            </Nav.Link>
           </Nav.Item>
-          <Nav.Item className="nav-items">
-            <Nav.Link href="/benefits">Benefits</Nav.Link>
+          <Nav.Item>
+            <Nav.Link href="/benefits" className="nav-link">
+              Benefits
+            </Nav.Link>
           </Nav.Item>
         </div>
 

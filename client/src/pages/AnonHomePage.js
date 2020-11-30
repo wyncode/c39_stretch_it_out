@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navigation from '../components/Navigation/Navigation';
 import WhiteSpace from '../components/WhiteSpace';
 import CardGroup1 from '../components/PainCards';
@@ -12,10 +12,6 @@ import BlogSpace from '../components/BlogSpace';
 import './AnonHomePage.css';
 
 const AnonHomePage = () => {
-  // const [show, setShow] = useState(false);
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
-
   return (
     <div className="d-flex flex-column align-items-center">
       <Navigation />

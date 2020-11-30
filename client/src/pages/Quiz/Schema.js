@@ -1,5 +1,4 @@
 import Level from './quizpages/Level';
-import Welcome from './Welcome';
 import Description from './quizpages/Description';
 import Dedication from './quizpages/Dedication';
 import Info from './quizpages/Info';
@@ -16,11 +15,6 @@ export const emptyFormData = {
 };
 
 export const schema = {
-  // welcome: {
-  //   previous: null,
-  //   form: Welcome,
-  //   next: 'description'
-  // },
   description: {
     previous: null,
     form: Description,

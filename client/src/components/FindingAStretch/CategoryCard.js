@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { Card, Button, CardColumns } from 'react-bootstrap';
+import { Card, Button, CardDeck } from 'react-bootstrap';
 import { AppContext } from '../../context/AppContext';
 import StretchModal from '../FindingAStretch/StretchModal';
 import axios from 'axios';
@@ -50,7 +50,7 @@ const CategoryCard = () => {
     <div>
       <h2 className="body-area">Upper Body Stretches</h2>
 
-      <CardColumns>
+      <CardDeck>
         <Card className="category-card ">
           <Card.Img src={Neck} />
           <Button
@@ -86,7 +86,9 @@ const CategoryCard = () => {
             Upper Back
           </Button>
         </Card>
+      </CardDeck>
 
+      <CardDeck>
         <Card className="category-card">
           <Card.Img src={Wrist} />
           <Button
@@ -122,11 +124,11 @@ const CategoryCard = () => {
             Chest
           </Button>
         </Card>
-      </CardColumns>
+      </CardDeck>
 
       <h2 className="body-area">Lower Body Stretches</h2>
 
-      <CardColumns>
+      <CardDeck>
         <Card className="category-card">
           <Card.Img src={Glutes} />
           <Button
@@ -162,7 +164,9 @@ const CategoryCard = () => {
             Hamstrings
           </Button>
         </Card>
+      </CardDeck>
 
+      <CardDeck className="card-deck">
         <Card className="category-card">
           <Card.Img src={Knee} />
           <Button
@@ -198,7 +202,8 @@ const CategoryCard = () => {
             Calves
           </Button>
         </Card>
-      </CardColumns>
+      </CardDeck>
+
       <StretchModal
         stretch={stretchNames && stretchNames}
         target={targetArea}

@@ -8,7 +8,6 @@ import YogaWoman from '../images/woman-yoga-pose-1.png';
 import AthelticMale from '../images/atheltic-male-1.png';
 import ContactFooter from '../components/ContactFooter';
 import GetStartedFooter from '../components/GetStartedFooter';
-import { Container } from 'react-bootstrap';
 import Navigation from '../components/Navigation/Navigation';
 
 const Benefits = () => {

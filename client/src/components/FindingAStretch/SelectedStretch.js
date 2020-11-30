@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { Container, Button, ResponsiveEmbed, Image } from 'react-bootstrap';
+import { Container, Button, Image } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import axios from 'axios';
@@ -86,10 +86,6 @@ const SelectedStretch = () => {
             Add to my programs
           </Button>
         </Container>
-      </Container>
-
-      <Container>
-        <h3>Suggested Stretches</h3>
       </Container>
 
       <Link className="share-your-feedback">

@@ -3,9 +3,7 @@
 * {
   font-family: 'Nunito', sans-serif;
 }
-/* // ***********************************************/
-/* Stretch Category Page 
-/* // ***********************************************/
+/* ***** Stretch Category Page ******************************************/
 
 .body-area {
   font-family: 'Nunito', sans-serif;
@@ -20,21 +18,14 @@
   filter: drop-shadow(3px 6px 5px #c0bfbf);
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin: 50px 15px;
 }
 
-.category-card-button {
-  display: flex;
+.card-deck {
+  margin-bottom: 15px;
 }
-
-.card-category-body {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-}
-/* // ***********************************************/
-/* Selected Stretch Page 
-/* // ***********************************************/
+/* ***** Selected Stretch Page ******************************************/
 
 .selected-stretch-div {
   display: flex;
@@ -42,6 +33,7 @@
   align-items: center;
   margin: 10px 100px;
 }
+
 .selected-stretch-container {
   margin: 30px 100px;
   display: flex;
@@ -101,9 +93,7 @@
   text-align: center;
 }
 
-/* // ***********************************************/
-/* Stretch Modal
-/* // ***********************************************/
+/* ***** Stretch Modal ******************************************/
 
 .stretch-modal {
   display: flex;
@@ -135,9 +125,7 @@
   border-radius: 10px;
 }
 
-/* // ***********************************************/
-/* Stretch Modal Cards 
-/* // ***********************************************/
+/* ***** Stretch Modal Cards ******************************************/
 
 .stretch-modal-cards {
   display: flex;

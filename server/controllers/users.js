@@ -41,6 +41,7 @@ exports.createUser = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
 //LOGIN USER
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
@@ -59,6 +60,7 @@ exports.loginUser = async (req, res) => {
 };
 
 ///////////////////FOR SECURE ROUTES//////////////////////////
+
 //LOGOUT USER
 
 exports.getCurrentUser = async (req, res) => {
@@ -109,18 +111,18 @@ exports.updateUser = async (req, res) => {
 
   try {
     updates.forEach((update) => (req.user[update] = req.body[update]));
-    // console.log('about to update');
     console.log(req.user);
     console.log(req.body);
     await req.user.save();
-    // console.log('about to respond');
 
     res.json(req.user);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
+
 //UPLOAD AVATAR//////
+
 exports.uploadAvatar = async (req, res) => {
   try {
     const response = await cloudinary.uploader.upload(
@@ -147,9 +149,6 @@ exports.deleteUser = async (req, res) => {
 };
 
 ///ADD DAILY STRETCH TO USER////
-
-////if it is today, stop incrementing the weekly stretches
-//when it is tomorrow, increment weekly stretches
 
 exports.incrementDailyStretch = async (req, res) => {
   const maxStretchesMap = {

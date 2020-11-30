@@ -1,6 +1,5 @@
 const passport = require('passport'),
   JwtStrategy = require('passport-jwt').Strategy,
-  //this is what passport is using to authenticate
   User = require('../../db/models/user'),
   ExtractJwt = require('passport-jwt').ExtractJwt;
 

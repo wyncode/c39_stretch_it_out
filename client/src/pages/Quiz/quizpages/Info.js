@@ -2,8 +2,6 @@ import React from 'react';
 import Progress3 from '../images/Progress-3.png';
 import Image from 'react-bootstrap/Image';
 
-import swal from 'sweetalert';
-
 const Info = ({ handleChange, formData, setChecked, checked }) => {
   return (
     <div className="modal-div">
@@ -63,7 +61,6 @@ const Info = ({ handleChange, formData, setChecked, checked }) => {
             type="checkbox"
             id="agreeToTerms"
             name="agreeToTerms"
-            // onChange={handleChange('agreeToTerms')}
             onChange={() => setChecked(!checked)}
             checked={checked}
           />
