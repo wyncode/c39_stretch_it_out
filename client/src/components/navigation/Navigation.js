@@ -5,7 +5,7 @@ import { AppContext } from '../../context/AppContext';
 import { Logo, StartTrial } from '../../images/index';
 import AnonPic from '../../pages/profile/images/AnonPic.png';
 import Logout from '../Logout';
-import LoginModal from '../LoginModal';
+import { LoginModal } from '../login';
 
 import './Navigation.css';
 

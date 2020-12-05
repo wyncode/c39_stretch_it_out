@@ -3,7 +3,7 @@ import { Navigation } from '../../components/navigation';
 import WhiteSpace from './components/WhiteSpace';
 import CardGroup1 from './components/PainCards';
 import WhiteSpace2 from './components/WhiteSpace2';
-import VideoCarousel from '../../components/VideoCarousel';
+import { VideoCarousel } from '../../components/video-carousel';
 import GetStartedFooter from './components/GetStartedFooter';
 import JumbotronHeader from './components/JumbotronHeader';
 import ContactFooter from './components/ContactFooter';
