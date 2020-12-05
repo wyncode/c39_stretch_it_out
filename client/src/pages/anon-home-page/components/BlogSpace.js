@@ -1,7 +1,7 @@
 import React from 'react';
-import BlogCard1 from '../images/homepage-blog-Card-1.png';
-import BlogCard2 from '../images/homepage-blog-card-2.png';
-import BlogCard3 from '../images/homepage-blog-card-3.png';
+import BlogCard1 from '../../../images/homepage-blog-Card-1.png';
+import BlogCard2 from '../../../images/homepage-blog-card-2.png';
+import BlogCard3 from '../../../images/homepage-blog-card-3.png';
 
 const BlogSpace = () => {
   return (

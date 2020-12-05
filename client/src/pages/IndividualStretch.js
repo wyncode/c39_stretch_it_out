@@ -1,8 +1,8 @@
 import React from 'react';
-import SelectedStretch from '../components/FindingAStretch/SelectedStretch';
-import Navigation from '../components/Navigation/Navigation';
-import ContactFooter from '../components/ContactFooter';
-import GetStarted from '../components/GetStartedFooter';
+import SelectedStretch from '../components/finding-a-stretch/SelectedStretch';
+import Navigation from '../components/navigation/Navigation';
+import ContactFooter from './anon-home-page/components/ContactFooter';
+import GetStarted from './anon-home-page/components/GetStartedFooter';
 
 const IndividualStretch = () => {
   return (

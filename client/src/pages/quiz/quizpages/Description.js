@@ -9,12 +9,12 @@ const Description = ({ handleChange, formData }) => {
       <h4>Which person best describes who you are?</h4>
       <p>Select one answer</p>
       <div className="form-group">
-        <div className="radio-button">
+        <div className="radio-button" onClick={handleChange('personType')}>
           <input
             type="radio"
             id="personType1"
             name="personType"
-            onChange={handleChange('personType')}
+            // onChange={handleChange('personType')}
             checked={formData.personType === 'Active'}
             value="Active"
           />

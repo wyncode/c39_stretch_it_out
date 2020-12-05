@@ -1,7 +1,6 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import appleIcon from '../images/Dowload on App Store 1.png';
-import googleIcon from '../images/google-play-badge 1.png';
+import appleIcon from '../../../images/Dowload on App Store 1.png';
+import googleIcon from '../../../images/google-play-badge 1.png';
 
 const GetStartedFooter = () => {
   return (

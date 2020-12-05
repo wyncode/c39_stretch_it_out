@@ -1,9 +1,9 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
-import FacebookIcon from '../images/facebook-icon.png';
-import InstgramIcon from '../images/instgram-icon.png';
-import TwitterIcon from '../images/twitter-icon.png';
-import YoutubeIcon from '../images/youtube-icon.png';
+import FacebookIcon from '../../../images/facebook-icon.png';
+import InstgramIcon from '../../../images/instgram-icon.png';
+import TwitterIcon from '../../../images/twitter-icon.png';
+import YoutubeIcon from '../../../images/youtube-icon.png';
 
 const ContactFooter = () => {
   return (

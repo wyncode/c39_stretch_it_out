@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import Navigation from '../components/Navigation/Navigation';
-import CategoryCard from '../components/FindingAStretch/CategoryCard';
-import { StretchBanner } from '../StretchImages/index';
-import ContactFooter from '../components/ContactFooter';
-import GetStarted from '../components/GetStartedFooter';
+import Navigation from '../components/navigation/Navigation';
+import CategoryCard from '../components/finding-a-stretch/CategoryCard';
+import { StretchBanner } from '../stretchimages/index';
+import ContactFooter from './anon-home-page/components/ContactFooter';
+import GetStarted from './anon-home-page/components/GetStartedFooter';
 
 const StretchCategory = () => {
   return (

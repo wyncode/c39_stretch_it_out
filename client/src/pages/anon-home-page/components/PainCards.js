@@ -1,8 +1,7 @@
 import React from 'react';
-import { Button, Card, CardGroup, Container } from 'react-bootstrap';
-import NeckPain from '../images/neck-pain-card.png';
-import LowerBack from '../images/lower-back-card.png';
-import AllAround from '../images/all-around-pain-card.png';
+import NeckPain from '../../../images/neck-pain-card.png';
+import LowerBack from '../../../images/lower-back-card.png';
+import AllAround from '../../../images/all-around-pain-card.png';
 
 const CardGroup1 = () => {
   return (

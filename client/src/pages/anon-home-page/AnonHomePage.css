@@ -53,7 +53,7 @@
 
 .jumboHeader {
   display: flex;
-  background-image: url('../images/Hero-Image.png');
+  background-image: url('../../images/Hero-Image.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
