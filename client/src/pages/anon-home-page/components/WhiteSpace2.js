@@ -1,13 +1,10 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import Clock5 from '../images/clock-icon-5min.png';
-import Clock10 from '../images/clock-icon-10min.png';
-import Clock15 from '../images/clock-icon-15min.png';
-import AnimatedPeople from '../images/animated-people-talking.png';
-import Statistic1 from '../images/statistic1.png';
-import Statistic2 from '../images/statistic2.png';
-import VideosImg from '../images/homepage-videos.png';
-import VideoCarousel from './VideoCarousel';
+import Clock5 from '../../../images/clock-icon-5min.png';
+import Clock10 from '../../../images/clock-icon-10min.png';
+import Clock15 from '../../../images/clock-icon-15min.png';
+import AnimatedPeople from '../../../images/animated-people-talking.png';
+import Statistic1 from '../../../images/statistic1.png';
+import Statistic2 from '../../../images/statistic2.png';
 
 const WhiteSpace2 = () => {
   return (

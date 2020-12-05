@@ -9,15 +9,15 @@ import './Profile.css';
 import swal from 'sweetalert';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import AnonPic from './images/AnonPic.png';
-import Navigation from '../../components/Navigation/Navigation';
+import { Navigation } from '../../components/navigation';
 import AccountPref from './components/AccountPref';
 import UploadPic from './components/UploadPic';
 import Cog from './images/cog.png';
 import UserCog from './images/user-cog.png';
 import Camera from './images/camera.png';
 import Trash from './images/trash.png';
-import GetStartedFooter from '../../components/GetStartedFooter';
-import ContactFooter from '../../components/ContactFooter';
+import GetStartedFooter from '../anon-home-page/components/GetStartedFooter';
+import ContactFooter from '../anon-home-page/components/ContactFooter';
 
 const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading } = useContext(AppContext);

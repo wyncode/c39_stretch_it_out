@@ -1,5 +1,5 @@
 import React from 'react';
-import YogaGirl from '../images/ws2-picture.png';
+import YogaGirl from '../../../images/ws2-picture.png';
 
 const Whitespace = () => {
   return (

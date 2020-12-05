@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import DevicesImg from '../images/responsive-devices.png';
-import ReviewCards from '../images/customer-reviews.png';
+
+import DevicesImg from '../../../images/responsive-devices.png';
+import ReviewCards from '../../../images/customer-reviews.png';
 
 const WhiteSpace3 = () => {
   return (

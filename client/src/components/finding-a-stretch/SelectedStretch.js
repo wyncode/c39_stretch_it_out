@@ -5,7 +5,7 @@ import { AppContext } from '../../context/AppContext';
 import axios from 'axios';
 import './FindingAStretch.css';
 import Lightbulb from './Group.png';
-import AddStretch from '../../pages/Profile/components/AddStretch';
+import AddStretch from '../../pages/profile/components/AddStretch';
 import swal from 'sweetalert';
 
 const SelectedStretch = () => {

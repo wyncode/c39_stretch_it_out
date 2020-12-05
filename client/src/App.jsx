@@ -1,13 +1,13 @@
 import React from 'react';
 import { AppContextProvider } from './context/AppContext';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import AnonHomePage from './pages/AnonHomePage';
+import { AnonHomePage } from './pages/anon-home-page';
 import StretchCategory from './pages/StretchCategory';
 import IndividualStretch from './pages/IndividualStretch';
 import PrivateRoute from './components/PrivateRoute';
-import Profile from './pages/Profile/Profile';
-import Benefits from './pages/Benefits';
-import Welcome from './pages/Quiz/Welcome';
+import { Profile } from './pages/profile';
+import { Benefits } from './pages/benefits';
+import { Welcome } from './pages/quiz';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 

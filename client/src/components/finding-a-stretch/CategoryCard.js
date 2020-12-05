@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { Card, Button, CardDeck } from 'react-bootstrap';
 import { AppContext } from '../../context/AppContext';
-import StretchModal from '../FindingAStretch/StretchModal';
+import StretchModal from './StretchModal';
 import axios from 'axios';
 import {
   Neck,
@@ -16,7 +16,7 @@ import {
   Knee,
   Groin,
   Calves
-} from '../../StretchImages/index.js';
+} from '../../stretchimages/index.js';
 
 const CategoryCard = () => {
   const {

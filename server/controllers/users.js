@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const cloudinary = require('cloudinary').v2;
 
 const isEmpty = (value) => {
-  return value === undefined || value === null || value === '';
+  return !value;
 };
 
 //Create a new user//

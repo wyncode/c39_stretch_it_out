@@ -1,14 +1,14 @@
 import React from 'react';
 import './Benefits.css';
-import BenefitsHeaderImg from '../images/benefits-page-header.png';
-import YogaCouple from '../images/couple-trasparent-1.png';
-import GirlStretching from '../images/girl-transparent-background-1.png';
-import SeniorLady from '../images/senior-lady-hamstring.png';
-import YogaWoman from '../images/woman-yoga-pose-1.png';
-import AthelticMale from '../images/atheltic-male-1.png';
-import ContactFooter from '../components/ContactFooter';
-import GetStartedFooter from '../components/GetStartedFooter';
-import Navigation from '../components/Navigation/Navigation';
+import BenefitsHeaderImg from '../../images/benefits-page-header.png';
+import YogaCouple from '../../images/couple-trasparent-1.png';
+import GirlStretching from '../../images/girl-transparent-background-1.png';
+import SeniorLady from '../../images/senior-lady-hamstring.png';
+import YogaWoman from '../../images/woman-yoga-pose-1.png';
+import AthelticMale from '../../images/atheltic-male-1.png';
+import ContactFooter from '../anon-home-page/components/ContactFooter';
+import GetStartedFooter from '../anon-home-page/components/GetStartedFooter';
+import { Navigation } from '../../components/navigation';
 
 const Benefits = () => {
   return (
