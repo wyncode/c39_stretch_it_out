@@ -18,6 +18,7 @@ import Camera from './images/camera.png';
 import Trash from './images/trash.png';
 import GetStartedFooter from '../anon-home-page/components/GetStartedFooter';
 import ContactFooter from '../anon-home-page/components/ContactFooter';
+import BmiCalc from './components/BmiCalc';
 
 const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading } = useContext(AppContext);
@@ -132,6 +133,7 @@ const Profile = ({ history: { push } }) => {
           <Link className="find-a-stretch" to="/body-area">
             Find a Stretch!
           </Link>
+          <BmiCalc />
           <ProfilePref
             setCurrentUser={setCurrentUser}
             show={show}

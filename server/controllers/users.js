@@ -169,3 +169,43 @@ exports.incrementDailyStretch = async (req, res) => {
   await req.user.save();
   res.json(req.user);
 };
+
+/// GET USER BMI ///
+
+exports.getUserBmi = (req, res) => {
+  const { weight } = req.body;
+  const { height } = req.body;
+  const { data } = fetch(
+    `https://body-mass-index-bmi-calculator.p.rapidapi.com/imperial?weight=${weight}&height=${height}`,
+    {
+      method: GET,
+      headers: {
+        'x-rapidapi-host': 'body-mass-index-bmi-calculator.p.rapidapi.com',
+        'x-rapidapi-key': process.env.X_RAPIDAPI_KEY
+      }
+    }
+  )
+    .then((res) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+//     return axios.get((`https://body-mass-index-bmi-calculator.p.rapidapi.com/imperial?weight=${weight}&height=${height}`, {
+//       headers: { `x-rapidapi-key`: `${X_RAPIDAPI_KEY}` } }))
+//   }
+
+//   try {
+//     const {data} = await getBmiApi()
+//     res.json(data)
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// }
+
+// "headers": {
+//   "x-rapidapi-host": "body-mass-index-bmi-calculator.p.rapidapi.com",
+//   "x-rapidapi-key": "69d5f865f9msh5a5fdb59b8dfd15p1a2849jsnb1aa3415d61c"
+// }
