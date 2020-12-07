@@ -8,9 +8,9 @@ const CardGroup1 = () => {
     <div className="painContainer">
       <h2>Target Your Pain Areas</h2>
       <div className="painCards">
-        <img src={NeckPain} alt="Woman with neck pain" />
+        {/* <img src={NeckPain} alt="Woman with neck pain" />
         <img src={LowerBack} alt="Man with back pain" />
-        <img src={AllAround} alt="Woman with pain all around" />
+        <img src={AllAround} alt="Woman with pain all around" /> */}
       </div>
     </div>
   );

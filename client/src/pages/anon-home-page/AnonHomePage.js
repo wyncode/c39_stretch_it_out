@@ -1,5 +1,7 @@
 import React from 'react';
 import { Navigation } from '../../components/navigation';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import WhiteSpace from './components/WhiteSpace';
 import CardGroup1 from './components/PainCards';
 import WhiteSpace2 from './components/WhiteSpace2';
@@ -15,15 +17,16 @@ const AnonHomePage = () => {
   return (
     <div className="d-flex flex-column align-items-center">
       <Navigation />
+
       <JumbotronHeader />
       <WhiteSpace />
       <CardGroup1 />
-      <WhiteSpace2 />
+      {/* <WhiteSpace2 />
       <VideoCarousel />
       <BlogSpace />
       <WhiteSpace3 />
       <GetStartedFooter />
-      <ContactFooter />
+      <ContactFooter />  */}
     </div>
   );
 };

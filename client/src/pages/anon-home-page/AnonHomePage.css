@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   height: 55vh;
-  margin-top: 9rem;
+  margin-top: 7rem;
+  margin-bottom: 5%;
 }
 
 .wsWrapper {
@@ -13,7 +14,7 @@
 
 .wsContainer h2 {
   font-weight: 700;
-  font-size: 50px;
+  font-size: 35px;
   line-height: 54px;
   margin-left: 2rem;
   font-family: 'Nunito Sans', sans-serif;
@@ -36,10 +37,10 @@
 }
 
 .wsList li {
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 400;
-  line-height: 30px;
-  height: 45px;
+  line-height: 20px;
+  height: 20px;
 }
 
 .wsList li::before {
@@ -50,7 +51,9 @@
   width: 1em;
   margin-left: -1em;
 }
-
+.yoga-girl {
+  width: 35%;
+}
 .jumboHeader {
   display: flex;
   background-image: url('../../images/Hero-Image.png');
@@ -65,26 +68,19 @@
   display: flex;
   justify-content: left;
   font-weight: 800;
-  font-size: 70px;
+  font-size: 50px;
   font-family: 'Nunito Sans', sans-serif;
+  word-wrap: break-word;
 }
 
 .headerWrapper {
-  padding-top: 190px;
-  padding-left: 150px;
-  width: 800px;
-}
+  padding-top: 10%;
+  padding-left: 5%;
 
-.headerBtnText {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  font-weight: 400;
-  font-size: 45px;
-  line-height: 30px;
-  margin-top: 30px;
-  font-family: 'Lato', sans-serif;
+  /* padding-top: 190px;
+  padding-left: 150px; */
+  height: 38%;
+  width: 38%;
 }
 
 .headerBtnText p {
@@ -92,6 +88,10 @@
   flex-direction: column;
   justify-content: left;
   text-align: left;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 30px;
+  margin-top: 30px;
   font-family: 'Lato', sans-serif;
   line-height: 3rem;
 }
@@ -100,11 +100,18 @@
   margin-top: 30px;
   padding: 20px;
   width: 270px;
-  background-color: #347a8c;
+  background-color: #347a8c !important;
+  border-color: #347a8c !important;
   font-size: 30px;
 }
 
+.headerBtnText button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
 .painContainer {
+  margin-top: 5%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -112,7 +119,7 @@
   border-radius: 250px 0px 0px 0px;
   background-color: #e0eaed;
   width: 100%;
-  height: 825px;
+  height: 30%;
   padding-bottom: 4rem;
 }
 
@@ -121,7 +128,7 @@
   margin-bottom: 70px;
   text-align: center;
   font-weight: 800;
-  font-size: 50px;
+  font-size: 35px;
   font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -399,4 +406,28 @@
   font-size: 33px;
   line-height: 36px;
   font-weight: 400;
+}
+
+@media only screen and (max-width: 1100px) {
+  .headerText h1 {
+    font-size: 30px;
+  }
+  .headerBtnText p {
+    font-size: 20px;
+  }
+
+  .headerBtnText button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 170px;
+    background-color: #347a8c !important;
+    border-color: #347a8c !important;
+    font-size: 20px;
+  }
+  .wsContainer h2 {
+    font-size: 25px;
+  }
+  .wsList li {
+    font-size: 15px;
+  }
 }
