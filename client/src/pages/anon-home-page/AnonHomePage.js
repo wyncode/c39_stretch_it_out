@@ -26,8 +26,8 @@ const AnonHomePage = () => {
       <VideoCarousel />
       {/* <BlogSpace /> */}
       <WhiteSpace3 />
-      {/* <GetStartedFooter />
-      <ContactFooter />  */}
+      <GetStartedFooter />
+      {/* <ContactFooter />  */}
     </div>
   );
 };

@@ -219,7 +219,15 @@
 .statsText img {
   margin: 4rem;
 }
-
+.carousel {
+  border-radius: 0px 150px 0px 0px;
+  background-color: #e0eaed;
+  height: 450px;
+}
+.carousel-header {
+  font-size: 30px;
+  padding-left: 50px;
+}
 #ws3Title {
   margin-top: 3rem;
   margin-bottom: 2rem;
@@ -305,13 +313,11 @@
 }
 
 .getStartedIcon {
-  width: 300px;
-  height: 100px;
+  width: 270px;
 }
 
 .getStartedIcon2 {
   width: 300px;
-  height: 126px;
 }
 
 .followUsContainer {
@@ -460,6 +466,19 @@
     flex-direction: column;
     align-items: center;
   }
+  #ws3DeviceImage img {
+    width: 80%;
+    height: 80%;
+  }
+  #ws3ReviewCards {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  #ws3ReviewCards .card {
+    width: 50%;
+  }
 }
 @media only screen and (max-width: 375px) {
   .headerBtnText p {
@@ -498,9 +517,7 @@
   .painContainer h2 {
     font-size: 20px;
   }
-  .pain-card {
-    /* width: 60%; */
-  }
+
   .ws2-text h2 {
     font-size: 35px;
   }
@@ -535,5 +552,21 @@
     font-size: 20px;
     width: 100%;
     margin-bottom: 30px;
+  }
+
+  #ws3Title h2 {
+    font-size: 20px;
+    padding-left: 30px;
+  }
+  #ws3ReviewTitle h2 {
+    font-size: 20px;
+    width: 60%;
+  }
+  #ws3DeviceImage img {
+    width: 40%;
+  }
+
+  #ws3ReviewCards .card {
+    width: 30%;
   }
 }
