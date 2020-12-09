@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigation } from '../../components/navigation';
-import { Button } from 'react-bootstrap';
+
+import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import WhiteSpace from './components/WhiteSpace';
 import CardGroup1 from './components/PainCards';
@@ -15,17 +16,17 @@ import './AnonHomePage.css';
 
 const AnonHomePage = () => {
   return (
-    <div className="d-flex flex-column align-items-center">
+    <div className="d-flex flex-column align-items-center vw-100">
       <Navigation />
 
       <JumbotronHeader />
       <WhiteSpace />
       <CardGroup1 />
-      {/* <WhiteSpace2 />
+      <WhiteSpace2 />
       <VideoCarousel />
-      <BlogSpace />
+      {/* <BlogSpace /> */}
       <WhiteSpace3 />
-      <GetStartedFooter />
+      {/* <GetStartedFooter />
       <ContactFooter />  */}
     </div>
   );

@@ -18,79 +18,81 @@ const VideoCarousel = () => {
       <h3 className="carousel-header">
         Browse Our Instructional Stretching Videos
       </h3>
-      <ItemsCarousel
-        requestToChangeActive={setActiveItemIndex}
-        activeItemIndex={activeItemIndex}
-        numberOfCards={3}
-        gutter={20}
-        leftChevron={<Button variant="light">{'<'}</Button>}
-        rightChevron={<Button variant="light">{'>'}</Button>}
-        outsideChevron
-        chevronWidth={chevronWidth}
-      >
-        <div
-          style={{
-            height: 280,
-            width: 420,
-            background: '#EEE'
-          }}
+      <div className="carousel">
+        <ItemsCarousel
+          requestToChangeActive={setActiveItemIndex}
+          activeItemIndex={activeItemIndex}
+          numberOfCards={2}
+          gutter={10}
+          leftChevron={<Button variant="light">{'<'}</Button>}
+          rightChevron={<Button variant="light">{'>'}</Button>}
+          outsideChevron
+          chevronWidth={chevronWidth}
         >
-          <iframe
-            width="420"
-            height="280"
-            src="https://www.youtube.com/embed/g_tea8ZNk5A"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div style={{ height: 280, width: 420, background: '#EEE' }}>
-          {' '}
-          <iframe
-            width="420"
-            height="280"
-            src="https://www.youtube.com/embed/e5SE0HCPOlA"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div style={{ height: 280, width: 420, background: '#EEE' }}>
-          {' '}
-          <iframe
-            width="420"
-            height="280"
-            src="https://www.youtube.com/embed/pH6KMX0V7d0"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
+          <div
+            style={{
+              height: 280,
+              width: 420,
+              background: '#EEE'
+            }}
+          >
+            <iframe
+              width="420"
+              height="280"
+              src="https://www.youtube.com/embed/g_tea8ZNk5A"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div style={{ height: 280, width: 420, background: '#EEE' }}>
+            {' '}
+            <iframe
+              width="420"
+              height="280"
+              src="https://www.youtube.com/embed/e5SE0HCPOlA"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div style={{ height: 280, width: 420, background: '#EEE' }}>
+            {' '}
+            <iframe
+              width="420"
+              height="280"
+              src="https://www.youtube.com/embed/pH6KMX0V7d0"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
 
-        <div style={{ height: 280, width: 420, background: '#EEE' }}>
-          {' '}
-          <iframe
-            width="420"
-            height="280"
-            src="https://www.youtube.com/embed/NHO0ARPVifs"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
+          <div style={{ height: 280, width: 420, background: '#EEE' }}>
+            {' '}
+            <iframe
+              width="420"
+              height="280"
+              src="https://www.youtube.com/embed/NHO0ARPVifs"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
 
-        <div style={{ height: 280, width: 420, background: '#EEE' }}>
-          {' '}
-          <iframe
-            width="420"
-            height="280"
-            src="https://www.youtube.com/embed/vuGnzLxRvZM"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </ItemsCarousel>
+          <div style={{ height: 280, width: 420, background: '#EEE' }}>
+            {' '}
+            <iframe
+              width="420"
+              height="280"
+              src="https://www.youtube.com/embed/vuGnzLxRvZM"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </ItemsCarousel>
+      </div>
     </div>
   );
 };
