@@ -1,30 +1,29 @@
 import React from 'react';
-import Clock5 from '../../../images/clock-icon-5min.png';
-import Clock10 from '../../../images/clock-icon-10min.png';
-import Clock15 from '../../../images/clock-icon-15min.png';
+import { Container } from 'react-bootstrap';
+import Clock5 from '../../../images/five-minutes.png';
+import Clock10 from '../../../images/ten-minutes.png';
+import Clock15 from '../../../images/fifteen-minutes.png';
 import AnimatedPeople from '../../../images/animated-people-talking.png';
 import Statistic1 from '../../../images/statistic1.png';
 import Statistic2 from '../../../images/statistic2.png';
+import { clocks } from '../Constants';
 
 const WhiteSpace2 = () => {
   return (
     <>
-      <div>
+      <div className="ws2-wrapper">
         <div className="ws2-text">
           <h2>Pressed For Time?</h2>
           <h4>Quick Stretch-From-Your-Desk Programs</h4>
         </div>
       </div>
       <div className="clocks">
-        <div className="5clock">
-          <img src={Clock5} alt="clock displaying 5minutes" />
-        </div>
-        <div className="10clock">
-          <img src={Clock10} alt="clock displaying 10miunutes" />
-        </div>
-        <div className="15clock">
-          <img src={Clock15} alt="clock displaying 15minutes" />
-        </div>
+        {clocks.map((clock) => (
+          <div className="individual-clock">
+            <img src={clock.image} alt={clock.alt} />
+            <h3>{clock.desc}</h3>
+          </div>
+        ))}
       </div>
       <div>
         <div className="statsContainer">
@@ -32,8 +31,11 @@ const WhiteSpace2 = () => {
             <img src={AnimatedPeople} alt-="people talking" />
           </div>
           <div className="statsText">
-            <img src={Statistic1} alt="" />
-            <img src={Statistic2} alt="" />
+            <h3>97% of people surveyed think that stretching is important</h3>
+            <h3>
+              77% of people surveyed say that their busy schedule is preventing
+              them from stretching
+            </h3>
           </div>
         </div>
       </div>

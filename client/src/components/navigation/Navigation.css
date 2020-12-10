@@ -4,16 +4,23 @@
   display: flex;
   align-items: baseline;
 }
-
+.brand {
+  padding-top: 0 !important;
+}
 .nav-logo {
   display: flex;
   align-items: center;
   padding-left: 20px;
 }
-
+#basic-navbar-nav {
+  display: flex;
+  justify-content: space-evenly;
+}
 .stretches-benefits-nav {
   display: flex;
-  align-items: center;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 50vw;
 }
 
 .nav-link {
@@ -24,4 +31,14 @@
 .profile-trial-nav {
   display: flex;
   align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  #basic-navbar-nav {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .nav-link {
+    font-size: 20px;
+  }
 }

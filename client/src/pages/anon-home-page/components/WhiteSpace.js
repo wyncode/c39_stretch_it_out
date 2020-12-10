@@ -17,7 +17,11 @@ const Whitespace = () => {
               <li>Track progress</li>
             </ul>
           </div>
-          <img src={YogaGirl} alt="woman doing yoga stretch" />
+          <img
+            className="yoga-girl"
+            src={YogaGirl}
+            alt="woman doing yoga stretch"
+          />
         </div>
       </div>
     </>
