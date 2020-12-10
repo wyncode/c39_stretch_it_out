@@ -27,7 +27,7 @@ const AnonHomePage = () => {
       {/* <BlogSpace /> */}
       <WhiteSpace3 />
       <GetStartedFooter />
-      {/* <ContactFooter />  */}
+      <ContactFooter />
     </div>
   );
 };

@@ -330,17 +330,21 @@
 .followUsWrapper {
   display: flex;
   flex-direction: row;
-  padding: 70px;
-  justify-content: space-between;
+  padding: 30px;
+  justify-content: space-around;
   font-family: 'Nunito Sans', sans-serif;
+  width: 100vw;
+  background-color: red;
 }
 
 .signUp {
-  margin-left: 6.5rem;
+  margin-left: 60px;
+  background-color: green;
+  width: ;
 }
 
 .followUsIcons {
-  margin-right: 300px;
+  background-color: purple;
 }
 
 .followUsText {
@@ -363,7 +367,7 @@
 }
 
 .formText {
-  margin: 0;
+  margin: 0 0 15px 0;
   font-weight: 800;
   color: #606060;
   font-family: 'Nunito Sans', sans-serif;
@@ -381,7 +385,7 @@
 }
 
 .signUp Form Button {
-  margin-top: 31px;
+  margin-top: 45px;
   margin-left: 10px;
   height: 36px;
 }
@@ -389,6 +393,8 @@
 .contactItem {
   margin-left: 50px;
   font-weight: 700;
+}
+.contactItem .link {
   color: #606060;
 }
 
@@ -460,6 +466,8 @@
   .wsList li {
     font-size: 25px;
   }
+  .formText {
+  }
 }
 @media only screen and (max-width: 768px) {
   .statsContainer {
@@ -479,8 +487,19 @@
   #ws3ReviewCards .card {
     width: 50%;
   }
+  .signUp {
+    margin-left: 0;
+  }
+  .formText {
+    font-size: 10px;
+    word-wrap: none;
+    margin-bottom: 20px;
+  }
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 414px) {
   .headerBtnText p {
     display: none;
   }
@@ -544,9 +563,6 @@
   }
   .statsText {
     width: 100%;
-
-    /* flex-direction: row;
-    justify-content: space-between; */
   }
   .statsText h3 {
     font-size: 20px;
@@ -568,5 +584,49 @@
 
   #ws3ReviewCards .card {
     width: 30%;
+  }
+
+  .getStartedContainer {
+    padding-top: 20px;
+  }
+  .getStartedText {
+    font-size: 20px;
+  }
+  .getStartedButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 40px;
+  }
+  .getStartedIcon {
+    width: 77%;
+    padding-top: 3px;
+  }
+  .getStartedIcon2 {
+    width: 75%;
+  }
+  .followUsWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .socialIcon {
+    padding: 0px 5px 0px 5px;
+  }
+  .socialIcon img {
+    width: 30px;
+  }
+  .contactBar {
+    margin-left: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .contactItem {
+    display: flex;
+
+    margin-left: 0;
+  }
+  .contactWrapper {
+    margin: 0;
   }
 }

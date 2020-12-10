@@ -10,7 +10,7 @@ const GetStartedFooter = () => {
       <div className="getStartedFooter">
         <div className="getStartedContainer">
           <h1 className="getStartedText">Get Started</h1>
-          <div>
+          <div className="getStartedButtons">
             <Link to="https://www.apple.com/app-store/">
               <img
                 className="getStartedIcon"
