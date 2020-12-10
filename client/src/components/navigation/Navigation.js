@@ -1,6 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Nav, Image, NavItem, Dropdown, Navbar } from 'react-bootstrap';
+import {
+  Image,
+  Navbar,
+  Nav,
+  NavItem,
+  Dropdown,
+  FormControl
+} from 'react-bootstrap';
 import { AppContext } from '../../context/AppContext';
 import { Logo, StartTrial } from '../../images/index';
 import AnonPic from '../../pages/profile/images/AnonPic.png';
@@ -14,29 +21,31 @@ const Navigation = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <div>
-      <Navbar collapseOnSelect expand="md">
-        <Navbar.Brand className="nav-logo">
+      <Navbar
+        className="row justify-content-between align-self-baseline nav"
+        collapseOnSelect
+        expand="lg"
+      >
+        <Navbar.Brand className="brand">
           <Link to="/">
             <Image className="logo" src={Logo} />
           </Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="row justify-content-around nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav>
             <div className="stretches-benefits-nav">
-              <Nav.Item>
-                <Nav.Link href="/body-area" className="nav-link">
-                  Stretches
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="/benefits" className="nav-link">
-                  Benefits
-                </Nav.Link>
-              </Nav.Item>
+              <Link to="/body-area" className="nav-link">
+                Stretches
+              </Link>
+
+              <Link to="/benefits" className="nav-link">
+                Benefits
+              </Link>
             </div>
 
             <div className="profile-trial-nav">

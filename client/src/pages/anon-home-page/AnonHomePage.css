@@ -334,17 +334,10 @@
   justify-content: space-around;
   font-family: 'Nunito Sans', sans-serif;
   width: 100vw;
-  background-color: red;
 }
 
 .signUp {
   margin-left: 60px;
-  background-color: green;
-  width: ;
-}
-
-.followUsIcons {
-  background-color: purple;
 }
 
 .followUsText {
@@ -466,8 +459,6 @@
   .wsList li {
     font-size: 25px;
   }
-  .formText {
-  }
 }
 @media only screen and (max-width: 768px) {
   .statsContainer {
@@ -494,9 +485,6 @@
     font-size: 10px;
     word-wrap: none;
     margin-bottom: 20px;
-  }
-  .navbar-collapse.collapse {
-    display: none !important;
   }
 }
 @media only screen and (max-width: 414px) {
@@ -627,6 +615,18 @@
     margin-left: 0;
   }
   .contactWrapper {
+    margin: 0;
+  }
+  .followUsIcons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .social {
+    align-items: baseline;
+    padding: 0;
+  }
+  .followUsText {
     margin: 0;
   }
 }

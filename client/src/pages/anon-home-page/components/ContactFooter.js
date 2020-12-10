@@ -29,6 +29,7 @@ const ContactFooter = () => {
         </div>
         <div className="followUsIcons">
           <p className="followUsText">FOLLOW US</p>
+
           <ul className="social">
             <Link to="www.instagram.com">
               {' '}
