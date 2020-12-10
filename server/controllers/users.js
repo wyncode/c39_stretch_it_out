@@ -1,6 +1,7 @@
 const User = require('../db/models/user');
 const jwt = require('jsonwebtoken');
 const cloudinary = require('cloudinary').v2;
+const axios = require('axios');
 
 const isEmpty = (value) => {
   return !value;
@@ -172,40 +173,27 @@ exports.incrementDailyStretch = async (req, res) => {
 
 /// GET USER BMI ///
 
-exports.getUserBmi = (req, res) => {
+exports.postUserBmi = async (req, res) => {
+  console.log(req.body);
   const { weight } = req.body;
   const { height } = req.body;
-  const { data } = fetch(
-    `https://body-mass-index-bmi-calculator.p.rapidapi.com/imperial?weight=${weight}&height=${height}`,
-    {
-      method: GET,
-      headers: {
-        'x-rapidapi-host': 'body-mass-index-bmi-calculator.p.rapidapi.com',
-        'x-rapidapi-key': process.env.X_RAPIDAPI_KEY
+  try {
+    const resp = await axios.get(
+      `https://body-mass-index-bmi-calculator.p.rapidapi.com/imperial`,
+      {
+        headers: {
+          'X-RapidAPI-Host': 'body-mass-index-bmi-calculator.p.rapidapi.com',
+          'X-RapidAPI-Key': process.env.X_RAPIDAPI_KEY
+        },
+        params: {
+          height: height,
+          weight: weight
+        }
       }
-    }
-  )
-    .then((res) => {
-      res.json(data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    );
+    console.log(resp.data);
+    res.json(resp.data);
+  } catch (err) {
+    console.log(err);
+  }
 };
-
-//     return axios.get((`https://body-mass-index-bmi-calculator.p.rapidapi.com/imperial?weight=${weight}&height=${height}`, {
-//       headers: { `x-rapidapi-key`: `${X_RAPIDAPI_KEY}` } }))
-//   }
-
-//   try {
-//     const {data} = await getBmiApi()
-//     res.json(data)
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// }
-
-// "headers": {
-//   "x-rapidapi-host": "body-mass-index-bmi-calculator.p.rapidapi.com",
-//   "x-rapidapi-key": "69d5f865f9msh5a5fdb59b8dfd15p1a2849jsnb1aa3415d61c"
-// }

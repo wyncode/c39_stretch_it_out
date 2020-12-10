@@ -5,7 +5,7 @@ const router = require('express').Router(),
     uploadAvatar,
     getCurrentUser,
     incrementDailyStretch,
-    getUserBmi
+    postUserBmi
   } = require('../../controllers/users');
 
 router.post('/logout', logoutUser);
@@ -13,6 +13,6 @@ router.put('/update', updateUser);
 router.post('/avatar', uploadAvatar);
 router.get('/me', getCurrentUser);
 router.put('/increment', incrementDailyStretch);
-router.get('/bmi', getUserBmi);
+router.post('/bmi', postUserBmi);
 
 module.exports = router;
