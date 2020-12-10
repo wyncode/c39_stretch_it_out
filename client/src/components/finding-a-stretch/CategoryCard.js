@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { Card, Button, CardDeck } from 'react-bootstrap';
+import { Card, CardDeck } from 'react-bootstrap';
 import { AppContext } from '../../context/AppContext';
 import StretchModal from './StretchModal';
 import axios from 'axios';
@@ -28,8 +28,8 @@ const CategoryCard = () => {
     setStretchNames
   } = useContext(AppContext);
 
-  const handleClick = async (e) => {
-    setTargetArea(e.target.value);
+  const handleClick = (field) => (e) => {
+    setTargetArea(field);
     setModalShow(true);
   };
 
@@ -51,156 +51,72 @@ const CategoryCard = () => {
       <h2 className="body-area">Upper Body Stretches</h2>
 
       <CardDeck>
-        <Card className="category-card ">
+        <Card className="category-card" onClick={handleClick('Neck')}>
           <Card.Img src={Neck} />
-          <Button
-            value="Neck"
-            onClick={handleClick}
-            className="category-card-button"
-            variant="outline-dark"
-          >
-            Neck
-          </Button>
+          <Card.Title>Neck</Card.Title>
         </Card>
 
-        <Card className="category-card">
+        <Card className="category-card" onClick={handleClick('Shoulder')}>
           <Card.Img src={Shoulder} />
-          <Button
-            value="Shoulder"
-            onClick={handleClick}
-            className="category-card-button"
-            variant="outline-dark"
-          >
-            Shoulder
-          </Button>
+          <Card.Title>Shoulder</Card.Title>
         </Card>
 
-        <Card className="category-card">
+        <Card className="category-card" onClick={handleClick('Upper Back')}>
           <Card.Img src={UpperBack} />
-          <Button
-            value="UpperBack"
-            onClick={handleClick}
-            className="category-card-button"
-            variant="outline-dark"
-          >
-            Upper Back
-          </Button>
+          <Card.Title>Upper Back</Card.Title>
         </Card>
       </CardDeck>
 
       <CardDeck>
-        <Card className="category-card">
+        <Card className="category-card" onClick={handleClick('Wrist')}>
           <Card.Img src={Wrist} />
-          <Button
-            value="Wrist"
-            onClick={handleClick}
-            className="category-card-button"
-            variant="outline-dark"
-          >
-            Wrist
-          </Button>
+          <Card.Title>Wrist</Card.Title>
         </Card>
 
-        <Card className="category-card">
+        <Card className="category-card" onClick={handleClick('Lower Back')}>
           <Card.Img src={LowerBack} />
-          <Button
-            value="LowerBack"
-            onClick={handleClick}
-            className="category-card-button"
-            variant="outline-dark"
-          >
-            Lower Back
-          </Button>
+          <Card.Title>Lower Back</Card.Title>
         </Card>
 
-        <Card className="category-card">
+        <Card className="category-card" onClick={handleClick('Chest')}>
           <Card.Img src={Chest} />
-          <Button
-            value="Chest"
-            onClick={handleClick}
-            className="category-card-button"
-            variant="outline-dark"
-          >
-            Chest
-          </Button>
+          <Card.Title>Chest</Card.Title>
         </Card>
       </CardDeck>
 
       <h2 className="body-area">Lower Body Stretches</h2>
 
       <CardDeck>
-        <Card className="category-card">
+        <Card className="category-card" onClick={handleClick('Glutes')}>
           <Card.Img src={Glutes} />
-          <Button
-            value="Glutes"
-            onClick={handleClick}
-            className="category-card-button"
-            variant="outline-dark"
-          >
-            Glutes
-          </Button>
+          <Card.Title>Glutes</Card.Title>
         </Card>
 
-        <Card className="category-card">
+        <Card className="category-card" onClick={handleClick('Quads')}>
           <Card.Img src={Quads} />
-          <Button
-            value="Quads"
-            onClick={handleClick}
-            className="category-card-button"
-            variant="outline-dark"
-          >
-            Quads
-          </Button>
+          <Card.Title>Quads</Card.Title>
         </Card>
 
-        <Card className="category-card">
+        <Card className="category-card" onClick={handleClick('Hamstrings')}>
           <Card.Img src={Hamstrings} />
-          <Button
-            value="Hamstrings"
-            onClick={handleClick}
-            className="category-card-button"
-            variant="outline-dark"
-          >
-            Hamstrings
-          </Button>
+          <Card.Title>Hamstrings</Card.Title>
         </Card>
       </CardDeck>
 
       <CardDeck className="card-deck">
-        <Card className="category-card">
+        <Card className="category-card" onClick={handleClick('Knee')}>
           <Card.Img src={Knee} />
-          <Button
-            value="Knee"
-            onClick={handleClick}
-            className="category-card-button"
-            variant="outline-dark"
-          >
-            Knee
-          </Button>
+          <Card.Title>Knee</Card.Title>
         </Card>
 
-        <Card className="category-card">
+        <Card className="category-card" onClick={handleClick('Groin')}>
           <Card.Img src={Groin} />
-          <Button
-            value="Groin"
-            onClick={handleClick}
-            className="category-card-button"
-            variant="outline-dark"
-          >
-            Groin
-          </Button>
+          <Card.Title>Groin</Card.Title>
         </Card>
 
-        <Card className="category-card">
+        <Card className="category-card" onClick={handleClick('Calves')}>
           <Card.Img src={Calves} />
-          <Button
-            value="Calves"
-            onClick={handleClick}
-            className="category-card-button"
-            variant="outline-dark"
-          >
-            Calves
-          </Button>
+          <Card.Title>Calves</Card.Title>
         </Card>
       </CardDeck>
 
