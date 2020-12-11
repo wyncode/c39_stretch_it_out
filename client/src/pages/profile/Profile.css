@@ -141,3 +141,60 @@
 .add-stretch-button {
   background-color: transparent;
 }
+
+/* BMI Calc Styling */
+.get-your-bmi {
+  background-color: #377c8d !important;
+  border-color: #377c8d !important;
+  margin: 20px;
+  height: 60px !important;
+  width: 150px !important;
+  border-radius: 10px !important;
+  font-family: 'Lato', sans-serif;
+  color: black !important;
+}
+
+.bmi-modal-header {
+  background-color: #eaf7f7;
+  border-color: #eaf7f7;
+  color: black;
+}
+
+.bmi-modal-body {
+  background-color: #eaf7f7;
+  border-color: #eaf7f7;
+  color: black;
+}
+
+.height-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weight-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bmi-calc {
+  background-color: #eaf7f7 !important;
+  border-color: #eaf7f7 !important;
+  color: black !important;
+}
+
+.profile-page-buttons-div {
+  display: flex;
+}
+
+.bmi-calc-button {
+  background-color: #377c8d !important;
+  border-color: #377c8d !important;
+  margin: 20px;
+  height: 60px !important;
+  width: 150px !important;
+  border-radius: 10px !important;
+  font-family: 'Lato', sans-serif;
+  color: black !important;
+}

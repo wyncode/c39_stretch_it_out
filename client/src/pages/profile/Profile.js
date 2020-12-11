@@ -18,6 +18,7 @@ import Camera from './images/camera.png';
 import Trash from './images/trash.png';
 import GetStartedFooter from '../anon-home-page/components/GetStartedFooter';
 import ContactFooter from '../anon-home-page/components/ContactFooter';
+import BmiCalc from './components/BmiCalc';
 
 const Profile = ({ history: { push } }) => {
   const { currentUser, setCurrentUser, setLoading } = useContext(AppContext);
@@ -129,9 +130,12 @@ const Profile = ({ history: { push } }) => {
               Delete Account
             </Button>
           </div>
-          <Link className="find-a-stretch" to="/body-area">
-            Find a Stretch!
-          </Link>
+          <div className="profile-page-buttons-div">
+            <Link className="find-a-stretch" to="/body-area">
+              Find a Stretch!
+            </Link>
+            <BmiCalc />
+          </div>
           <ProfilePref
             setCurrentUser={setCurrentUser}
             show={show}

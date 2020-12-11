@@ -1,6 +1,7 @@
 const User = require('../db/models/user');
 const jwt = require('jsonwebtoken');
 const cloudinary = require('cloudinary').v2;
+const axios = require('axios');
 
 const isEmpty = (value) => {
   return !value;
@@ -168,4 +169,29 @@ exports.incrementDailyStretch = async (req, res) => {
 
   await req.user.save();
   res.json(req.user);
+};
+
+/// GET USER BMI ///
+
+exports.postUserBmi = async (req, res) => {
+  const { weight } = req.body;
+  const { height } = req.body;
+  try {
+    const resp = await axios.get(
+      `https://body-mass-index-bmi-calculator.p.rapidapi.com/imperial`,
+      {
+        headers: {
+          'X-RapidAPI-Host': 'body-mass-index-bmi-calculator.p.rapidapi.com',
+          'X-RapidAPI-Key': process.env.X_RAPIDAPI_KEY
+        },
+        params: {
+          height: height,
+          weight: weight
+        }
+      }
+    );
+    res.json(resp.data);
+  } catch (err) {
+    console.log(err);
+  }
 };
