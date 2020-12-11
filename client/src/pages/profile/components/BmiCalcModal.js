@@ -23,7 +23,6 @@ const BmiCalcModal = (props) => {
         { height, weight },
         { withCredentials: true }
       );
-      console.log(response);
       setBmi(response.data.bmi.toFixed(2));
     } catch (error) {
       console.log(error);
@@ -33,29 +32,33 @@ const BmiCalcModal = (props) => {
   return (
     <div>
       <Modal {...props}>
-        <Modal.Header closeButton></Modal.Header>
-        <div className="bmi-calc-div">
-          <Modal.Body>
+        <Modal.Header className="bmi-modal-header" closeButton></Modal.Header>
+        <div>
+          <Modal.Body className="bmi-modal-body">
             <Form className="bmi-calc" onSubmit={fetchBmi}>
-              <Form.Label>Height in Inches</Form.Label>
-              <Form.Control
-                id="height"
-                type="text"
-                name="height"
-                onChange={handleHeightChange}
-                required
-              />
+              <div className="height-input">
+                <h5>Height in Inches:</h5>
+                <Form.Control
+                  id="height"
+                  type="text"
+                  name="height"
+                  onChange={handleHeightChange}
+                  required
+                />
+              </div>
+              <br></br>
+              <div className="weight-input">
+                <h5>Weight in lbs:</h5>
+                <Form.Control
+                  id="weight"
+                  type="text"
+                  name="height"
+                  onChange={handleWeightChange}
+                  required
+                />
+              </div>
 
-              <Form.Label>Weight in lb</Form.Label>
-              <Form.Control
-                id="weight"
-                type="text"
-                name="height"
-                onChange={handleWeightChange}
-                required
-              />
-
-              <Form.Group className="bmi-calc-div">
+              <Form.Group>
                 <Button
                   className="bmi-calc-button"
                   block
@@ -66,7 +69,7 @@ const BmiCalcModal = (props) => {
                 </Button>
               </Form.Group>
             </Form>
-            <div>Your BMI is: {bmi}</div>
+            <h1 className="your-bmi-is">Your BMI is: {bmi}</h1>
           </Modal.Body>
         </div>
       </Modal>

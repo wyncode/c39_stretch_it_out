@@ -12,7 +12,9 @@ const BmiCalc = () => {
 
   return (
     <div>
-      <Button onClick={handleClick}>Get Your BMI</Button>
+      <Button className="get-your-bmi" onClick={handleClick}>
+        Get Your BMI
+      </Button>
       <BmiCalcModal show={show} onHide={() => setShow(false)} />
     </div>
   );

@@ -130,10 +130,12 @@ const Profile = ({ history: { push } }) => {
               Delete Account
             </Button>
           </div>
-          <Link className="find-a-stretch" to="/body-area">
-            Find a Stretch!
-          </Link>
-          <BmiCalc />
+          <div className="profile-page-buttons-div">
+            <Link className="find-a-stretch" to="/body-area">
+              Find a Stretch!
+            </Link>
+            <BmiCalc />
+          </div>
           <ProfilePref
             setCurrentUser={setCurrentUser}
             show={show}
