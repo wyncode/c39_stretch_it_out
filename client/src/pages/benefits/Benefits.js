@@ -36,7 +36,12 @@ const Benefits = () => {
               the body, including increased feeling of anxiety, fatigue and
               tension.
             </p>
-            <a href="">Read More</a>
+            <a
+              href="https://shcs.ucdavis.edu/blog/archive/healthy-habits/why-stretching-extremely-important"
+              target="_blank"
+            >
+              Read More
+            </a>
           </div>
         </div>
         <div className="reducedPain row">
@@ -46,7 +51,12 @@ const Benefits = () => {
               Excessive muscular tension can increase discomfort throught the
               body. However, studies have shown that regulary performing.
             </p>
-            <a href="">Read More</a>
+            <a
+              href="https://shcs.ucdavis.edu/blog/archive/healthy-habits/why-stretching-extremely-important"
+              target="_blank"
+            >
+              Read More
+            </a>
           </div>
           <div className="reducedPainImg col">
             <img
@@ -71,7 +81,12 @@ const Benefits = () => {
               the body, including increased feeling of anxiety, fatigue and
               tension.
             </p>
-            <a href="">Read More</a>
+            <a
+              href="https://shcs.ucdavis.edu/blog/archive/healthy-habits/why-stretching-extremely-important"
+              target="_blank"
+            >
+              Read More
+            </a>
           </div>
         </div>
         <div className="improvedMuscular row">
@@ -82,7 +97,12 @@ const Benefits = () => {
               body. However, studies have shown that regulary performing static
               stretching helps...
             </p>
-            <a href="">Read More</a>
+            <a
+              href="https://shcs.ucdavis.edu/blog/archive/healthy-habits/why-stretching-extremely-important"
+              target="_blank"
+            >
+              Read More
+            </a>
           </div>
           <div className="improvedMuscularImg col">
             <img
@@ -107,7 +127,12 @@ const Benefits = () => {
               the body, including increased feeling of anxiety, fatigue and
               tension.
             </p>
-            <a href="">Read More</a>
+            <a
+              href="https://shcs.ucdavis.edu/blog/archive/healthy-habits/why-stretching-extremely-important"
+              target="_blank"
+            >
+              Read More
+            </a>
           </div>
         </div>
       </div>
