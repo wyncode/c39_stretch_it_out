@@ -174,7 +174,6 @@ exports.incrementDailyStretch = async (req, res) => {
 /// GET USER BMI ///
 
 exports.postUserBmi = async (req, res) => {
-  console.log(req.body);
   const { weight } = req.body;
   const { height } = req.body;
   try {
@@ -191,7 +190,6 @@ exports.postUserBmi = async (req, res) => {
         }
       }
     );
-    console.log(resp.data);
     res.json(resp.data);
   } catch (err) {
     console.log(err);

@@ -141,3 +141,9 @@
 .add-stretch-button {
   background-color: transparent;
 }
+
+/* BMI Calc Styling */
+
+.bmi-calc-div {
+  display: flex;
+}

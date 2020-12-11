@@ -24,7 +24,7 @@ const BmiCalcModal = (props) => {
         { withCredentials: true }
       );
       console.log(response);
-      setBmi(response.data.bmi);
+      setBmi(response.data.bmi.toFixed(2));
     } catch (error) {
       console.log(error);
     }
@@ -33,9 +33,10 @@ const BmiCalcModal = (props) => {
   return (
     <div>
       <Modal {...props}>
-        <Modal.Body>
-          <Form className="bmi-calc" onSubmit={fetchBmi}>
-            <Form.Group>
+        <Modal.Header closeButton></Modal.Header>
+        <div className="bmi-calc-div">
+          <Modal.Body>
+            <Form className="bmi-calc" onSubmit={fetchBmi}>
               <Form.Label>Height in Inches</Form.Label>
               <Form.Control
                 id="height"
@@ -44,8 +45,7 @@ const BmiCalcModal = (props) => {
                 onChange={handleHeightChange}
                 required
               />
-            </Form.Group>
-            <Form.Group>
+
               <Form.Label>Weight in lb</Form.Label>
               <Form.Control
                 id="weight"
@@ -54,20 +54,21 @@ const BmiCalcModal = (props) => {
                 onChange={handleWeightChange}
                 required
               />
-            </Form.Group>
-            <Form.Group className="bmi-calc-div">
-              <Button
-                className="bmi-calc-button"
-                block
-                type="submit"
-                onSubmit={fetchBmi}
-              >
-                Get Your BMI
-              </Button>
-            </Form.Group>
-          </Form>
-          <div>Your BMI is:</div>
-        </Modal.Body>
+
+              <Form.Group className="bmi-calc-div">
+                <Button
+                  className="bmi-calc-button"
+                  block
+                  type="submit"
+                  onSubmit={fetchBmi}
+                >
+                  Get Your BMI
+                </Button>
+              </Form.Group>
+            </Form>
+            <div>Your BMI is: {bmi}</div>
+          </Modal.Body>
+        </div>
       </Modal>
     </div>
   );
