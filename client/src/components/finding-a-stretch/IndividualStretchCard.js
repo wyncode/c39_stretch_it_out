@@ -13,14 +13,10 @@ const IndividualStretchCard = ({ id, stretchName, illustration }) => {
   };
 
   return (
-    <div>
-      <Card className="stretch-modal-cards">
-        <Card.Img src={illustration} />
-        <Button onClick={() => handleClick(id)} variant="outline-dark">
-          {stretchName}
-        </Button>
-      </Card>
-    </div>
+    <Card className="stretch-modal-cards" onClick={() => handleClick(id)}>
+      <Card.Img src={illustration} />
+      <h4 className="stretch-modal-card-title">{stretchName}</h4>
+    </Card>
   );
 };
 

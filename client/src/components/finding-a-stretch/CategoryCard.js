@@ -53,34 +53,34 @@ const CategoryCard = () => {
       <CardDeck>
         <Card className="category-card" onClick={handleClick('Neck')}>
           <Card.Img src={Neck} />
-          <Card.Title>Neck</Card.Title>
+          <h4 className="stretch-card-title">NECK</h4>
         </Card>
 
         <Card className="category-card" onClick={handleClick('Shoulder')}>
           <Card.Img src={Shoulder} />
-          <Card.Title>Shoulder</Card.Title>
+          <h4 className="stretch-card-title">SHOULDER</h4>
         </Card>
 
         <Card className="category-card" onClick={handleClick('Upper Back')}>
           <Card.Img src={UpperBack} />
-          <Card.Title>Upper Back</Card.Title>
+          <h4 className="stretch-card-title">UPPER BACK</h4>
         </Card>
       </CardDeck>
 
       <CardDeck>
         <Card className="category-card" onClick={handleClick('Wrist')}>
           <Card.Img src={Wrist} />
-          <Card.Title>Wrist</Card.Title>
+          <h4 className="stretch-card-title">WRIST</h4>
         </Card>
 
         <Card className="category-card" onClick={handleClick('Lower Back')}>
           <Card.Img src={LowerBack} />
-          <Card.Title>Lower Back</Card.Title>
+          <h4 className="stretch-card-title">LOWER BACK</h4>
         </Card>
 
         <Card className="category-card" onClick={handleClick('Chest')}>
           <Card.Img src={Chest} />
-          <Card.Title>Chest</Card.Title>
+          <h4 className="stretch-card-title">CHEST</h4>
         </Card>
       </CardDeck>
 
@@ -89,34 +89,34 @@ const CategoryCard = () => {
       <CardDeck>
         <Card className="category-card" onClick={handleClick('Glutes')}>
           <Card.Img src={Glutes} />
-          <Card.Title>Glutes</Card.Title>
+          <h4 className="stretch-card-title">GLUTES</h4>
         </Card>
 
         <Card className="category-card" onClick={handleClick('Quads')}>
           <Card.Img src={Quads} />
-          <Card.Title>Quads</Card.Title>
+          <h4 className="stretch-card-title">QUADS</h4>
         </Card>
 
         <Card className="category-card" onClick={handleClick('Hamstrings')}>
           <Card.Img src={Hamstrings} />
-          <Card.Title>Hamstrings</Card.Title>
+          <h4 className="stretch-card-title">HAMSTRINGS</h4>
         </Card>
       </CardDeck>
 
       <CardDeck className="card-deck">
         <Card className="category-card" onClick={handleClick('Knee')}>
           <Card.Img src={Knee} />
-          <Card.Title>Knee</Card.Title>
+          <h4 className="stretch-card-title">KNEE</h4>
         </Card>
 
         <Card className="category-card" onClick={handleClick('Groin')}>
           <Card.Img src={Groin} />
-          <Card.Title>Groin</Card.Title>
+          <h4 className="stretch-card-title">GROIN</h4>
         </Card>
 
         <Card className="category-card" onClick={handleClick('Calves')}>
           <Card.Img src={Calves} />
-          <Card.Title>Calves</Card.Title>
+          <h4 className="stretch-card-title">CALVES</h4>
         </Card>
       </CardDeck>
 
