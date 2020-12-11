@@ -1,6 +1,6 @@
 import React from 'react';
 import './Benefits.css';
-import BenefitsHeaderImg from '../../images/benefits-page-header.png';
+import BenefitsHeaderImg from '../../images/banner-background.png';
 import YogaCouple from '../../images/couple-trasparent-1.png';
 import GirlStretching from '../../images/girl-transparent-background-1.png';
 import SeniorLady from '../../images/senior-lady-hamstring.png';
@@ -15,7 +15,7 @@ const Benefits = () => {
     <div className="benefitsPageContainer">
       <Navigation />
       <div className="benefitsHeader">
-        <img src={BenefitsHeaderImg}></img>
+        <h1>BENEFITS</h1>
       </div>
       <div className="benefitsContainer">
         <div className="benefitsHeaderTitle">
@@ -23,7 +23,11 @@ const Benefits = () => {
         </div>
         <div className="decreasedStress row">
           <div className="decreasedStressImg col">
-            <img src={YogaCouple} alt="playful couple" />
+            <img
+              className="playful-couple"
+              src={YogaCouple}
+              alt="playful couple"
+            />
           </div>
           <div className="decreasedStressText col">
             <h2>Decreased Stress</h2>
@@ -46,6 +50,7 @@ const Benefits = () => {
           </div>
           <div className="reducedPainImg col">
             <img
+              className="girl-stretching"
               src={GirlStretching}
               alt="girl sitting and turning her torso"
             />
@@ -54,6 +59,7 @@ const Benefits = () => {
         <div className="improvedHealth row">
           <div className="improvedHealthImg col">
             <img
+              className="senior-lady"
               src={SeniorLady}
               alt="senior lady sitting and stretching her hamstring"
             />
@@ -79,12 +85,20 @@ const Benefits = () => {
             <a href="">Read More</a>
           </div>
           <div className="improvedMuscularImg col">
-            <img src={YogaWoman} alt="woman doing advanced yoga pose" />
+            <img
+              className="yoga-woman"
+              src={YogaWoman}
+              alt="woman doing advanced yoga pose"
+            />
           </div>
         </div>
         <div className="reducedRisk row">
           <div className="reducedRiskImg col">
-            <img src={AthelticMale} alt="atheltic male does a lunge stretch" />
+            <img
+              className="athletic-male"
+              src={AthelticMale}
+              alt="atheltic male does a lunge stretch"
+            />
           </div>
           <div className="reducedRiskText col">
             <h2>Reduced Risk of Injury</h2>

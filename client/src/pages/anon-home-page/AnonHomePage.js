@@ -1,8 +1,6 @@
 import React from 'react';
 import { Navigation } from '../../components/navigation';
 
-import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import WhiteSpace from './components/WhiteSpace';
 import CardGroup1 from './components/PainCards';
 import WhiteSpace2 from './components/WhiteSpace2';
