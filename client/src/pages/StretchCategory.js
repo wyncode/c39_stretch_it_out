@@ -3,8 +3,8 @@ import { Container } from 'react-bootstrap';
 import Navigation from '../components/navigation/Navigation';
 import CategoryCard from '../components/finding-a-stretch/CategoryCard';
 import { BlueBanner } from '../stretchimages/index';
-import ContactFooter from './anon-home-page/components/ContactFooter';
-import GetStarted from './anon-home-page/components/GetStartedFooter';
+import ContactFooter from '../pages/anon-home-page/components/ContactFooter';
+import GetStartedFooter from '../pages/anon-home-page/components/GetStartedFooter';
 
 const StretchCategory = () => {
   return (
@@ -17,7 +17,7 @@ const StretchCategory = () => {
       <Container>
         <CategoryCard />
       </Container>
-      <GetStarted />
+      <GetStartedFooter />
       <ContactFooter />
     </div>
   );

@@ -1,15 +1,15 @@
 import React from 'react';
 import SelectedStretch from '../components/finding-a-stretch/SelectedStretch';
 import Navigation from '../components/navigation/Navigation';
-import ContactFooter from './anon-home-page/components/ContactFooter';
-import GetStarted from './anon-home-page/components/GetStartedFooter';
+import ContactFooter from '../pages/anon-home-page/components/ContactFooter';
+import GetStartedFooter from '../pages/anon-home-page/components/GetStartedFooter';
 
 const IndividualStretch = () => {
   return (
     <div>
       <Navigation />
       <SelectedStretch />
-      <GetStarted />
+      <GetStartedFooter />
       <ContactFooter />
     </div>
   );
