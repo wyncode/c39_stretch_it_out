@@ -17,11 +17,10 @@ import { LoginModal } from '../login';
 import './Navigation.css';
 
 const Navigation = () => {
-  const { currentUser, handleLogin } = useContext(AppContext);
+  const { currentUser } = useContext(AppContext);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [open, setOpen] = useState(false);
 
   return (
     <div>
@@ -52,7 +51,7 @@ const Navigation = () => {
               <Dropdown as={NavItem}>
                 <Dropdown.Toggle variant="" className="profile-dropdown-nav">
                   <Image
-                    src={currentUser?.avatar ? currentUser?.avatar : AnonPic}
+                    src={currentUser ? currentUser?.avatar : AnonPic}
                     height={50}
                     width={50}
                     roundedCircle
@@ -65,7 +64,7 @@ const Navigation = () => {
                   <Dropdown.Item as="button" onClick={handleShow}>
                     Log In
                   </Dropdown.Item>
-                  <Logout />
+                  {currentUser ? <Logout /> : null}
                 </Dropdown.Menu>
               </Dropdown>
               <Link to="/sign-up" className="start-trial-link">
