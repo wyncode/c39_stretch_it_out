@@ -6,7 +6,7 @@ const Whitespace = () => {
     <>
       <div className="wsContainer">
         <h2>
-          Transform your body and Mind <br /> Stretch By Stretch
+          Transform your body and mind <br /> Stretch By Stretch
         </h2>
         <div className="wsWrapper row">
           <div className="wsText col">

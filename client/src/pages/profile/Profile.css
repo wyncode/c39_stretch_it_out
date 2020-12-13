@@ -234,11 +234,7 @@
     margin-bottom: 30px;
   }
 }
-@media only screen and (max-width: 768) {
-  .profile-pic {
-    width: 50% !important;
-  }
-}
+
 @media only screen and (max-width: 768px) {
   .daily-stretches {
     margin-right: 40px;
