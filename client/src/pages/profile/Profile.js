@@ -93,6 +93,7 @@ const Profile = ({ history: { push } }) => {
           <Image
             src={preview || currentUser?.avatar || AnonPic}
             alt="profile-picture"
+            className="profile-pic"
             width={250}
             height={250}
             roundedCircle
@@ -111,15 +112,15 @@ const Profile = ({ history: { push } }) => {
         <div className="user-pref-buttons">
           <div className="button-sub-div-1">
             <Button className="profile-buttons" onClick={handleShow}>
-              <img className="cog" src={Cog} /> Stretch Preferences
+              <img className="cog" src={Cog} /> <p>Stretch Preferences</p>
             </Button>
             <Button className="profile-buttons" onClick={handleShowTwo}>
-              <img className="cog" src={UserCog} /> Account Settings
+              <img className="cog" src={UserCog} /> <p>Account Settings</p>
             </Button>
           </div>
           <div className="button-sub-div-2">
             <Button className="profile-buttons" onClick={handleShowThree}>
-              <img className="cog" src={Camera} /> Choose Avatar
+              <img className="cog" src={Camera} /> <p>Choose Avatar</p>
             </Button>
             <Button
               className="profile-buttons"
@@ -127,7 +128,7 @@ const Profile = ({ history: { push } }) => {
               onClick={handleDelete}
             >
               <img className="cog" src={Trash} />
-              Delete Account
+              <p>Delete Account</p>
             </Button>
           </div>
           <div className="profile-page-buttons-div">
@@ -178,25 +179,26 @@ const Profile = ({ history: { push } }) => {
             </label>
             <p>{currentUser?.timeDedicated}</p>
           </div>
-          <div>
+
+          <div className="user-stat">
             <label className="pr-4 font-weight-bold">
               My Favorite Stretches:
             </label>
-            <div className="favorite-stretch-list">
-              {currentUser &&
-                currentUser?.stretches?.map((stretch) => {
-                  return (
-                    <Link as={Link} to={`/stretch/${stretch._id}`}>
-                      {stretch.stretchName}
-                    </Link>
-                  );
-                })}
-            </div>
+            {currentUser &&
+              currentUser?.stretches?.map((stretch) => {
+                return (
+                  <Link as={Link} to={`/stretch/${stretch._id}`}>
+                    {stretch.stretchName}
+                  </Link>
+                );
+              })}
           </div>
         </div>
         <div className="stretch-tracker">
           <div className="daily-stretches">
-            <h3>Stretches Completed Today</h3>
+            <h3 className="daily-stretches-header">
+              Stretches Completed Today
+            </h3>
             <div style={{ width: '200px', overflowWrap: 'break-word' }}>
               <CircularProgressbar
                 value={value}
