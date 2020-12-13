@@ -37,6 +37,19 @@
   #basic-navbar-nav {
     display: none !important;
   }
+  .stretches-benefits-nav {
+    flex-direction: column;
+  }
+  .profile-trial-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-link {
+    font-size: 20px !important;
+  }
+  .profile-link {
+    font-size: 16px !important;
+  }
 }
 @media only screen and (max-width: 540px) {
   .nav-link {

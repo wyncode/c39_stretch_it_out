@@ -37,6 +37,7 @@ const Benefits = () => {
               tension.
             </p>
             <a
+              className="benefit-link"
               href="https://shcs.ucdavis.edu/blog/archive/healthy-habits/why-stretching-extremely-important"
               target="_blank"
             >
@@ -52,6 +53,7 @@ const Benefits = () => {
               body. However, studies have shown that regulary performing.
             </p>
             <a
+              className="benefit-link"
               href="https://shcs.ucdavis.edu/blog/archive/healthy-habits/why-stretching-extremely-important"
               target="_blank"
             >
@@ -82,6 +84,7 @@ const Benefits = () => {
               tension.
             </p>
             <a
+              className="benefit-link"
               href="https://shcs.ucdavis.edu/blog/archive/healthy-habits/why-stretching-extremely-important"
               target="_blank"
             >
@@ -98,6 +101,7 @@ const Benefits = () => {
               stretching helps...
             </p>
             <a
+              className="benefit-link"
               href="https://shcs.ucdavis.edu/blog/archive/healthy-habits/why-stretching-extremely-important"
               target="_blank"
             >
@@ -128,6 +132,7 @@ const Benefits = () => {
               tension.
             </p>
             <a
+              className="benefit-link"
               href="https://shcs.ucdavis.edu/blog/archive/healthy-habits/why-stretching-extremely-important"
               target="_blank"
             >
