@@ -449,8 +449,8 @@ body {
     font-size: 10px !important;
     width: 180px !important;
   }
-  a {
-    font-size: 10px !important;
+  .benefit-link {
+    font-size: 10px;
   }
   .reducedPainText {
     margin-left: 0 !important;

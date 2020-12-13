@@ -58,7 +58,11 @@ const Navigation = () => {
                   />
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                  <Dropdown.Item as={Link} to="/profile">
+                  <Dropdown.Item
+                    className="profile-link"
+                    as={Link}
+                    to="/profile"
+                  >
                     Profile
                   </Dropdown.Item>
                   <Dropdown.Item as="button" onClick={handleShow}>
