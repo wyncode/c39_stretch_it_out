@@ -20,6 +20,7 @@ const Quiz = ({ show, hide, setShow }) => {
 
   const handleChange = (field) => (e) => {
     setFormData({ ...formData, [field]: e.target.value });
+    console.log(formData);
   };
 
   const handlePrevious = () => {

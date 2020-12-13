@@ -8,7 +8,7 @@ const Dedication = ({ handleChange, formData }) => {
       <h3>How much time would you dedicate to stretching?</h3>
       <p>Select one answer</p>
       <div className="form-group">
-        <div className="radio-button">
+        <label for="timeDedicated1" className="radio-button">
           <input
             type="radio"
             name="timeDedicated"
@@ -18,8 +18,8 @@ const Dedication = ({ handleChange, formData }) => {
             value="Under 10 minutes"
           />
           <label for="timeDedicated1">Under 10 minutes</label>
-        </div>
-        <div className="radio-button">
+        </label>
+        <label for="timeDedicated2" className="radio-button">
           <input
             type="radio"
             name="timeDedicated"
@@ -29,8 +29,8 @@ const Dedication = ({ handleChange, formData }) => {
             value="10-20 minutes"
           />
           <label for="timeDedicated1">10-20 minutes</label>
-        </div>
-        <div className="radio-button">
+        </label>
+        <label for="timeDedicated3" className="radio-button">
           <input
             type="radio"
             id="timeDedicated3"
@@ -40,7 +40,7 @@ const Dedication = ({ handleChange, formData }) => {
             value="More than 20 minutes"
           />
           <label for="timeDedicated3">More than 20 minutes</label>
-        </div>
+        </label>
       </div>
     </div>
   );
