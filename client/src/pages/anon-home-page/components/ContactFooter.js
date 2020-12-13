@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import FacebookIcon from '../../../images/facebook-icon.png';
 import InstgramIcon from '../../../images/instgram-icon.png';
 import TwitterIcon from '../../../images/twitter-icon.png';
@@ -15,7 +16,11 @@ const ContactFooter = () => {
               <Form.Label className="formText">
                 SIGN UP TO GET THE LATEST TIPS
               </Form.Label>
-              <Form.Control type="email" placeholder="Your email" />
+              <Form.Control
+                className="formInput"
+                type="email"
+                placeholder="Your email"
+              />
             </Form.Group>
             <Button variant="light" type="submit">
               Submit
@@ -24,35 +29,54 @@ const ContactFooter = () => {
         </div>
         <div className="followUsIcons">
           <p className="followUsText">FOLLOW US</p>
+
           <ul className="social">
-            <li className="socialIcon">
-              <img src={InstgramIcon} alt="instagram icon" />
-            </li>
-            <li className="socialIcon">
-              <img src={YoutubeIcon} alt="youtube icon" />
-            </li>
-            <li className="socialIcon">
-              <img src={FacebookIcon} alt="facebook icon" />
-            </li>
-            <li className="socialIcon">
-              <img src={TwitterIcon} alt="twitter icon" />
-            </li>
+            <Link to="www.instagram.com">
+              {' '}
+              <li className="socialIcon">
+                <img src={InstgramIcon} alt="instagram icon" />
+              </li>
+            </Link>
+            <Link to="www.youtube.com">
+              <li className="socialIcon">
+                <img src={YoutubeIcon} alt="youtube icon" />
+              </li>
+            </Link>
+            <Link to="www.facebook.com">
+              <li className="socialIcon">
+                <img src={FacebookIcon} alt="facebook icon" />
+              </li>
+            </Link>
+            <Link to="www.twitter.com">
+              <li className="socialIcon">
+                <img src={TwitterIcon} alt="twitter icon" />
+              </li>
+            </Link>
           </ul>
         </div>
       </div>
-      <div>
+      <div className="contactWrapper">
         <ul className="contactBar">
           <li className="contactItem">
-            <a href>Home</a>
+            <Link className="link" to="/">
+              Home
+            </Link>
           </li>
           <li className="contactItem">
-            <a href>Privacy Policy</a>
+            <Link className="link" to="/">
+              Privacy Policy
+            </Link>
+          </li>
+
+          <li className="contactItem">
+            <Link className="link" to="/">
+              Terms of Service
+            </Link>
           </li>
           <li className="contactItem">
-            <a href>Terms of Service</a>
-          </li>
-          <li className="contactItem">
-            <a href>Contact Us</a>
+            <Link className="link" to="/">
+              Contact Us
+            </Link>
           </li>
         </ul>
       </div>

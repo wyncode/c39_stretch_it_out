@@ -41,6 +41,13 @@ label {
   font-size: 20px;
   font-family: 'Lato', sans-serif;
 }
+.input-form-group {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
 p {
   text-align: center;
   margin: 0;
@@ -67,7 +74,7 @@ p {
 }
 .sounds-good-button {
   background-color: #377c8d !important;
-  background-color: #377c8d !important;
+  border-color: #377c8d !important;
   height: 60px !important;
   width: 150px !important;
   border-radius: 10px !important;
@@ -90,4 +97,56 @@ p {
 .welcome-paragraph {
   margin-top: 30px;
   margin-bottom: 60px;
+}
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  color: #377c8d;
+  font-family: 'Lato', sans-serif;
+}
+@media only screen and (max-width: 1024px) {
+  .welcome-paragraph {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.welcome-paragraph p {
+  width: 70% !important;
+  font-family: ;
+}
+
+@media only screen and (max-width: 768px) {
+  .input-form-group {
+    width: 70%;
+  }
+
+  .input-form-group label,
+  .input-form-group-last label {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .welcome-paragraph p {
+    width: 100% !important;
+  }
+  .input-form-group {
+    width: 80%;
+  }
+  .input-form-group-last label {
+    font-size: 12px;
+  }
+  h4,
+  h3 {
+    font-size: 18px !important;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .input-form-group {
+    width: 90%;
+  }
+  .input-form-group-last label {
+    font-size: 10px;
+  }
 }

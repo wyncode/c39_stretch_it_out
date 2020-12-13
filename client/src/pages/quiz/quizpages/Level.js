@@ -9,7 +9,7 @@ const Level = ({ handleChange, formData }) => {
       <h3>What is your stretching level?</h3>
       <p>Select one answer</p>
       <div className="form-group">
-        <div className="radio-button">
+        <label for="levelChoice1" className="radio-button">
           <input
             id="levelChoice1"
             type="radio"
@@ -19,8 +19,8 @@ const Level = ({ handleChange, formData }) => {
             value="Beginner"
           />
           <label for="levelChoice1">Beginner</label>
-        </div>
-        <div className="radio-button">
+        </label>
+        <label for="levelChoice2" className="radio-button">
           <input
             type="radio"
             id="levelChoice2"
@@ -30,8 +30,8 @@ const Level = ({ handleChange, formData }) => {
             value="Intermediate"
           />
           <label for="levelChoice2">Intermediate</label>
-        </div>
-        <div className="radio-button">
+        </label>
+        <label for="levelChoice3" className="radio-button">
           <input
             type="radio"
             id="levelChoice3"
@@ -41,7 +41,7 @@ const Level = ({ handleChange, formData }) => {
             value="Advanced"
           />
           <label for="levelChoice3">Advanced</label>
-        </div>
+        </label>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navigation } from '../../components/navigation';
+
 import WhiteSpace from './components/WhiteSpace';
 import CardGroup1 from './components/PainCards';
 import WhiteSpace2 from './components/WhiteSpace2';
@@ -13,14 +14,15 @@ import './AnonHomePage.css';
 
 const AnonHomePage = () => {
   return (
-    <div className="d-flex flex-column align-items-center">
+    <div className="d-flex flex-column align-items-center vw-100">
       <Navigation />
+
       <JumbotronHeader />
       <WhiteSpace />
       <CardGroup1 />
       <WhiteSpace2 />
       <VideoCarousel />
-      <BlogSpace />
+      {/* <BlogSpace /> */}
       <WhiteSpace3 />
       <GetStartedFooter />
       <ContactFooter />

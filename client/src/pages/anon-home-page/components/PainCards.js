@@ -1,16 +1,26 @@
 import React from 'react';
-import NeckPain from '../../../images/neck-pain-card.png';
-import LowerBack from '../../../images/lower-back-card.png';
-import AllAround from '../../../images/all-around-pain-card.png';
+import { Card, CardDeck } from 'react-bootstrap';
+import { cards } from '../Constants';
 
 const CardGroup1 = () => {
   return (
     <div className="painContainer">
       <h2>Target Your Pain Areas</h2>
       <div className="painCards">
-        <img src={NeckPain} alt="Woman with neck pain" />
-        <img src={LowerBack} alt="Man with back pain" />
-        <img src={AllAround} alt="Woman with pain all around" />
+        <CardDeck>
+          {cards.map((card) => (
+            <Card className="pain-card">
+              <Card.Img
+                fluid
+                variant="top"
+                src={card.Picture}
+                alt={card.Desc}
+              />
+              <Card.Title className="card-title">{card.Title}</Card.Title>
+              <Card.Text className="card-text">{card.Text}</Card.Text>
+            </Card>
+          ))}
+        </CardDeck>
       </div>
     </div>
   );
