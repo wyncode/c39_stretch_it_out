@@ -58,8 +58,8 @@ const SelectedStretch = () => {
         <div className="reminder-div">
           <Image src={Lightbulb} />
           <p className="reminder">
-            Remember that the sensation during the stretch should be discomfort,
-            but not pain.
+            Remember that the sensation during the stretch should be slight
+            discomfort, not pain.
           </p>
         </div>
 

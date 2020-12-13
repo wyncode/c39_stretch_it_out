@@ -454,16 +454,48 @@
     font-size: 20px;
   }
   .wsContainer h2 {
-    font-size: 35px;
+    font-size: 40px !important;
+    width: 100% !important;
   }
   .wsList li {
     font-size: 25px;
+  }
+  .painCards .card-text {
+    width: 200px !important;
+  }
+  #ws3ReviewCards .card-text {
+    width: 100px !important;
   }
 }
 @media only screen and (max-width: 768px) {
   .statsContainer {
     flex-direction: column;
     align-items: center;
+  }
+
+  .painCards .card-text {
+    width: 80% !important;
+  }
+  .yoga-girl {
+    margin-right: 40px;
+  }
+  .wsWrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+  .wsText.col {
+    margin: 0 !important;
+    width: 300px;
+  }
+  .wsList {
+    width: 300px;
+  }
+  #ws3Title {
+    width: 100% !important;
+  }
+  #ws3Title h2 {
+    font-size: 23px !important;
+    padding-left: 30px;
   }
   #ws3DeviceImage img {
     width: 80%;
@@ -473,10 +505,16 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: center;
+    width: 100%;
   }
 
   #ws3ReviewCards .card {
-    width: 50%;
+    width: 100%;
+  }
+
+  #ws3ReviewCards .card-text {
+    width: 80% !important;
+    font-size: 20px !important;
   }
   .signUp {
     margin-left: 0;
@@ -503,10 +541,14 @@
   .pain-card {
     width: 50%;
   }
+  .pain-card .card-title {
+    font-size: 15px !important;
+  }
   .wsContainer h2 {
     text-align: center;
     margin-left: 0;
-    font-size: 25px;
+    width: 100% !important;
+    font-size: 25px !important;
   }
   .wsList li {
     font-size: 15px;
@@ -557,21 +599,21 @@
     width: 100%;
     margin-bottom: 30px;
   }
-
-  #ws3Title h2 {
-    font-size: 20px;
-    padding-left: 30px;
+  #ws3Title {
+    width: 100% !important;
   }
+
   #ws3ReviewTitle h2 {
-    font-size: 20px;
+    font-size: 30px;
     width: 60%;
   }
+
   #ws3DeviceImage img {
-    width: 40%;
+    width: 70%;
   }
 
   #ws3ReviewCards .card {
-    width: 30%;
+    width: 100%;
   }
 
   .getStartedContainer {
@@ -628,5 +670,14 @@
   }
   .followUsText {
     margin: 0;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .headerText h1 {
+    font-size: 25px;
+  }
+  #ws3Title h2 {
+    font-size: 20px !important;
+    width: 60%;
   }
 }

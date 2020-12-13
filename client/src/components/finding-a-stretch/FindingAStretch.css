@@ -196,3 +196,34 @@
   align-items: center;
   text-align: center;
 }
+
+@media only screen and (max-width: 1024px) {
+  .reminder {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .video-div {
+    height: 300px !important;
+    width: 500px !important;
+  }
+  .video-div iframe {
+    width: 100% !important;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .selected-stretch-div {
+    margin: 10px 0;
+  }
+  .video-div {
+    width: 340px !important;
+    height: 200px !important;
+    padding: 0 !important;
+  }
+  .stretch-name {
+    font-size: 30px !important;
+  }
+}
