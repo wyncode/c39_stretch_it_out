@@ -25,3 +25,27 @@
   background: #e9f7f7;
   border-bottom: none !important;
 }
+@media only screen and (max-width: 414px) {
+  .login,
+  .login-modal,
+  .login-modal-header {
+    width: 300px !important;
+  }
+  .login {
+    margin-left: 13% !important;
+  }
+  .login .form-control,
+  .login .form-label {
+    width: 70% !important;
+    margin-left: 14% !important;
+  }
+  .login-button {
+    width: 60% !important;
+    margin-left: 14% !important;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .login {
+    margin-left: 8% !important;
+  }
+}
