@@ -6,21 +6,21 @@ const Description = ({ handleChange, formData }) => {
   return (
     <div className="modal-div">
       <Image fluid src={Progress1} alt="progress-bar" />
-      <h4>Which person best describes who you are?</h4>
+      <h3>Which person best describes who you are?</h3>
       <p>Select one answer</p>
       <div className="form-group">
-        <div className="radio-button" onClick={handleChange('personType')}>
+        <label for="personType1" className="radio-button">
           <input
             type="radio"
             id="personType1"
             name="personType"
-            // onChange={handleChange('personType')}
+            onChange={handleChange('personType')}
             checked={formData.personType === 'Active'}
             value="Active"
           />
           <label for="personType1">Active</label>
-        </div>
-        <div className="radio-button">
+        </label>
+        <label for="personType2" className="radio-button">
           <input
             type="radio"
             id="personType2"
@@ -30,8 +30,8 @@ const Description = ({ handleChange, formData }) => {
             value="Sedentary"
           />
           <label for="personType2">Sedentary</label>
-        </div>
-        <div className="radio-button">
+        </label>
+        <label for="personType3" className="radio-button">
           <input
             type="radio"
             id="personType3"
@@ -41,8 +41,8 @@ const Description = ({ handleChange, formData }) => {
             value="Senior"
           />
           <label for="personType3">Senior</label>
-        </div>
-        <div className="radio-button">
+        </label>
+        <label for="personType4" className="radio-button">
           <input
             type="radio"
             id="personType4"
@@ -52,7 +52,7 @@ const Description = ({ handleChange, formData }) => {
             value="Chronic illnesses"
           />
           <label for="personType4">Chronic illnesses</label>
-        </div>
+        </label>
       </div>
     </div>
   );

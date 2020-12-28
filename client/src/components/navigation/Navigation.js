@@ -1,6 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Nav, Image, NavItem, Dropdown } from 'react-bootstrap';
+import {
+  Image,
+  Navbar,
+  Nav,
+  NavItem,
+  Dropdown,
+  FormControl
+} from 'react-bootstrap';
 import { AppContext } from '../../context/AppContext';
 import { Logo, StartTrial } from '../../images/index';
 import AnonPic from '../../pages/profile/images/AnonPic.png';
@@ -10,58 +17,67 @@ import { LoginModal } from '../login';
 import './Navigation.css';
 
 const Navigation = () => {
-  const { currentUser, handleLogin } = useContext(AppContext);
+  const { currentUser } = useContext(AppContext);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
     <div>
-      <Nav className="row justify-content-around nav">
-        <div className="nav-logo">
+      <Navbar
+        className="row justify-content-between align-self-baseline nav"
+        collapseOnSelect
+        expand="lg"
+      >
+        <Navbar.Brand className="brand">
           <Link to="/">
-            <Image src={Logo} />
+            <Image className="logo" src={Logo} />
           </Link>
-        </div>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav>
+            <div className="stretches-benefits-nav">
+              <Link to="/body-area" className="nav-link">
+                Stretches
+              </Link>
 
-        <div className="stretches-benefits-nav">
-          <Nav.Item>
-            <Nav.Link href="/body-area" className="nav-link">
-              Stretches
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/benefits" className="nav-link">
-              Benefits
-            </Nav.Link>
-          </Nav.Item>
-        </div>
+              <Link to="/benefits" className="nav-link">
+                Benefits
+              </Link>
+            </div>
 
-        <div className="profile-trial-nav">
-          <Dropdown as={NavItem}>
-            <Dropdown.Toggle variant="" className="profile-dropdown-nav">
-              <Image
-                src={currentUser?.avatar ? currentUser?.avatar : AnonPic}
-                height={50}
-                width={50}
-                roundedCircle
-              />
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item as={Link} to="/profile">
-                Profile
-              </Dropdown.Item>
-              <Dropdown.Item as="button" onClick={handleShow}>
-                Log In
-              </Dropdown.Item>
-              <Logout />
-            </Dropdown.Menu>
-          </Dropdown>
-          <Link to="/sign-up" className="start-trial-link">
-            <Image src={StartTrial} />
-          </Link>
-        </div>
-      </Nav>
+            <div className="profile-trial-nav">
+              <Dropdown as={NavItem}>
+                <Dropdown.Toggle variant="" className="profile-dropdown-nav">
+                  <Image
+                    src={currentUser?.avatar ? currentUser?.avatar : AnonPic}
+                    height={50}
+                    width={50}
+                    roundedCircle
+                  />
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item
+                    className="profile-link"
+                    as={Link}
+                    to="/profile"
+                  >
+                    Profile
+                  </Dropdown.Item>
+                  <Dropdown.Item as="button" onClick={handleShow}>
+                    Log In
+                  </Dropdown.Item>
+                  {currentUser ? <Logout /> : null}
+                </Dropdown.Menu>
+              </Dropdown>
+              <Link to="/sign-up" className="start-trial-link">
+                <Image src={StartTrial} />
+              </Link>
+            </div>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
 
       <LoginModal show={show} hide={handleClose} />
     </div>

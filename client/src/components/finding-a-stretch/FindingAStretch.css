@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Nunito&display=swap');
 
-* {
+/* * {
   font-family: 'Nunito', sans-serif;
-}
+} */
 /* ***** Stretch Category Page ******************************************/
 
 .body-area {
@@ -15,15 +15,119 @@
 }
 
 .category-card {
-  filter: drop-shadow(3px 6px 5px #c0bfbf);
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 50px 15px;
+  transition: transform 0.1s;
+}
+.category-card::after {
+  content: '';
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.category-card:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.25, 1.25);
+  transform: scale(1.1);
+}
+
+.category-card:hover::after {
+  opacity: 1;
 }
 
 .card-deck {
   margin-bottom: 15px;
+}
+
+.stretch-card-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* ***** Stretch Modal ******************************************/
+
+.stretch-modal {
+  display: flex;
+}
+
+.stretch-modal-title {
+  display: flex;
+  margin: 5px 50px 5px 125px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 29px;
+}
+
+.dropdowns {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: auto 140px 15px;
+}
+
+.dropdown-button {
+  margin: auto 15px;
+  border-radius: 5%;
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+}
+
+/* ***** Stretch Modal Cards ******************************************/
+
+.stretch-modal-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 10px;
+  transition: transform 0.1s;
+}
+
+.stretch-modal-cards::after {
+  content: '';
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.stretch-modal-cards:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.25, 1.25);
+  transform: scale(1.1);
+}
+
+.stretch-modal-cards:hover::after {
+  opacity: 1;
+}
+
+.stretch-card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.stretch-modal-card-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 500;
 }
 /* ***** Selected Stretch Page ******************************************/
 
@@ -93,46 +197,33 @@
   text-align: center;
 }
 
-/* ***** Stretch Modal ******************************************/
-
-.stretch-modal {
-  display: flex;
+@media only screen and (max-width: 1024px) {
+  .reminder {
+    width: 90% !important;
+  }
 }
 
-.stretch-modal-header {
-  display: flex;
+@media only screen and (max-width: 768px) {
+  .video-div {
+    height: 300px !important;
+    width: 500px !important;
+  }
+  .video-div iframe {
+    width: 100% !important;
+    height: 100%;
+  }
 }
 
-.stretch-modal-title {
-  display: flex;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 29px;
-}
-
-.dropdowns {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 15px;
-}
-
-.dropdown-button {
-  margin: auto 15px;
-  border-radius: 5%;
-}
-
-.dropdown-menu {
-  border-radius: 10px;
-}
-
-/* ***** Stretch Modal Cards ******************************************/
-
-.stretch-modal-cards {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 20px 10px;
-}
-
-.stretch-card-container {
-  display: flex;
+@media only screen and (max-width: 540px) {
+  .selected-stretch-div {
+    margin: 10px 0;
+  }
+  .video-div {
+    width: 340px !important;
+    height: 200px !important;
+    padding: 0 !important;
+  }
+  .stretch-name {
+    font-size: 30px !important;
+  }
 }

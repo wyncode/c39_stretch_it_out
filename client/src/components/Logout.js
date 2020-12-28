@@ -20,6 +20,8 @@ const Logout = () => {
       setCurrentUser(null);
 
       history.push('/');
+
+      swal('Goodbye!', 'You have logged out', 'success');
     } catch (error) {
       console.log('Login Error: ' + error);
     }

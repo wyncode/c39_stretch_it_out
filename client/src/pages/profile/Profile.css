@@ -31,11 +31,15 @@
 .day-count-header {
   margin-bottom: 40px;
 }
+.day-count-header h3 {
+  margin-bottom: 0;
+}
 .day-count-value {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #eaf7f7;
+  border: 1px solid #495464;
   height: 70px;
   width: 200px;
   border-radius: 10px;
@@ -54,6 +58,10 @@
   align-items: center;
   justify-content: center;
 }
+.find-a-stretch:hover {
+  text-decoration: none !important;
+  color: inherit !important;
+}
 .modal-button {
   background-color: #377c8d !important;
   border-color: #377c8d !important;
@@ -65,7 +73,7 @@
 .profile-banner {
   background-image: url('./images/profilebanner.png');
   width: 100vw;
-  height: 300px;
+  /* height: 20%; */
   display: flex;
   padding-top: 30px;
   justify-content: baseline;
@@ -74,11 +82,14 @@
   background-color: #eaf7f7 !important;
   width: 200px !important;
   height: 50px !important;
-  border-color: #eaf7f7 !important;
   color: black !important;
+  border-color: #495464 !important;
   display: flex !important ;
+  justify-content: center;
   align-items: baseline !important;
+  padding-top: 10px !important;
 }
+
 .space {
   height: 40px;
   width: 100;
@@ -120,24 +131,163 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 60vh;
+  /* height: 60vh; */
   width: 100vw;
 }
 .user-stats-visible {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: top;
   width: 60vw;
   padding-bottom: 30px;
   margin-bottom: 40px;
 }
 
-.favorite-stretch-list {
+.user-stat {
+  background-color: #eaf7f7;
+  border: 1px solid #495464;
+  border-radius: 10px;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+.add-stretch-button {
+  background-color: transparent;
+}
+
+/* BMI Calc Styling */
+.get-your-bmi {
+  background-color: #377c8d !important;
+  border-color: #377c8d !important;
+  margin: 20px;
+  height: 60px !important;
+  width: 150px !important;
+  border-radius: 10px !important;
+  font-family: 'Lato', sans-serif;
+  color: black !important;
+}
+
+.bmi-modal-header {
+  background-color: #eaf7f7;
+  border-color: #eaf7f7;
+  color: black;
+}
+
+.bmi-modal-body {
+  background-color: #eaf7f7;
+  border-color: #eaf7f7;
+  color: black;
+}
+
+.height-input {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.add-stretch-button {
-  background-color: transparent;
+.weight-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bmi-calc {
+  background-color: #eaf7f7 !important;
+  border-color: #eaf7f7 !important;
+  color: black !important;
+}
+
+.profile-page-buttons-div {
+  display: flex;
+}
+
+.bmi-calc-button {
+  background-color: #377c8d !important;
+  border-color: #377c8d !important;
+  margin: 20px;
+  height: 60px !important;
+  width: 150px !important;
+  border-radius: 10px !important;
+  font-family: 'Lato', sans-serif;
+  color: black !important;
+}
+
+@media only screen and (max-width: 1400px) {
+  .user-stats-visible {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-stat {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .day-count-header,
+  .daily-stretches-header {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .daily-stretches {
+    margin-right: 40px;
+  }
+  .day-count {
+    margin-left: 40px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .profile-banner {
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0;
+  }
+  .user-pic-div {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .profile-pic {
+    width: 60% !important;
+    height: 90%;
+    margin: 0;
+  }
+  .user-greeting-div {
+    align-items: center;
+  }
+  .user-greeting-text {
+    font-size: 15px;
+  }
+  .button-sub-div-1,
+  .button-sub-div-2 {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+  }
+  .profile-buttons {
+    margin: 10px 0;
+  }
+  .button-sub-div-1,
+  .button-sub-div-2 {
+    width: 100%;
+  }
+  .day-count-header {
+    size: 15px !important;
+  }
+  .stretch-tracker {
+    flex-direction: column;
+  }
+  .day-count {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .daily-stretches {
+    margin-right: 0;
+  }
 }

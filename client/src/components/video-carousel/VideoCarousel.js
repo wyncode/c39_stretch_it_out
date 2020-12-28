@@ -8,9 +8,10 @@ const VideoCarousel = () => {
   const chevronWidth = 40;
   return (
     <div
+      className="carousel"
       style={{
         padding: `0 ${chevronWidth}px`,
-        maxWidth: '65%',
+        maxWidth: '100%',
 
         justifyContent: 'center'
       }}
@@ -18,11 +19,11 @@ const VideoCarousel = () => {
       <h3 className="carousel-header">
         Browse Our Instructional Stretching Videos
       </h3>
+
       <ItemsCarousel
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
         numberOfCards={3}
-        gutter={20}
         leftChevron={<Button variant="light">{'<'}</Button>}
         rightChevron={<Button variant="light">{'>'}</Button>}
         outsideChevron

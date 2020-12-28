@@ -1,4 +1,22 @@
-.find-your-stretch {
+.stretch-banner-div {
+  position: relative;
+  text-align: center;
+}
+
+.stretch-banner {
   width: 100vw;
   display: flex;
+}
+
+.find-your-stretch {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 4vw;
+  text-transform: uppercase;
+  color: #ffffff;
 }
