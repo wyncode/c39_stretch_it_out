@@ -14,7 +14,7 @@ import './AnonHomePage.css';
 
 const AnonHomePage = () => {
   return (
-    <div className="d-flex flex-column align-items-center vw-100">
+    <div className="d-flex flex-column align-items-center ">
       <Navigation />
 
       <JumbotronHeader />

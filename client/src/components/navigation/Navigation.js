@@ -51,7 +51,7 @@ const Navigation = () => {
               <Dropdown as={NavItem}>
                 <Dropdown.Toggle variant="" className="profile-dropdown-nav">
                   <Image
-                    src={currentUser ? currentUser?.avatar : AnonPic}
+                    src={currentUser?.avatar ? currentUser?.avatar : AnonPic}
                     height={50}
                     width={50}
                     roundedCircle
