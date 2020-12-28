@@ -73,7 +73,7 @@
 .profile-banner {
   background-image: url('./images/profilebanner.png');
   width: 100vw;
-  height: 30%;
+  /* height: 20%; */
   display: flex;
   padding-top: 30px;
   justify-content: baseline;
@@ -131,7 +131,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 60vh;
+  /* height: 60vh; */
   width: 100vw;
 }
 .user-stats-visible {
