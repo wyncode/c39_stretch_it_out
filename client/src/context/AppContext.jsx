@@ -13,7 +13,7 @@ export const AppContextProvider = ({ children }) => {
   const user = sessionStorage.getItem('user');
 
   useEffect(() => {
-    if (user && !currentUser) {
+    if (user) {
       axios
         .get(`/api/users/me`, {
           withCredentials: true
