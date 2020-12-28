@@ -154,7 +154,7 @@
 }
 .ws2-wrapper {
   width: 100vw;
-  height: 40vh;
+  /* height: 40vh; */
 }
 .ws2-text {
   display: flex;
