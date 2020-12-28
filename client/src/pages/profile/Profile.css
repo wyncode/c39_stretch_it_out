@@ -15,7 +15,6 @@
 .cog {
   width: 10%;
   margin-right: 10px;
-  margin-top: ;
 }
 
 .daily-stretches {
@@ -74,7 +73,7 @@
 .profile-banner {
   background-image: url('./images/profilebanner.png');
   width: 100vw;
-  height: 300px;
+  height: 30%;
   display: flex;
   padding-top: 30px;
   justify-content: baseline;
@@ -83,7 +82,6 @@
   background-color: #eaf7f7 !important;
   width: 200px !important;
   height: 50px !important;
-  /* border-color: #eaf7f7 !important; */
   color: black !important;
   border-color: #495464 !important;
   display: flex !important ;
@@ -244,7 +242,7 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 414px) {
   .profile-banner {
     flex-direction: column;
     justify-content: space-around;

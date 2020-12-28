@@ -97,6 +97,9 @@ p {
 .welcome-paragraph {
   margin-top: 30px;
   margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 input[type='text'],
 input[type='email'],
@@ -107,14 +110,10 @@ input[type='password'] {
 @media only screen and (max-width: 1024px) {
   .welcome-paragraph {
     width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 }
 .welcome-paragraph p {
   width: 70% !important;
-  font-family: ;
 }
 
 @media only screen and (max-width: 768px) {
